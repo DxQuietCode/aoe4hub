@@ -268,7 +268,30 @@ async function fetchPatches() {
   var box = document.getElementById('patch-container');
   var tEl = document.getElementById('patch-loaded-time');
   var fallback = [
-    {version:'15.2.7380',name:'Hotfix - Torguud & Elephants',date:'4 dec. 2025',isNew:true,
+    {version:'16.2.10604',name:'Balance & Contenu - Juin 2026',date:'1 juin 2026',isNew:true,
+      categories:[
+        {title:'Abbasides',items:["Administrative Wing : +50% bonus par tier du Golden Age (5 tiers)","Nouvelle tech City Planning : batiments adjacents identiques +8% PV et productivite","Nouvelle tech Siege Directive : machines de siege +25% degats bonus","Armored Caravans armure reduite : +3 -> +2","Medical Centers : soin 2 -> 1 par seconde"]},
+        {title:'Mongols',items:["Mangudai vitesse d'attaque amelioree : cap 1.97 -> 1.66","Double Villager cout reduit : 125 -> 120 Pierre","Ovoo taux de collecte Chateau 130 -> 140, Imperial 160 -> 170"]},
+        {title:'Rus',items:["Wooden Fortress cout reduit : 175 -> 150 Bois","Bounty Food bonus ameliore : 5/10/15% -> 10/15/20% par tier"]},
+        {title:'Byzantins',items:["Olive Grove revenu huile reduit : 20% -> 15% de la Nourriture recoltee","Cataphract degats de pietinage reduits : 12 -> 10","Cataphract Numeri effet reduit : 15% 12s -> 10% 10s","Cisterne cout reduit : 125 -> 100 Pierre","Mercenary Camp cout reduit : 150 -> 100 Bois"]},
+        {title:'Ottomans',items:["Sipahi cout augmente : 120 Nour. 40 Bois -> 120 Nour. 45 Bois","Sipahi temps de production augmente : 30 -> 31 secondes"]},
+        {title:'Francais',items:["College of Artillery ne produit plus de Royal Culverins","Royal Ribauldequins : nouvelle capacite Fortify (5 palissades + 30% portee)","Royal Cannons et Royal Ribauldequins coutent 25% moins d'Or"]},
+        {title:'HRE',items:["Inspired Warriors rayon d'aura : 0.5 tuile","Bursae : les Universites donnent +30 de population","Nouvelle tech Concave Lens : +2 tuiles de ligne de vue","Inspired Warriors effet reduit : +15% -> +10% degats"]},
+        {title:'Ayyoubides',items:["Atabeg bonus PV augmente : +20% -> +25%","Couts Advancement Wing reduits (Feodal, Chateau, Imperial)"]},
+        {title:'Delhi',items:["Tower of Victory contient maintenant les technologies de Forge","Compound of the Defender remise amelioree : 20% -> 25%"]},
+        {title:'Templiers',items:["Revenu des Pelerins reduit d'environ 10% (plafond 130 Or maintenu)"]},
+        {title:'Ordre du Dragon',items:["Gilded Villager taux de collecte reduit : 28% -> 27%","Inspired Warriors memes changements que le HRE"]},
+        {title:'Horde d\'Or',items:["Torguud PV reduits : 220 -> 200","Stockyard cout augmente : 250 -> 275 Bois"]},
+        {title:'Macedoniens',items:["Varangian Warcamp cout renforce reduit","Hippodrome Champion soin reduit : 1 -> 0.6 PV par seconde"]},
+        {title:'Tughlaq',items:["Ballista Elephant cout reduit : 300 -> 250 Nourriture","Ballista Elephant temps d'entrainement : 45 -> 40 secondes","Compound of the Defender remise amelioree : 20% -> 25%"]},
+        {title:'Japonais',items:["Shinobi portee de Shunshin augmentee : 4 -> 5 tuiles"]},
+        {title:'Dynastie Jin',items:["Grassland Horse apparition acceleree : 90 -> 75 secondes (Feodal)"]},
+        {title:'Lancaster',items:["Lancaster Castle : 8 emplacements de garnison qui tirent des fleches"]},
+        {title:'Zhu Xi',items:["Shaolin Temple peut maintenant se connecter a l'influence de la Jiangnan Tower"]},
+        {title:'General',items:["Support manette PC (Steam Deck, ROG Ally) - limite 4 joueurs","Corrections de bugs multiples (Anglais, Chine, Ottomans, Jin, Macedoniens)"]}
+      ],
+      source:'https://www.ageofempires.com/news/age-of-empires-iv-patch-16-2-10475/'},
+    {version:'15.2.7380',name:'Hotfix - Torguud & Elephants',date:'4 dec. 2025',
       categories:[{title:'Balance',items:['Torguud - vitesse reduite','Worker Elephant - reequilibre']},
         {title:'Corrections',items:['Fix crash Crucible','Cursed Boons visuel']}],
       source:'https://www.ageofempires.com/news/'},

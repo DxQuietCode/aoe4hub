@@ -1,9 +1,8 @@
 ﻿// AOE4 Hub - Team-UP
 // Charge apres data.js et main.js
+// tuMode, tuAlly, tuEnemy, tuPickTarget sont declares dans data.js
 
 // ── ETAT TEAM-UP ─────────────────────────────────────────────────────────────
-var tuMode = 2, tuAlly = [], tuEnemy = [], tuPickTarget = 'ally';
-
 function getTeamSize() { return Math.floor(tuMode / 2); }
 function setTeamMode(total, btn) {
   tuMode = total;
