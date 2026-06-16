@@ -1,0 +1,85 @@
+﻿<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<title>Mongols — AOE IV Hub</title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+<div class="page-bg-global"></div>
+<div id="hub-toast" class="hub-toast" role="status" aria-live="polite"></div>
+<button id="back-to-top" class="back-to-top" onclick="scrollToTop()" aria-label="Retour en haut">&#8679;</button>
+<div id="hub-quote" class="hub-quote-bar"></div>
+<nav></nav>
+
+<div class="layout">
+  <aside class="toc">
+    <div class="toc-title">Sommaire</div>
+    <a class="toc-link" href="#overview">Vue d'ensemble</a>
+    <a class="toc-link" href="#bonus">Bonus uniques</a>
+    <a class="toc-link" href="#landmarks">Landmarks</a>
+    <a class="toc-link" href="#units">Troupes par âge</a>
+    <a class="toc-link" href="#strategy">Stratégies</a>
+    <div class="toc-sep"></div>
+    <div class="toc-title">Autres civs</div>
+    <a class="toc-civ-link" href="anglais.html">🏴󠁧󠁢󠁥󠁮󠁧󠁿 Anglais</a>
+    <a class="toc-civ-link" href="francais.html">⚜️ Français</a>
+    <a class="toc-civ-link" href="hre.html">🦅 Saint-Empire</a>
+    <a class="toc-civ-link" href="mongols.html">🏹 Mongols</a>
+    <a class="toc-civ-link" href="rus.html">🪶 Rus</a>
+    <a class="toc-civ-link" href="abbasides.html">🌙 Abbasides</a>
+    <a class="toc-civ-link" href="ottomans.html">🌺 Ottomans</a>
+    <a class="toc-civ-link" href="chine.html">🐉 Chine</a>
+    <a class="toc-civ-link" href="delhi.html">🐘 Delhi</a>
+    <a class="toc-civ-link" href="japonais.html">🌸 Japonais</a>
+  </aside>
+  <main class="main">
+    <div class="breadcrumb"><a href="../index.html">Accueil</a><span style="opacity:.4">›</span><a href="../guide.html">Guide Civs</a><span style="opacity:.4">›</span><span>Mongols</span></div>
+    <button class="fav-btn" id="fav-btn-mongols" onclick="toggleFav('mongols')" title="Ajouter aux favoris">⭐</button>
+    <div class="variant-banner"><span class="variant-banner-label">VARIANTE</span><a class="variant-banner-link" href="hordedor.html">🐎 Horde d'Or →</a></div>
+      <div class="civ-hero" id="overview">
+      <div class="civ-hero-flag">🏹</div>
+      <div class="civ-hero-info">
+        <div class="civ-difficulty"><div class="diff-stars-inline"><svg class="ds on" viewBox="0 0 16 16"><path d="M8 1l1.9 3.9 4.1.6-3 2.9.7 4.1L8 10.5l-3.7 1.9.7-4.1-3-2.9 4.1-.6z"/></svg><svg class="ds on" viewBox="0 0 16 16"><path d="M8 1l1.9 3.9 4.1.6-3 2.9.7 4.1L8 10.5l-3.7 1.9.7-4.1-3-2.9 4.1-.6z"/></svg><svg class="ds off" viewBox="0 0 16 16"><path d="M8 1l1.9 3.9 4.1.6-3 2.9.7 4.1L8 10.5l-3.7 1.9.7-4.1-3-2.9 4.1-.6z"/></svg></div><span class="diff-badge">INTERMÉDIAIRE</span></div>
+        <div class="civ-name-hero">Mongols</div>
+        <div class="civ-tagline-hero">La horde nomade - mobilité absolue et harass permanent</div>
+        <p class="civ-playstyle">Les Mongols sont la civilisation la plus agressive et mobile du jeu. Tous leurs bâtiments peuvent être pliés et redéployés ailleurs en quelques secondes. Ils n'ont pas besoin de maisons et démarrent avec le maximum de population. L'objectif est de harceler en permanence l'adversaire, de piller ses bâtiments pour générer des ressources, et de ne jamais laisser l'ennemi s'installer confortablement.</p>
+        <div class="str-weak">
+          <div class="sw-col str"><div class="sw-label str">Forces</div><ul class="sw-list str"><li class="sw-item">Mobilité totale - base redéployable</li><li class="sw-item">Cavalerie la plus rapide du jeu</li><li class="sw-item">Population maximum dès le départ</li><li class="sw-item">Pillage génère des ressources passives</li><li class="sw-item">Keshik se soigne en combattant</li></ul></div>
+          <div class="sw-col wk"><div class="sw-label wk">Faiblesses</div><ul class="sw-list wk"><li class="sw-item">Aucune défense fixe</li><li class="sw-item">Très sensible au micro-gestion</li><li class="sw-item">Faible sur mappes fermées/forestières</li><li class="sw-item">Difficile à jouer si l'adversaire punit le harass</li></ul></div>
+        </div>
+      </div>
+    </div>
+    <div class="section" id="bonus"><div class="section-title"><span class="section-icon">⚡</span>Bonus de civilisation</div><div class="bonus-list"><div class="bonus-item"><div class="bonus-icon">🏕️</div><div class="bonus-text"><div class="bt-title">Nomade - Bâtiments mobiles</div><div class="bt-desc">Tous les bâtiments mongols peuvent être pliés et redéployés à n'importe quel endroit de la carte. Radical.</div></div></div><div class="bonus-item"><div class="bonus-icon">👥</div><div class="bonus-text"><div class="bt-title">Population max au départ</div><div class="bt-desc">Commence avec le plafond de population maximum - pas besoin de maisons.</div></div></div><div class="bonus-item"><div class="bonus-icon">🔥</div><div class="bonus-text"><div class="bt-title">Pillage des bâtiments</div><div class="bt-desc">Chaque bâtiment ennemi brûlé génère des ressources (nourriture + or) directement dans ton stock.</div></div></div><div class="bonus-item"><div class="bonus-icon">🏇</div><div class="bonus-text"><div class="bt-title">Cavalerie précoce</div><div class="bt-desc">Le Horseman est disponible dès l'âge Sombre - rush cavalry dès les premières minutes.</div></div></div><div class="bonus-item"><div class="bonus-icon">⛏️</div><div class="bonus-text"><div class="bt-title">Ovoo - Double production</div><div class="bt-desc">L'Ovoo est un bâtiment unique posé sur un gisement de pierre. Les bâtiments dans sa zone d'influence peuvent produire unités et technologies en double vitesse en dépensant de la pierre. Cette mécanique est liée à l'Ovoo uniquement.</div></div></div></div></div>
+    <div class="section" id="landmarks">
+      <div class="section-title"><span class="section-icon">🏯</span>Landmarks - Choix par âge</div>
+      <p style="font-size:.95rem;color:var(--text-muted);font-style:italic;margin-bottom:1.5rem;">À chaque montée d'âge, tu choisis l'un des deux landmarks.</p>
+      <div class="landmark-pair"><div class="age-label-lm">Âge II - Féodal</div><div class="landmark-card"><div class="lm-name">The Silver Tree</div><div class="lm-desc">Fonctionne comme un Marché. Construit des Traders 50% plus vite et 50% moins chers en or. Excellent pour une économie commerciale précoce et agressive.</div></div><div class="landmark-card"><div class="lm-name">Deer Stones</div><div class="lm-desc">Agit comme un Ger. Augmente la vitesse de déplacement des cavaliers et Traders à proximité de +15%. Idéal pour amplifier la mobilité mongole dès le Féodal.</div></div></div>
+      <div class="landmark-pair"><div class="age-label-lm">Âge III - Château</div><div class="landmark-card"><div class="lm-name">Kurultai</div><div class="lm-desc">Zone de soin de 1 PV/s et bonus de +20% de dégâts pour toutes les unités proches quand le Khan est présent. Puissant hub offensif pour les batailles rangées.</div></div><div class="landmark-card"><div class="lm-name">Steppe Redoubt</div><div class="lm-desc">Agit comme un Ger. L'or déposé dans ce bâtiment est augmenté de +50%. Transforme chaque dépôt d'or en ressource amplifiée — excellent pour une économie passive.</div></div></div>
+      <div class="landmark-pair"><div class="age-label-lm">Âge IV - Impérial</div><div class="landmark-card"><div class="lm-name">The White Stupa</div><div class="lm-desc">Agit comme un Ovoo sans nécessiter un gisement de pierre. Produit 240 pierre par minute passivement. Donne accès à la double production sur tous les bâtiments voisins.</div></div><div class="landmark-card"><div class="lm-name">Khaganate Palace</div><div class="lm-desc">Fait spawner périodiquement un groupe aléatoire de cavaliers : Horsemen, Mangudai ou Lancers. Production autonome d'armée de cavalerie en late game.</div></div></div>
+    </div>
+    <div class="section" id="units">
+      <div class="section-title"><span class="section-icon">⚔️</span>Troupes par âge</div>
+      <div class="age-tabs"><div class="age-tab active" onclick="setAge(0,this)">I - Sombre</div><div class="age-tab" onclick="setAge(1,this)">II - Féodal</div><div class="age-tab" onclick="setAge(2,this)">III - Château</div><div class="age-tab" onclick="setAge(3,this)">IV - Impérial</div></div>
+      <div class="age-panel active" id="age-0"><div class="item-grid"><div class="item-card "><div class="item-icon-name"><div class="item-icon">🐎</div><div class="item-name">Scout</div></div><div class="item-desc">Éclaireur rapide.</div><div class="item-stats"><span class="istat">65 🍖 · 23s</span></div></div><div class="item-card "><div class="item-icon-name"><div class="item-icon">🏇</div><div class="item-name">Early Horseman</div></div><div class="item-desc">Cavalier léger dès l'âge Sombre - unique aux Mongols.</div><div class="item-stats"><span class="istat">80 🍖 · 20s</span></div></div></div></div>
+      <div class="age-panel" id="age-1"><div class="item-grid"><div class="item-card unique"><div class="item-icon-name"><div class="item-icon">🏹✨</div><div class="item-name">Mangudai</div></div><div class="item-desc">Archer à cheval unique - tire en mouvement. Très mobile et efficace en harass.</div><div class="item-stats"><span class="istat">110 🍖 · 60 🪙</span></div><div class="unique-badge">UNITÉ UNIQUE</div></div><div class="item-card unique"><div class="item-icon-name"><div class="item-icon">🏹✨</div><div class="item-name">Keshik</div></div><div class="item-desc">Cavalier lourd unique qui se soigne en attaquant les ennemis. Régénère des PV à chaque coup porté - excellent en combat prolongé.</div><div class="item-stats"><span class="istat">120 🍖 · 60 🪙</span></div><div class="unique-badge">UNITÉ UNIQUE</div></div><div class="item-card "><div class="item-icon-name"><div class="item-icon">🏇</div><div class="item-name">Horseman</div></div><div class="item-desc">Cavalier léger standard.</div><div class="item-stats"><span class="istat">100 🍖</span></div></div><div class="item-card "><div class="item-icon-name"><div class="item-icon">🗡️</div><div class="item-name">Spearman</div></div><div class="item-desc">Piquier basique.</div><div class="item-stats"><span class="istat">60 🍖 · 20 🪵</span></div></div></div></div>
+      <div class="age-panel" id="age-2"><div class="item-grid"><div class="item-card "><div class="item-icon-name"><div class="item-icon">🏹</div><div class="item-name">Archer à cheval</div></div><div class="item-desc">Version améliorée du Mangudai.</div><div class="item-stats"><span class="istat">130 🍖 · 80 🪙</span></div></div><div class="item-card "><div class="item-icon-name"><div class="item-icon">🏇</div><div class="item-name">Knight</div></div><div class="item-desc">Cavalier lourd.</div><div class="item-stats"><span class="istat">140 🍖 · 100 🪙</span></div></div><div class="item-card unique"><div class="item-icon-name"><div class="item-icon">💣</div><div class="item-name">Traction Trebuchet</div></div><div class="item-desc">Trébuchet unique mongol - plus léger, plus mobile, peut être déplacé.</div><div class="item-stats"><span class="istat">300 🪵 · 300 🪙</span></div><div class="unique-badge">UNITÉ UNIQUE</div></div></div></div>
+      <div class="age-panel" id="age-3"><div class="item-grid"><div class="item-card unique"><div class="item-icon-name"><div class="item-icon">🏹✨</div><div class="item-name">Mangudai Elite</div></div><div class="item-desc">Version impériale du Mangudai - statistiques maximales. Tire en mouvement, mobilité absolue.</div><div class="item-stats"><span class="istat">130 🍖 · 80 🪙</span></div><div class="unique-badge">UNITÉ UNIQUE</div></div><div class="item-card "><div class="item-icon-name"><div class="item-icon">💥</div><div class="item-name">Bombard</div></div><div class="item-desc">Canon de siège lourd pour démolir les défenses ennemies.</div><div class="item-stats"><span class="istat">400 🪵 · 400 🪙</span></div></div><div class="item-card unique"><div class="item-icon-name"><div class="item-icon">🏇🏯✨</div><div class="item-name">Cavalerie du Khaganate</div></div><div class="item-desc">Groupe de cavaliers générés par le Khaganate Palace : Horsemen, Mangudai ou Lancers selon le cycle. Armée autonome en late game.</div><div class="item-stats"><span class="istat">Khaganate Palace</span></div><div class="unique-badge">VIA LANDMARK</div></div></div></div>
+    </div>
+    <div class="section" id="strategy">
+      <div class="section-title"><span class="section-icon">🗺️</span>Stratégies recommandées</div>
+      <div class="strategy-box"><div class="strat-title">Fast Feudal Harass - Harcèlement précoce</div><div class="strat-desc">Pousser en âge Féodal rapidement et envoyer des Mangudai harceler les villageois adverses dès les premières minutes.</div><ol class="strat-steps"><li class="strat-step"><div class="step-n">1</div><div>Optimiser l'économie - pas besoin de maisons, économise du temps</div></li><li class="strat-step"><div class="step-n">2</div><div>Monter Féodal très vite (12-13 villageois)</div></li><li class="strat-step"><div class="step-n">3</div><div>Construire Archery Range + Écuries immédiatement</div></li><li class="strat-step"><div class="step-n">4</div><div>Produire Mangudai et Keshik en continu</div></li><li class="strat-step"><div class="step-n">5</div><div>Attaque directement les villageois ennemis - fuir si contre-attaque</div></li><li class="strat-step"><div class="step-n">6</div><div>Le Keshik se soigne en attaquant pendant le harass - excellent en combat prolongé</div></li></ol></div>
+      <div class="strategy-box"><div class="strat-title">Pillage Total - Économie parasitaire</div><div class="strat-desc">Maximiser le pillage pour générer des ressources depuis la base ennemie - l'agressivité devient ton économie.</div><ol class="strat-steps"><li class="strat-step"><div class="step-n">1</div><div>Produire des scouts et cavaliers légers en masse</div></li><li class="strat-step"><div class="step-n">2</div><div>Envoyer des petits groupes sur toute la carte pour déclencher des bâtiments</div></li><li class="strat-step"><div class="step-n">3</div><div>Chaque bâtiment brûlé = nourriture + or gratuit</div></li><li class="strat-step"><div class="step-n">4</div><div>Redéployer les bâtiments de production près des combats</div></li><li class="strat-step"><div class="step-n">5</div><div>Ne jamais laisser l'ennemi poser ses mines ou ses fermes tranquilles</div></li></ol></div>
+    </div>
+    <div class="civ-nav-bar">
+      <a class="civ-nav-btn" href="../guide.html">← Retour au guide</a>
+      <a class="civ-nav-btn" href="rus.html">Rus 🪶 →</a>
+    </div>
+  </main>
+<script src="../js/data.js"></script>
+<script src="../js/main.js"></script>
+<script src="../js/civ.js"></script>
+</body>
+</html>

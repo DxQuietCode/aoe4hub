@@ -1,0 +1,115 @@
+﻿<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<title>Tughluq — AOE IV Hub</title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+<div class="page-bg-global"></div>
+<div id="hub-toast" class="hub-toast" role="status" aria-live="polite"></div>
+<button id="back-to-top" class="back-to-top" onclick="scrollToTop()" aria-label="Retour en haut">&#8679;</button>
+<div id="hub-quote" class="hub-quote-bar"></div>
+<nav></nav>
+
+  <div class="layout">
+    <aside class="toc">
+      <div class="toc-title">Sommaire</div>
+      <a class="toc-link" href="#overview-tughluq">Vue d'ensemble</a>
+      <a class="toc-link" href="#bonus-tughluq">Bonus uniques</a>
+      <a class="toc-link" href="#landmarks-tughluq">Landmarks</a>
+      <a class="toc-link" href="#units-tughluq">Troupes par âge</a>
+      <a class="toc-link" href="#strategy-tughluq">Stratégies</a>
+      <div class="toc-sep"></div>
+      <div class="toc-title">Toutes les civs</div>
+      <a class="toc-civ-link" href="anglais.html">🏴󠁧󠁢󠁥󠁮󠁧󠁿 Anglais</a>
+      <a class="toc-civ-link" href="francais.html">⚜️ Français</a>
+      <a class="toc-civ-link" href="hre.html">🦅 Saint-Empire</a>
+      <a class="toc-civ-link" href="mongols.html">🏹 Mongols</a>
+      <a class="toc-civ-link" href="rus.html">🪶 Rus</a>
+      <a class="toc-civ-link" href="abbasides.html">🌙 Abbasides</a>
+      <a class="toc-civ-link" href="ottomans.html">🌺 Ottomans</a>
+      <a class="toc-civ-link" href="mali.html">🌞 Mali</a>
+      <a class="toc-civ-link" href="byzantins.html">🔱 Byzantins</a>
+      <a class="toc-civ-link" href="chine.html">🐉 Chine</a>
+      <a class="toc-civ-link" href="delhi.html">🐘 Delhi</a>
+      <a class="toc-civ-link" href="japonais.html">🌸 Japonais</a>
+      <div class="toc-sep"></div>
+      <div class="toc-title" style="color:var(--gold);font-size:.58rem;">DLC</div>
+      <a class="toc-civ-link" href="zhuxilegacy.html">🏯 <span class="dlc-badge-mini dlc-badge-mini-dynasties">DLC</span> Zhu Xi Legacy</a>
+      <a class="toc-civ-link" href="ayyoubides.html">⚔️ <span class="dlc-badge-mini">DLC</span> Ayyoubides</a>
+      <a class="toc-civ-link" href="jeannedarc.html">⚜️🔥 <span class="dlc-badge-mini">DLC</span> Jeanne d'Arc</a>
+      <a class="toc-civ-link" href="ordresmoines.html">✝️ <span class="dlc-badge-mini">DLC</span> Ordre du Dragon</a>
+      <a class="toc-civ-link" href="templiers.html">✝️⚔️ <span class="dlc-badge-mini dlc-badge-mini-knights">DLC</span> Templiers</a>
+      <a class="toc-civ-link" href="lancaster.html">🌹 <span class="dlc-badge-mini dlc-badge-mini-knights">DLC</span> Lancaster</a>
+      <a class="toc-civ-link" href="hordedor.html">🐎 <span class="dlc-badge-mini dlc-badge-mini-dynasties">DLC</span> Horde d'Or</a>
+      <a class="toc-civ-link" href="macedonienne.html">⚡ <span class="dlc-badge-mini dlc-badge-mini-dynasties">DLC</span> Macédonienne</a>
+      <a class="toc-civ-link" href="sengokudaimyo.html">⛩️ <span class="dlc-badge-mini dlc-badge-mini-dynasties">DLC</span> Sengoku Daimyo</a>
+      <a class="toc-civ-link" href="tughluq.html">🕌 <span class="dlc-badge-mini dlc-badge-mini-dynasties">DLC</span> Tughluq</a>
+      <a class="toc-civ-link" href="jindynasty.html">🏮 <span class="dlc-badge-mini dlc-badge-mini-yuefei">DLC</span> Dynastie Jin</a>
+    </aside>
+    <main class="main">
+      <div class="breadcrumb"><a href="../index.html">Accueil</a><span style="opacity:.4">›</span><a href="../guide.html">Guide Civs</a><span style="opacity:.4">›</span><span>Tughluq</span></div>
+      <button class="fav-btn" id="fav-btn-tughluq" onclick="toggleFav('tughluq')" title="Ajouter aux favoris">⭐</button>
+      <div class="variant-banner"><span class="variant-banner-label">VARIANTE DE</span><a class="variant-banner-link" href="delhi.html">🐘 Delhi →</a></div>
+      <div class="civ-hero" id="overview-tughluq">
+        <div class="civ-hero-flag">🕌</div>
+        <div class="civ-hero-info">
+          <div class="civ-difficulty">
+            <div class="diff-stars-inline"><svg class="ds on" viewBox="0 0 16 16"><path d="M8 1l1.9 3.9 4.1.6-3 2.9.7 4.1L8 10.5l-3.7 1.9.7-4.1-3-2.9 4.1-.6z"/></svg><svg class="ds on" viewBox="0 0 16 16"><path d="M8 1l1.9 3.9 4.1.6-3 2.9.7 4.1L8 10.5l-3.7 1.9.7-4.1-3-2.9 4.1-.6z"/></svg><svg class="ds off" viewBox="0 0 16 16"><path d="M8 1l1.9 3.9 4.1.6-3 2.9.7 4.1L8 10.5l-3.7 1.9.7-4.1-3-2.9 4.1-.6z"/></svg></div>
+            <span class="diff-badge">INTERMÉDIAIRE</span>
+            <span class="dlc-badge-hero-dynasties">DLC - Dynasties of the East</span>
+          </div>
+          <div class="civ-name-hero">Tughluq</div>
+          <div class="civ-tagline-hero">La Dynastie Tughlaq - Worker Elephants, Erudition et Forts de Tughlaqabad</div>
+          <p class="civ-playstyle">Tughluq est une variante du Delhi Sultanat (DLC Dynasties of the East) incarnant la dynastie Tughlaq (1320-1413), focalisée sur les éléphants, les forts et les gouverneurs. Plutôt que les Mosquées/Scholars classiques, son économie repose sur les Worker Elephants : des éléphants mobiles qui remplacent Moulins, Camps de Bûcherons et Camps Miniers comme points de dépôt universels n'importe où sur la carte. La technologie Erudition permet de rechercher presque toutes les technologies en seulement 5 secondes, moyennant un coût +20%. Les Forts de Tughlaqabad remplacent les Donjons et peuvent accueillir jusqu'à 6 Gouverneurs offrant des bonus défensifs, économiques, militaires ou religieux. L'infanterie peut construire des Palissades (Frontier Fortifications), et la récolte de baies/poisson est améliorée (Basketry, Defensive Deckhands).</p>
+          <div class="str-weak">
+            <div class="sw-col str"><div class="sw-label str">Forces</div><ul class="sw-list str"><li class="sw-item">Working Companions - Worker Elephants comme points de dépôt mobiles partout</li><li class="sw-item">Erudition - presque toutes les technologies recherchées en 5 secondes</li><li class="sw-item">Legendary Forts - jusqu'à 6 Gouverneurs avec bonus variés</li><li class="sw-item">Panoplie d'éléphants spécialisés : Raider, Ballista, Healer, War Elephant</li><li class="sw-item">Basketry et Defensive Deckhands - récolte de baies et pêche renforcées</li></ul></div>
+            <div class="sw-col wk"><div class="sw-label wk">Faiblesses</div><ul class="sw-list wk"><li class="sw-item">Perdre un Worker Elephant désorganise temporairement la récolte</li><li class="sw-item">Erudition coûte +20% sur la quasi-totalité des technologies</li><li class="sw-item">L'efficacité des Gouverneurs dépend du placement des Forts</li><li class="sw-item">Identité économique très différente de Delhi - pas de Scholars/Mosquée classique</li></ul></div>
+          </div>
+        </div>
+      </div>
+      <div class="section" id="bonus-tughluq">
+        <div class="section-title"><span class="section-icon">⚡</span>Bonus de civilisation</div>
+        <div class="bonus-list"><div class="bonus-item"><div class="bonus-icon">🐘</div><div class="bonus-text"><div class="bt-title">Working Companions - Éléphants ouvriers</div><div class="bt-desc">Les Worker Elephants remplacent Moulins, Camps de Bûcherons et Camps Miniers comme points de dépôt mobiles et universels. Centres-Villes, Worker Elephants et Quais accordent des ressources bonus à chaque dépôt des villageois.</div></div></div><div class="bonus-item"><div class="bonus-icon">⏱️</div><div class="bonus-text"><div class="bt-title">Erudition - Recherche instantanée</div><div class="bt-desc">Toutes les technologies, à l'exception des emplacements, sont recherchées en seulement 5 secondes - mais coûtent 20% de ressources supplémentaires.</div></div></div><div class="bonus-item"><div class="bonus-icon">🏯</div><div class="bonus-text"><div class="bt-title">Legendary Forts - Gouverneurs</div><div class="bt-desc">Les Forts de Tughlaqabad (remplacent les Donjons) peuvent chacun nommer un Gouverneur parmi 6 (Ajmer, Bhakkar, Jalor, Multan, Sehwan, Uch), jusqu'à 6 actifs au total, chacun apportant un bonus différent.</div></div></div><div class="bonus-item"><div class="bonus-icon">🧱</div><div class="bonus-text"><div class="bt-title">Frontier Fortifications</div><div class="bt-desc">Les unités d'infanterie peuvent construire des Palissades directement sur le terrain.</div></div></div><div class="bonus-item"><div class="bonus-icon">🌾</div><div class="bonus-text"><div class="bt-title">Basketry & Defensive Deckhands</div><div class="bt-desc">Les villageois récoltent les baies 30% plus vite et en rapportent +3 de nourriture par voyage. Les Bateaux de Pêche obtiennent une attaque à distance et +50% de PV.</div></div></div></div>
+      </div>
+      <div class="section" id="landmarks-tughluq">
+        <div class="section-title"><span class="section-icon">🏯</span>Landmarks - Choix par âge</div>
+        <p style="font-size:.95rem;color:var(--text-muted);font-style:italic;margin-bottom:1.5rem;">À chaque montée d'âge, tu choisis l'un des deux landmarks.</p>
+        <div class="landmark-pair"><div class="age-label-lm">Âge II - Féodal</div><div class="landmark-card"><div class="lm-name">Dome of the Faith</div><div class="lm-desc">Remplace la Mosquée - débloque le Healer Elephant en avance et offre une réduction de 65 or sur les Imams et Healer Elephants.</div></div><div class="landmark-card"><div class="lm-name">Tower of Victory</div><div class="lm-desc">Tous les éléphants dans la zone d'influence gagnent +20% de vitesse d'attaque.</div></div></div>
+        <div class="landmark-pair"><div class="age-label-lm">Âge III - Château</div><div class="landmark-card"><div class="lm-name">Compound of the Defender</div><div class="lm-desc">Réduit de 20% le coût en pierre et débloque les améliorations de Gouverneur de palier 4.</div></div><div class="landmark-card"><div class="lm-name">House of Learning</div><div class="lm-desc">Débloque des technologies militaires uniques au profit des éléphants : Elephant Caretakers (régénération +2 PV/2s hors combat), Collateral Damage (+30% dégâts), Khanda Drills (charge Man-at-Arms), Neza Training (cavalerie de pique +35% dégâts, +50% vitesse de production).</div></div></div>
+        <div class="landmark-pair"><div class="age-label-lm">Âge IV - Impérial</div><div class="landmark-card"><div class="lm-name">Hisar Academy</div><div class="lm-desc">Remplace la Madrasa - génère 50 nourriture + 50 or par minute pour chaque Gouverneur actif.</div></div><div class="landmark-card"><div class="lm-name">Palace of the Sultan</div><div class="lm-desc">Nomme immédiatement un Gouverneur choisi avec son bonus de palier 4 dès sa construction.</div></div></div>
+      </div>
+      <div class="section" id="units-tughluq">
+        <div class="section-title"><span class="section-icon">⚔️</span>Troupes par âge</div>
+        <div class="age-tabs"><div class="age-tab active" onclick="setAge(0,this)">I - Sombre</div><div class="age-tab" onclick="setAge(1,this)">II - Féodal</div><div class="age-tab" onclick="setAge(2,this)">III - Château</div><div class="age-tab" onclick="setAge(3,this)">IV - Impérial</div></div>
+        <div class="age-panel active" id="age-tughluq-0"><div class="item-grid"><div class="item-card"><div class="item-icon-name"><div class="item-icon">👷</div><div class="item-name">Villageois</div></div><div class="item-desc">Économie et construction.</div><div class="item-stats"><span class="istat">50 🍖 - 20s</span></div></div><div class="item-card unique"><div class="item-icon-name"><div class="item-icon">🐘📦✨</div><div class="item-name">Worker Elephant</div></div><div class="item-desc">Éléphant ouvrier - remplace Moulin/Camp de Bûcherons/Camp Minier comme point de dépôt mobile et universel n'importe où sur la carte.</div><div class="item-stats"><span class="istat">Économie</span></div><div class="unique-badge">UNITÉ UNIQUE</div></div></div></div>
+        <div class="age-panel" id="age-tughluq-1"><div class="item-grid"><div class="item-card unique"><div class="item-icon-name"><div class="item-icon">🐘🐎✨</div><div class="item-name">Raider Elephant</div></div><div class="item-desc">Remplace le Horseman - cavalerie légère montée sur éléphant, PV augmentés et capacité de piétinement infligeant des dégâts de zone.</div><div class="item-stats"><span class="istat">100 🍖 - 20 🪙</span></div><div class="unique-badge">UNITÉ UNIQUE</div></div><div class="item-card"><div class="item-icon-name"><div class="item-icon">🗡️</div><div class="item-name">Spearman</div></div><div class="item-desc">Piquier défensif.</div><div class="item-stats"><span class="istat">60 🍖 - 20 🪵</span></div></div><div class="item-card"><div class="item-icon-name"><div class="item-icon">🏹</div><div class="item-name">Arbalétrier</div></div><div class="item-desc">Archer lourd.</div><div class="item-stats"><span class="istat">80 🍖 - 40 🪙</span></div></div></div></div>
+        <div class="age-panel" id="age-tughluq-2"><div class="item-grid"><div class="item-card unique"><div class="item-icon-name"><div class="item-icon">🐘💣✨</div><div class="item-name">Ballista Elephant</div></div><div class="item-desc">Remplace le Springald - siège lourd monté sur éléphant, le tir de baliste traverse plusieurs unités ennemies en ligne.</div><div class="item-stats"><span class="istat">250 🪵 - 250 🪙</span></div><div class="unique-badge">UNITÉ UNIQUE</div></div><div class="item-card unique"><div class="item-icon-name"><div class="item-icon">🐘➕✨</div><div class="item-name">Healer Elephant</div></div><div class="item-desc">Unité religieuse montée sur éléphant - combat au corps-à-corps tout en soignant les unités alliées proches.</div><div class="item-stats"><span class="istat">Dome of the Faith</span></div><div class="unique-badge">UNITÉ UNIQUE</div></div><div class="item-card unique"><div class="item-icon-name"><div class="item-icon">🛡️✨</div><div class="item-name">Amir Warrior</div></div><div class="item-desc">Guerrier lourdement blindé ne consommant aucune population - plus efficace près des Forts de Tughlaqabad.</div><div class="item-stats"><span class="istat">Fort de Tughlaqabad</span></div><div class="unique-badge">UNITÉ UNIQUE</div></div></div></div>
+        <div class="age-panel" id="age-tughluq-3"><div class="item-grid"><div class="item-card"><div class="item-icon-name"><div class="item-icon">🐘👑</div><div class="item-name">War Elephant</div></div><div class="item-desc">Éléphant de guerre partagé avec le Delhi Sultanat - l'unité terrestre la plus puissante du jeu, améliorable via Armored Beasts.</div><div class="item-stats"><span class="istat">500 🍖 - 400 🪙</span></div></div><div class="item-card"><div class="item-icon-name"><div class="item-icon">💥</div><div class="item-name">Bombard</div></div><div class="item-desc">Canon de siège.</div><div class="item-stats"><span class="istat">400 🪵 - 400 🪙</span></div></div></div></div>
+      </div>
+      <div class="section" id="strategy-tughluq">
+        <div class="section-title"><span class="section-icon">🗺️</span>Stratégies recommandées</div>
+        <div class="strategy-box">
+          <div class="strat-title">Worker Elephants - Économie sans camps fixes</div>
+          <div class="strat-desc">Exploiter la mobilité des Worker Elephants pour récolter efficacement sur toute la carte sans investir dans des camps de ressources classiques.</div>
+          <ol class="strat-steps"><li class="strat-step"><div class="step-n">1</div><div>Worker Elephants déployés près des ressources éloignées dès l'âge Sombre</div></li><li class="strat-step"><div class="step-n">2</div><div>Dome of the Faith en Féodal - Healer Elephant en avance + réduction de coût</div></li><li class="strat-step"><div class="step-n">3</div><div>Erudition : profiter de la recherche en 5 secondes pour rattraper le surcoût de 20%</div></li><li class="strat-step"><div class="step-n">4</div><div>Basketry sur les baies pour compenser le coût des Worker Elephants</div></li><li class="strat-step"><div class="step-n">5</div><div>Hisar Academy en Impérial - revenu passif via les Gouverneurs actifs</div></li></ol>
+        </div>
+        <div class="strategy-box">
+          <div class="strat-title">Forts de Tughlaqabad et Gouverneurs - Défense modulaire</div>
+          <div class="strat-desc">Construire plusieurs Forts de Tughlaqabad pour activer différents Gouverneurs selon les besoins (défense, économie, cavalerie, religion).</div>
+          <ol class="strat-steps"><li class="strat-step"><div class="step-n">1</div><div>Tower of Victory en Féodal pour booster la vitesse d'attaque des éléphants</div></li><li class="strat-step"><div class="step-n">2</div><div>1er Fort de Tughlaqabad - Gouverneur de Multan (production TC plus rapide) ou Ajmer (Amir Warriors gratuits)</div></li><li class="strat-step"><div class="step-n">3</div><div>Compound of the Defender au Château - débloque le palier 4 des Gouverneurs</div></li><li class="strat-step"><div class="step-n">4</div><div>Ballista Elephant et Healer Elephant pour soutenir le front</div></li><li class="strat-step"><div class="step-n">5</div><div>Palace of the Sultan en Impérial - Gouverneur choisi avec bonus palier 4 immédiat</div></li></ol>
+        </div>
+      </div>
+      <div class="civ-nav-bar">
+        <a class="civ-nav-btn" href="delhi.html">← Delhi (base)</a>
+        <a class="civ-nav-btn" href="jindynasty.html">Dynastie Jin 🏮 →</a>
+      </div>
+    </main>
+<script src="../js/data.js"></script>
+<script src="../js/main.js"></script>
+<script src="../js/civ.js"></script>
+</body>
+</html>

@@ -1,0 +1,100 @@
+﻿<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<title>Accueil — AOE IV Hub</title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="page-bg-global"></div>
+<div id="hub-toast" class="hub-toast" role="status" aria-live="polite"></div>
+<button id="back-to-top" class="back-to-top" onclick="scrollToTop()" aria-label="Retour en haut">&#8679;</button>
+<div id="hub-quote" class="hub-quote-bar"></div>
+<nav></nav>
+
+<div class="dashboard-wrap">
+  <div class="dash-hero" id="dash-hero-particles">
+    <div class="season-banner" style="justify-content:center;">
+      <div class="s-dot"></div>
+      <span class="s-text">SAISON 13 EN COURS &middot; YUE FEI'S LEGACY &middot; MAI 2026</span>
+    </div>
+    <div class="dash-hero-title">COMMAND HUB</div>
+    <div class="dash-hero-sub">Age of Empires IV &middot; Ton quartier g&eacute;n&eacute;ral</div>
+  </div>
+
+  <div class="dash-block">
+    <div class="dash-sep"><div class="sep-diamond"></div><span class="sep-label">Jouer maintenant</span><div class="sep-diamond"></div></div>
+    <div class="dash-grid dash-grid--2">
+      <a class="dash-card" data-module="epreuve" href="epreuve.html">
+        <span class="dc-icon">&#128203;</span>
+        <div class="dc-name">Plan de Jeu</div>
+        <div class="dc-desc">Construis ta strat&eacute;gie &eacute;tape par &eacute;tape avec les outils de L'Epreuve.</div>
+      </a>
+      <a class="dash-card" data-module="pg-teamup" href="teamup.html">
+        <span class="dc-icon">&#128737;</span>
+        <div class="dc-name">Team-UP</div>
+        <div class="dc-desc">Analyse les synergies et contre-strat&eacute;gies de ton &eacute;quipe avant la partie.</div>
+      </a>
+    </div>
+  </div>
+
+  <div class="dash-block">
+    <div class="dash-sep"><div class="sep-diamond"></div><span class="sep-label">Conna&icirc;tre la m&eacute;ta</span><div class="sep-diamond"></div></div>
+    <div class="dash-grid dash-grid--3">
+      <a class="dash-card" data-module="tierlist" href="tierlist.html">
+        <span class="dc-icon">&#127942;</span>
+        <div class="dc-name">Tier List</div>
+        <div class="dc-desc">Classement live des civilisations avec winrates r&eacute;els depuis aoe4world.com.</div>
+      </a>
+      <a class="dash-card" data-module="guide" href="guide.html">
+        <span class="dc-icon">&#128218;</span>
+        <div class="dc-name">Guide des Civs</div>
+        <div class="dc-desc">Fiches d&eacute;taill&eacute;es pour les 24 civilisations : bonus, landmarks, strat&eacute;gies.</div>
+      </a>
+      <a class="dash-card" data-module="pg-buildorders" href="buildorders.html">
+        <span class="dc-icon">&#9889;</span>
+        <div class="dc-name">Build Orders</div>
+        <div class="dc-desc">Minuteur int&eacute;gr&eacute; pour ex&eacute;cuter tes build orders &agrave; la perfection.</div>
+      </a>
+    </div>
+  </div>
+
+  <div class="dash-block">
+    <div class="dash-sep"><div class="sep-diamond"></div><span class="sep-label">Outils avanc&eacute;s</span><div class="sep-diamond"></div></div>
+    <div class="dash-grid dash-grid--3">
+      <a class="dash-card" data-module="pg-comparateur" href="comparateur.html">
+        <span class="dc-icon">&#9878;</span>
+        <div class="dc-name">Comparateur</div>
+        <div class="dc-desc">Compare deux civilisations c&ocirc;te &agrave; c&ocirc;te : bonus, units, landmarks.</div>
+      </a>
+      <a class="dash-card" data-module="pg-glossaire" href="glossaire.html">
+        <span class="dc-icon">&#128220;</span>
+        <div class="dc-name">Glossaire</div>
+        <div class="dc-desc">38 termes cl&eacute;s expliqu&eacute;s : APM, ELO, rush, kiting, timing attack...</div>
+      </a>
+      <a class="dash-card" data-module="patches" href="patches.html">
+        <span class="dc-icon">&#128203;</span>
+        <div class="dc-name">Patch Notes</div>
+        <div class="dc-desc">Derniers correctifs et &eacute;quilibrages recharg&eacute;s depuis ageofempires.com.</div>
+      </a>
+    </div>
+  </div>
+
+  <div class="dash-block">
+    <div class="dash-sep"><div class="sep-diamond"></div><span class="sep-label">Civ du jour</span><div class="sep-diamond"></div></div>
+    <div id="civ-du-jour" class="dash-cjd"></div>
+  </div>
+</div>
+
+<script src="js/data.js"></script>
+<script src="js/main.js"></script>
+<script>
+window.addEventListener('DOMContentLoaded', function() {
+  initParticles();
+  renderCivOfDay();
+});
+</script>
+</body>
+</html>

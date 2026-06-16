@@ -1,0 +1,97 @@
+﻿<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<title>Tier List — AOE IV Hub</title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="page-bg-global"></div>
+<div id="hub-toast" class="hub-toast" role="status" aria-live="polite"></div>
+<button id="back-to-top" class="back-to-top" onclick="scrollToTop()" aria-label="Retour en haut">&#8679;</button>
+<div id="hub-quote" class="hub-quote-bar"></div>
+<nav></nav>
+<div class="civ-info-panel" id="civPanel" onclick="if(event.target===this)this.classList.remove('open')">
+  <div class="cip-box">
+    <button class="cip-close" onclick="document.getElementById('civPanel').classList.remove('open')">&#10005;</button>
+    <div class="cip-flag" id="cip-flag"></div>
+    <div class="cip-name" id="cip-name"></div>
+    <div class="cip-tier" id="cip-tier"></div>
+    <div class="cip-stats">
+      <div class="cip-stat"><div class="cs-label">Winrate</div><div class="cs-val" id="cip-wr"></div></div>
+      <div class="cip-stat"><div class="cs-label">Tier</div><div class="cs-val" id="cip-tval"></div></div>
+    </div>
+    <div class="cip-desc" id="cip-desc"></div>
+    <a class="cip-link" href="#" onclick="navigateFromPanel();return false;">Voir le guide complet &#8594;</a>
+  </div>
+</div>
+<div class="page">
+  <div class="breadcrumb"><a href="index.html">Accueil</a><span style="opacity:.4">›</span><span>Tier List</span></div>
+  <div class="page-header">
+    <span class="page-tag">🏆 Tier List Multijoueur</span>
+    <h1 class="page-title">Classement des civilisations</h1>
+    <p class="page-desc">Basé sur le winrate et le pick rate en ranked 1v1 - par tranche d'ELO. Clique sur une civ pour plus de détails.</p>
+  </div>
+
+  <!-- RANK FILTER + TOGGLE -->
+  <div class="tl-controls">
+    <div class="tl-rank-bar">
+      <button class="fbtn fbtn-rank active" data-rank="all"       onclick="setTierRank('all',this)">Tous rangs</button>
+      <button class="fbtn fbtn-rank"        data-rank="platinum"  onclick="setTierRank('platinum',this)">⭐ Platine+</button>
+      <button class="fbtn fbtn-rank"        data-rank="diamond"   onclick="setTierRank('diamond',this)">💎 Diamant+</button>
+      <button class="fbtn fbtn-rank"        data-rank="conqueror" onclick="setTierRank('conqueror',this)">🏆 Conqueror</button>
+    </div>
+    <button class="tl-toggle-btn" id="tl-toggle-btn" onclick="toggleTierMode()">📋 Mode Manuel</button>
+  </div>
+  <div id="tl-status" class="tl-status-bar"></div>
+
+  <div class="filter-bar" style="margin-top:.5rem;margin-bottom:.2rem;">
+    <span class="filter-lbl">Style :</span>
+    <button class="fbtn fbtn-style active" data-style="all" onclick="filterStyle('all',this)">Tous</button>
+    <button class="fbtn fbtn-style" data-style="agressif" onclick="filterStyle('agressif',this)">⚔️ Agressif</button>
+    <button class="fbtn fbtn-style" data-style="economique" onclick="filterStyle('economique',this)">💰 Économique</button>
+    <button class="fbtn fbtn-style" data-style="boom" onclick="filterStyle('boom',this)">📈 Boom</button>
+    <button class="fbtn fbtn-style" data-style="flexible" onclick="filterStyle('flexible',this)">🔀 Flexible</button>
+    <button class="fbtn fbtn-style" data-style="defense" onclick="filterStyle('defense',this)">🛡️ Défense</button>
+  </div>
+
+  <!-- DYNAMIC LIVE CONTENT -->
+  <div id="tl-dynamic">
+    <div id="tl-loading" class="tl-loading" style="display:none;">
+      <div class="tl-load-icon">⚙️</div>
+      <div class="tl-load-txt">Chargement donnees live aoe4world...</div>
+    </div>
+    <div id="tl-tier-content"></div>
+  </div>
+
+  <!-- STATIC FALLBACK (mode manuel) -->
+  <div id="tl-static" style="display:none;">
+    <div id="tl-static-content"></div>
+  </div><!-- /tl-static -->
+
+    <div class="disclaimer">
+    <strong>Note :</strong> Ces données sont approximatives, basées sur les statistiques de <a href="https://aoe4world.com/stats/rm_solo/civilizations" target="_blank">aoe4world.com</a> pour la saison en cours. Le méta évolue à chaque patch - les winrates fluctuent constamment. <strong>Une civilisation en C-tier maîtrisée bat toujours une S-tier jouée sans connaissance.</strong> Clique sur n'importe quelle civilisation pour voir pourquoi elle est à ce rang.
+  </div>
+</div>
+
+<!-- POPUP PANEL -->
+<div class="civ-info-panel" id="civPanel" onclick="closePanel(event)">
+  <div class="cip-box">
+    <button class="cip-close" onclick="document.getElementById('civPanel').classList.remove('open')">✕</button>
+    <div class="cip-flag" id="cip-flag"></div>
+    <div class="cip-name" id="cip-name"></div>
+    <div class="cip-tier" id="cip-tier"></div>
+    <div class="cip-stats">
+      <div class="cip-stat"><div class="cs-label">Winrate</div><div class="cs-val" id="cip-wr"></div></div>
+      <div class="cip-stat"><div class="cs-label">Tier</div><div class="cs-val" id="cip-tval"></div></div>
+    </div>
+    <div class="cip-desc" id="cip-desc"></div>
+    <a class="cip-link" id="cip-link" href="#">Voir le guide complet →</a>
+  </div>
+<script src="js/data.js"></script>
+<script src="js/main.js"></script>
+<script src="js/tierlist.js"></script>
+</body>
+</html>

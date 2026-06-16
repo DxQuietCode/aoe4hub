@@ -1,0 +1,1883 @@
+﻿<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<title>L'Epreuve — AOE IV Hub</title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="page-bg-global"></div>
+<div id="hub-toast" class="hub-toast" role="status" aria-live="polite"></div>
+<button id="back-to-top" class="back-to-top" onclick="scrollToTop()" aria-label="Retour en haut">&#8679;</button>
+<div id="hub-quote" class="hub-quote-bar"></div>
+<nav></nav>
+
+<div class="page" style="max-width:1100px;">
+  <div class="breadcrumb">
+    <a href="index.html">Accueil</a>
+    <span style="opacity:.4">›</span>
+    <span>L'Épreuve</span>
+  </div>
+  <div class="page-header">
+    <span class="page-tag" style="display:flex;align-items:center;gap:.5rem;">🛡️ MODE SOLO ROGUELITE &nbsp;·&nbsp; <span class="dlc-tag-dynasties">DYNASTIES OF THE EAST</span></span>
+    <h1 class="page-title">L'Épreuve</h1>
+    <p class="page-desc">Défendez votre Merveille contre des vagues d'ennemis infinies et de plus en plus puissantes. Survivre 45 minutes, c'est la médaille Or.</p>
+  </div>
+
+  <!-- SOUS-NAVIGATION STICKY -->
+  <div id="ep-subnav-anchor"></div>
+  <nav class="ep-subnav" role="tablist" aria-label="Sections de L'Épreuve">
+    <button class="ep-subnav-btn active" data-tab="planjeu" onclick="setEpTab('planjeu')" role="tab"><span class="ep-subnav-icon">📋</span>Plan de Jeu</button>
+    <button class="ep-subnav-btn" data-tab="presentation" onclick="setEpTab('presentation')" role="tab"><span class="ep-subnav-icon">📜</span>Présentation</button>
+    <button class="ep-subnav-btn" data-tab="perks" onclick="setEpTab('perks')" role="tab"><span class="ep-subnav-icon">🔓</span>Perks</button>
+    <button class="ep-subnav-btn" data-tab="boons" onclick="setEpTab('boons')" role="tab"><span class="ep-subnav-icon">✨</span>Boons</button>
+    <button class="ep-subnav-btn" data-tab="objectifs" onclick="setEpTab('objectifs')" role="tab"><span class="ep-subnav-icon">🎯</span>Objectifs</button>
+    <button class="ep-subnav-btn" data-tab="civguide" onclick="setEpTab('civguide')" role="tab"><span class="ep-subnav-icon">🛡️</span>Guide Civs</button>
+  </nav>
+  <div class="ep-tab-content">
+
+  <!-- ═══ 1. PRESENTATION ═══ -->
+  <div class="section ep-section-panel" id="ep-presentation" style="margin-bottom:2.5rem;">
+    <div class="section-title"><span class="section-icon">📜</span>Présentation</div>
+    <div class="ep-intro-box">
+      <p class="ep-intro-lead">L'Épreuve est le mode survie solo d'Age of Empires IV, introduit avec le DLC <strong style="color:var(--gold-pale)">Dynasties of the East</strong>. Le joueur doit protéger sa <strong style="color:var(--gold-pale)">Merveille</strong> contre des vagues d'ennemis qui débarquent toutes les quelques minutes, de plus en plus nombreux et résistants. Il n'y a pas de victoire possible : l'objectif est de tenir le plus longtemps possible.</p>
+      <p class="ep-intro-lead" style="margin-bottom:0;">Entre chaque run, les <strong style="color:var(--gold-pale)">Points de Perks</strong> accumulés grâce aux médailles permettent de débloquer des améliorations permanentes qui facilitent les prochaines tentatives, créant une boucle roguelite de progression.</p>
+      <div class="ep-intro-stats">
+        <div class="ep-istat"><span class="ep-istat-val">45 min</span><span class="ep-istat-lbl">Objectif médaille Or</span></div>
+        <div class="ep-istat"><span class="ep-istat-val">8</span><span class="ep-istat-lbl">Niveaux de difficulté</span></div>
+        <div class="ep-istat"><span class="ep-istat-val">4</span><span class="ep-istat-lbl">Missions disponibles</span></div>
+        <div class="ep-istat"><span class="ep-istat-val">3</span><span class="ep-istat-lbl">Médailles à obtenir</span></div>
+      </div>
+    </div>
+    <div class="strategy-box">
+      <div class="strat-title">Mécanique de base</div>
+      <div class="strat-desc">La Merveille est votre base de victoire : si elle est détruite, la partie se termine immédiatement. Les vagues arrivent depuis des directions définies selon la carte. Vous pouvez construire des fortifications, des tours, des casernes et produire une armée entre les vagues. La difficulté croît exponentiellement : les 15 premières minutes sont accessibles, les 30 suivantes sont une véritable épreuve de résistance.</div>
+    </div>
+  </div>
+
+  <!-- ═══ 2. LES 4 MISSIONS ═══ -->
+  <div class="section ep-section-panel" id="ep-missions" style="margin-bottom:2.5rem;">
+    <div class="section-title"><span class="section-icon">🗺️</span>Les 4 Missions</div>
+    <div class="ep-mission-grid">
+
+      <div class="ep-mission-card">
+        <span class="ep-mission-tag">Mission 1</span>
+        <div class="ep-mission-name">Cote Contestee</div>
+        <div class="ep-mission-sub">Mediterranee Byzantine</div>
+        <div class="ep-mission-traits">
+          <div class="ep-mission-trait">Falaises et criques marines limitent les approches</div>
+          <div class="ep-mission-trait">Vagues mixtes infanterie et archers depuis la plage</div>
+          <div class="ep-mission-trait">Ressources au bord de l'eau, exposees aux raids</div>
+          <div class="ep-mission-trait">Convient aux strategies de defense en entonnoir</div>
+        </div>
+      </div>
+
+      <div class="ep-mission-card">
+        <span class="ep-mission-tag">Mission 2</span>
+        <div class="ep-mission-name">Vallee Sacree</div>
+        <div class="ep-mission-sub">Forets des Hautes-Terres</div>
+        <div class="ep-mission-traits">
+          <div class="ep-mission-trait">Terrain accidente, chemins etroits entre les arbres</div>
+          <div class="ep-mission-trait">Embuscades frequentes depuis les bois environnants</div>
+          <div class="ep-mission-trait">Ressources bien reparties mais difficiles d'acces</div>
+          <div class="ep-mission-trait">Avantage aux constructions defensives en goulot</div>
+        </div>
+      </div>
+
+      <div class="ep-mission-card">
+        <span class="ep-mission-tag">Mission 3</span>
+        <div class="ep-mission-name">Steppes Brulantes</div>
+        <div class="ep-mission-sub">Plaines mongoles ouvertes</div>
+        <div class="ep-mission-traits">
+          <div class="ep-mission-trait">Espace ouvert : les ennemis arrivent de partout</div>
+          <div class="ep-mission-trait">Vagues massives de cavalerie difficiles a contenir</div>
+          <div class="ep-mission-trait">Ressources abondantes mais base exposee sur 360 deg</div>
+          <div class="ep-mission-trait">La mission la plus difficile en niveaux eleves</div>
+        </div>
+      </div>
+
+      <div class="ep-mission-card">
+        <span class="ep-mission-tag">Mission 4</span>
+        <div class="ep-mission-name">Remparts du Desert</div>
+        <div class="ep-mission-sub">Proche-Orient aride</div>
+        <div class="ep-mission-traits">
+          <div class="ep-mission-trait">Terrain sablonneux avec ruines servant de couverts</div>
+          <div class="ep-mission-trait">Machines de siege ennemies apparaissent tot</div>
+          <div class="ep-mission-trait">Peu d'eau : la production alimentaire est contrainte</div>
+          <div class="ep-mission-trait">Routes d'attaque previsibles mais ravitaillement dur</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ═══ 3. MEDAILLES ET RECOMPENSES ═══ -->
+  <div class="section ep-section-panel" id="ep-medailles" style="margin-bottom:2.5rem;">
+    <div class="section-title"><span class="section-icon">🏅</span>Medailles et Recompenses</div>
+    <div class="ep-medals">
+
+      <div class="ep-medal bronze">
+        <span class="ep-medal-icon">🥉</span>
+        <div class="ep-medal-name">Bronze</div>
+        <div class="ep-medal-time">25 minutes</div>
+        <div class="ep-medal-pts">+100 Points de Perks</div>
+        <div class="ep-medal-desc">Premier palier de survie. Les vagues a ce stade sont intenses mais gerable avec une defense solide. Recommande pour decouvrir le mode.</div>
+      </div>
+
+      <div class="ep-medal argent">
+        <span class="ep-medal-icon">🥈</span>
+        <div class="ep-medal-name">Argent</div>
+        <div class="ep-medal-time">35 minutes</div>
+        <div class="ep-medal-pts">+250 Points de Perks</div>
+        <div class="ep-medal-desc">Palier intermediaire. Les ennemis commencent a inclure des unites d'elite. Une composition d'armee adaptee et des remparts solides sont indispensables.</div>
+      </div>
+
+      <div class="ep-medal or">
+        <span class="ep-medal-icon">🥇</span>
+        <div class="ep-medal-name">Or</div>
+        <div class="ep-medal-time">45 minutes</div>
+        <div class="ep-medal-pts" style="border-color:rgba(200,168,75,.5);color:var(--gold);">+500 Points de Perks</div>
+        <div class="ep-medal-desc">L'objectif ultime d'une run standard. Requiert une gestion parfaite des ressources, de la production et de la rotation des troupes sous pression maximale.</div>
+      </div>
+
+    </div>
+    <div class="ep-perk-box">
+      <strong>Systeme de Perks :</strong> Les Points de Perks accumules entre les runs se depensent dans un <strong>Arbre de Perks</strong> accessible depuis le menu de selection de mission. Chaque perk est permanent pour toutes les runs suivantes. Exemples de perks : bonus de ressources de depart, murs avec PV augmentes, villageois supplementaires a la premiere vague, production militaire acceleree en debut de partie, ou reduction du delai entre deux vagues.
+    </div>
+  </div>
+
+  <!-- ═══ 4. PERKS PERMANENTS ═══ -->
+  <div class="section ep-section-panel" id="ep-perks" style="margin-bottom:2.5rem;">
+    <div class="section-title"><span class="section-icon">🔓</span>Les 17 Perks Permanents</div>
+
+    <!-- Principe -->
+    <div class="ep-perks-intro">
+      <p>Les <strong style="color:var(--gold-pale)">Perks Permanents</strong> sont des ameliorations qui persistent entre toutes les runs. Ils s'achètent avec des <strong style="color:var(--gold-pale)">Perk Points</strong> gagnes en fin de run selon le temps survécu et les objectifs completes (medailles Bronze, Argent, Or). Plus vous survivez longtemps et sur des difficultes elevees, plus vous accumulez de Points de Perks rapidement.</p>
+      <p>Chaque Perk peut être revendu a tout moment depuis le menu de selection de mission pour recuperer integralement les Points de Perks dépenses. Cela permet de reorienter sa progression librement selon les strategies ou les difficultes visées. Les Perks se debloquent niveau par niveau : il faut posseder le niveau precedent avant d'acheter le niveau suivant.</p>
+      <div class="ep-perks-meta">
+        <div class="ep-perks-metaitem"><strong>17</strong> Perks disponibles</div>
+        <div class="ep-perks-metaitem"><strong>1 a 3</strong> Niveaux par Perk</div>
+        <div class="ep-perks-metaitem"><strong>100 - 800 PP</strong> cout par niveau</div>
+        <div class="ep-perks-metaitem"><strong>Revente</strong> remboursement integral</div>
+      </div>
+    </div>
+
+    <!-- Tableau des Perks -->
+    <div class="ep-perks-table-wrap">
+      <table class="ep-perks-table">
+        <thead>
+          <tr>
+            <th style="width:28px;">#</th>
+            <th>Perk</th>
+            <th class="ep-th-c">Niveau 1</th>
+            <th class="ep-th-c">Niveau 2</th>
+            <th class="ep-th-c">Niveau 3</th>
+          </tr>
+        </thead>
+        <tbody>
+
+          <tr>
+            <td class="ep-perk-num">01</td>
+            <td class="ep-perk-namecell">
+              <div class="ep-perk-name">Ressources de depart</div>
+              <div class="ep-perk-cat">💰 Economique</div>
+            </td>
+            <td class="ep-perk-lvl-cell">
+              <div class="ep-perk-lvl-effect">+100 bois, pierre, or et vivres au debut de chaque run.</div>
+              <span class="ep-perk-cost">100 PP</span>
+            </td>
+            <td class="ep-perk-lvl-cell">
+              <div class="ep-perk-lvl-effect">+200 de chaque ressource au debut de la run.</div>
+              <span class="ep-perk-cost">200 PP</span>
+            </td>
+            <td class="ep-perk-lvl-cell">
+              <div class="ep-perk-lvl-effect">+400 de chaque ressource au debut de la run.</div>
+              <span class="ep-perk-cost">400 PP</span>
+            </td>
+          </tr>
+
+          <tr>
+            <td class="ep-perk-num">02</td>
+            <td class="ep-perk-namecell">
+              <div class="ep-perk-name">Villageois supplementaires</div>
+              <div class="ep-perk-cat">💰 Economique</div>
+            </td>
+            <td class="ep-perk-lvl-cell">
+              <div class="ep-perk-lvl-effect">+1 villageois supplementaire au debut de la run.</div>
+              <span class="ep-perk-cost">100 PP</span>
+            </td>
+            <td class="ep-perk-lvl-cell">
+              <div class="ep-perk-lvl-effect">+2 villageois supplementaires au debut de la run.</div>
+              <span class="ep-perk-cost">250 PP</span>
+            </td>
+            <td class="ep-perk-lvl-cell">
+              <div class="ep-perk-lvl-effect">+4 villageois supplementaires au debut de la run.</div>
+              <span class="ep-perk-cost">450 PP</span>
+            </td>
+          </tr>
+
+          <tr>
+            <td class="ep-perk-num">03</td>
+            <td class="ep-perk-namecell">
+              <div class="ep-perk-name">Eclaireurs supplementaires</div>
+              <div class="ep-perk-cat">⚔️ Militaire</div>
+            </td>
+            <td class="ep-perk-lvl-cell">
+              <div class="ep-perk-lvl-effect">+1 eclaireur au debut de la run.</div>
+              <span class="ep-perk-cost">100 PP</span>
+            </td>
+            <td class="ep-perk-lvl-cell">
+              <div class="ep-perk-lvl-effect">+2 eclaireurs + vitesse de deplacement des eclaireurs +15%.</div>
+              <span class="ep-perk-cost">250 PP</span>
+            </td>
+            <td class="ep-perk-empty">—</td>
+          </tr>
+
+          <tr>
+            <td class="ep-perk-num">04</td>
+            <td class="ep-perk-namecell">
+              <div class="ep-perk-name">Batiments pre-construits</div>
+              <div class="ep-perk-cat">💰 Economique</div>
+            </td>
+            <td class="ep-perk-lvl-cell">
+              <div class="ep-perk-lvl-effect">1 caserne entierement construite disponible en debut de run.</div>
+              <span class="ep-perk-cost">150 PP</span>
+            </td>
+            <td class="ep-perk-lvl-cell">
+              <div class="ep-perk-lvl-effect">1 caserne + 1 forge de forgeron pre-construites.</div>
+              <span class="ep-perk-cost">300 PP</span>
+            </td>
+            <td class="ep-perk-lvl-cell">
+              <div class="ep-perk-lvl-effect">1 caserne + 1 forge + 1 tour de guet avec garnison de 4.</div>
+              <span class="ep-perk-cost">550 PP</span>
+            </td>
+          </tr>
+
+          <tr>
+            <td class="ep-perk-num">05</td>
+            <td class="ep-perk-namecell">
+              <div class="ep-perk-name">Vitesse de production militaire</div>
+              <div class="ep-perk-cat">⚔️ Militaire</div>
+            </td>
+            <td class="ep-perk-lvl-cell">
+              <div class="ep-perk-lvl-effect">-10% duree de production de toutes les unites militaires.</div>
+              <span class="ep-perk-cost">150 PP</span>
+            </td>
+            <td class="ep-perk-lvl-cell">
+              <div class="ep-perk-lvl-effect">-20% duree de production des unites militaires.</div>
+              <span class="ep-perk-cost">350 PP</span>
+            </td>
+            <td class="ep-perk-lvl-cell">
+              <div class="ep-perk-lvl-effect">-30% duree de production des unites militaires.</div>
+              <span class="ep-perk-cost">600 PP</span>
+            </td>
+          </tr>
+
+          <tr>
+            <td class="ep-perk-num">06</td>
+            <td class="ep-perk-namecell">
+              <div class="ep-perk-name">Points de vie de la Merveille</div>
+              <div class="ep-perk-cat">🛡️ Defensif</div>
+            </td>
+            <td class="ep-perk-lvl-cell">
+              <div class="ep-perk-lvl-effect">+10% PV de la Merveille en debut de run.</div>
+              <span class="ep-perk-cost">200 PP</span>
+            </td>
+            <td class="ep-perk-lvl-cell">
+              <div class="ep-perk-lvl-effect">+25% PV de la Merveille en debut de run.</div>
+              <span class="ep-perk-cost">450 PP</span>
+            </td>
+            <td class="ep-perk-lvl-cell">
+              <div class="ep-perk-lvl-effect">+40% PV de la Merveille en debut de run.</div>
+              <span class="ep-perk-cost">800 PP</span>
+            </td>
+          </tr>
+
+          <tr>
+            <td class="ep-perk-num">07</td>
+            <td class="ep-perk-namecell">
+              <div class="ep-perk-name">Points de vie des batiments</div>
+              <div class="ep-perk-cat">🛡️ Defensif</div>
+            </td>
+            <td class="ep-perk-lvl-cell">
+              <div class="ep-perk-lvl-effect">+10% PV de tous les batiments (murs, tours, casernes).</div>
+              <span class="ep-perk-cost">150 PP</span>
+            </td>
+            <td class="ep-perk-lvl-cell">
+              <div class="ep-perk-lvl-effect">+20% PV de tous les batiments.</div>
+              <span class="ep-perk-cost">350 PP</span>
+            </td>
+            <td class="ep-perk-lvl-cell">
+              <div class="ep-perk-lvl-effect">+35% PV de tous les batiments.</div>
+              <span class="ep-perk-cost">600 PP</span>
+            </td>
+          </tr>
+
+          <tr>
+            <td class="ep-perk-num">08</td>
+            <td class="ep-perk-namecell">
+              <div class="ep-perk-name">Vitesse de montee en age</div>
+              <div class="ep-perk-cat">💰 Economique</div>
+            </td>
+            <td class="ep-perk-lvl-cell">
+              <div class="ep-perk-lvl-effect">-10% duree de chaque transition d'age.</div>
+              <span class="ep-perk-cost">150 PP</span>
+            </td>
+            <td class="ep-perk-lvl-cell">
+              <div class="ep-perk-lvl-effect">-20% duree de chaque transition d'age.</div>
+              <span class="ep-perk-cost">350 PP</span>
+            </td>
+            <td class="ep-perk-empty">—</td>
+          </tr>
+
+          <tr>
+            <td class="ep-perk-num">09</td>
+            <td class="ep-perk-namecell">
+              <div class="ep-perk-name">Boon Bonus</div>
+              <div class="ep-perk-cat">✨ Special</div>
+            </td>
+            <td class="ep-perk-lvl-cell">
+              <div class="ep-perk-lvl-effect">Debloqueun 6e emplacement de Boon a la 50e minute de chaque run.</div>
+              <span class="ep-perk-cost">500 PP</span>
+            </td>
+            <td class="ep-perk-empty">—</td>
+            <td class="ep-perk-empty">—</td>
+          </tr>
+
+          <tr>
+            <td class="ep-perk-num">10</td>
+            <td class="ep-perk-namecell">
+              <div class="ep-perk-name">Reroll de Boons</div>
+              <div class="ep-perk-cat">✨ Special</div>
+            </td>
+            <td class="ep-perk-lvl-cell">
+              <div class="ep-perk-lvl-effect">1 Reroll gratuit par run lors de chaque selection de Boon.</div>
+              <span class="ep-perk-cost">300 PP</span>
+            </td>
+            <td class="ep-perk-lvl-cell">
+              <div class="ep-perk-lvl-effect">2 Rerolls gratuits par run.</div>
+              <span class="ep-perk-cost">600 PP</span>
+            </td>
+            <td class="ep-perk-empty">—</td>
+          </tr>
+
+          <tr>
+            <td class="ep-perk-num">11</td>
+            <td class="ep-perk-namecell">
+              <div class="ep-perk-name">Resistance des villageois</div>
+              <div class="ep-perk-cat">🛡️ Defensif</div>
+            </td>
+            <td class="ep-perk-lvl-cell">
+              <div class="ep-perk-lvl-effect">+25% PV de tous les villageois.</div>
+              <span class="ep-perk-cost">150 PP</span>
+            </td>
+            <td class="ep-perk-lvl-cell">
+              <div class="ep-perk-lvl-effect">+50% PV des villageois + fuite automatique sous 20% PV.</div>
+              <span class="ep-perk-cost">350 PP</span>
+            </td>
+            <td class="ep-perk-empty">—</td>
+          </tr>
+
+          <tr>
+            <td class="ep-perk-num">12</td>
+            <td class="ep-perk-namecell">
+              <div class="ep-perk-name">Vitesse de construction</div>
+              <div class="ep-perk-cat">💰 Economique</div>
+            </td>
+            <td class="ep-perk-lvl-cell">
+              <div class="ep-perk-lvl-effect">+15% vitesse de construction de tous les batiments.</div>
+              <span class="ep-perk-cost">150 PP</span>
+            </td>
+            <td class="ep-perk-lvl-cell">
+              <div class="ep-perk-lvl-effect">+30% vitesse de construction de tous les batiments.</div>
+              <span class="ep-perk-cost">350 PP</span>
+            </td>
+            <td class="ep-perk-empty">—</td>
+          </tr>
+
+          <tr>
+            <td class="ep-perk-num">13</td>
+            <td class="ep-perk-namecell">
+              <div class="ep-perk-name">Or de depart supplementaire</div>
+              <div class="ep-perk-cat">💰 Economique</div>
+            </td>
+            <td class="ep-perk-lvl-cell">
+              <div class="ep-perk-lvl-effect">+150 or au debut de chaque run.</div>
+              <span class="ep-perk-cost">100 PP</span>
+            </td>
+            <td class="ep-perk-lvl-cell">
+              <div class="ep-perk-lvl-effect">+350 or de depart.</div>
+              <span class="ep-perk-cost">200 PP</span>
+            </td>
+            <td class="ep-perk-lvl-cell">
+              <div class="ep-perk-lvl-effect">+600 or de depart.</div>
+              <span class="ep-perk-cost">400 PP</span>
+            </td>
+          </tr>
+
+          <tr>
+            <td class="ep-perk-num">14</td>
+            <td class="ep-perk-namecell">
+              <div class="ep-perk-name">Reduction du cout des technologies</div>
+              <div class="ep-perk-cat">💰 Economique</div>
+            </td>
+            <td class="ep-perk-lvl-cell">
+              <div class="ep-perk-lvl-effect">-15% cout en ressources de toutes les recherches.</div>
+              <span class="ep-perk-cost">200 PP</span>
+            </td>
+            <td class="ep-perk-lvl-cell">
+              <div class="ep-perk-lvl-effect">-30% cout de toutes les recherches.</div>
+              <span class="ep-perk-cost">450 PP</span>
+            </td>
+            <td class="ep-perk-empty">—</td>
+          </tr>
+
+          <tr>
+            <td class="ep-perk-num">15</td>
+            <td class="ep-perk-namecell">
+              <div class="ep-perk-name">Portee des tours</div>
+              <div class="ep-perk-cat">🛡️ Defensif</div>
+            </td>
+            <td class="ep-perk-lvl-cell">
+              <div class="ep-perk-lvl-effect">+10% portee d'attaque de toutes les tours de guet et de muraille.</div>
+              <span class="ep-perk-cost">150 PP</span>
+            </td>
+            <td class="ep-perk-lvl-cell">
+              <div class="ep-perk-lvl-effect">+25% portee d'attaque de toutes les tours.</div>
+              <span class="ep-perk-cost">350 PP</span>
+            </td>
+            <td class="ep-perk-empty">—</td>
+          </tr>
+
+          <tr>
+            <td class="ep-perk-num">16</td>
+            <td class="ep-perk-namecell">
+              <div class="ep-perk-name">Delai avant la premiere vague</div>
+              <div class="ep-perk-cat">✨ Special</div>
+            </td>
+            <td class="ep-perk-lvl-cell">
+              <div class="ep-perk-lvl-effect">+90 secondes de preparation avant la 1ere vague ennemie.</div>
+              <span class="ep-perk-cost">200 PP</span>
+            </td>
+            <td class="ep-perk-lvl-cell">
+              <div class="ep-perk-lvl-effect">+3 minutes avant la 1ere vague ennemie.</div>
+              <span class="ep-perk-cost">450 PP</span>
+            </td>
+            <td class="ep-perk-empty">—</td>
+          </tr>
+
+          <tr>
+            <td class="ep-perk-num">17</td>
+            <td class="ep-perk-namecell">
+              <div class="ep-perk-name">Multiplicateur de Points de Perks</div>
+              <div class="ep-perk-cat">✨ Special</div>
+            </td>
+            <td class="ep-perk-lvl-cell">
+              <div class="ep-perk-lvl-effect">+15% Points de Perks gagnes en fin de chaque run.</div>
+              <span class="ep-perk-cost">300 PP</span>
+            </td>
+            <td class="ep-perk-lvl-cell">
+              <div class="ep-perk-lvl-effect">+30% Points de Perks gagnes en fin de run.</div>
+              <span class="ep-perk-cost">650 PP</span>
+            </td>
+            <td class="ep-perk-empty">—</td>
+          </tr>
+
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Guide de priorite -->
+    <div class="section-title" style="margin-top:1.5rem;font-size:1rem;"><span class="section-icon">🎯</span>Guide de Priorite par Profil</div>
+
+    <div class="ep-prio-grid">
+
+      <div class="ep-prio-card debutant">
+        <div class="ep-prio-header">
+          <div class="ep-prio-label">
+            <span class="ep-prio-icon">🌱</span>
+            <span class="ep-prio-title">Debutant</span>
+          </div>
+          <span class="ep-prio-diff">NIVEAUX 1 A 3 (PIONNIER - SERGENT)</span>
+        </div>
+        <ul class="ep-prio-perks">
+          <li><strong>Ressources de depart (Niv 3)</strong> - le plus fort retour sur investissement : un early game confortable sur tous les profils de cartes.</li>
+          <li><strong>Villageois supplementaires (Niv 2)</strong> - 2 villageois bonus eliminentles goulots d'etranglement eco dans les 10 premieres minutes.</li>
+          <li><strong>Batiments pre-construits (Niv 1)</strong> - la caserne immediate permet de sortir des unites sans perdre de temps a construire sous pression.</li>
+          <li><strong>Or de depart (Niv 2)</strong> - complemente les ressources generales pour financer rapidement les technologies de 2e age.</li>
+        </ul>
+        <div class="ep-prio-desc">L'objectif a ce stade est de reduire la pression du debut de run pour apprendre les mecaniques sans etre depasse. Privilegier tous les Perks qui raccourcissent la phase de mise en route.</div>
+      </div>
+
+      <div class="ep-prio-card inter">
+        <div class="ep-prio-header">
+          <div class="ep-prio-label">
+            <span class="ep-prio-icon">⚔️</span>
+            <span class="ep-prio-title">Intermédiaire</span>
+          </div>
+          <span class="ep-prio-diff">NIVEAUX 4 A 6 (CAPITAINE - COMMANDANT)</span>
+        </div>
+        <ul class="ep-prio-perks">
+          <li><strong>PV de la Merveille (Niv 2-3)</strong> - chaque pour-cent de PV supplementaire est un filet de securite lors des vagues d'elite qui percent les lignes.</li>
+          <li><strong>Vitesse de production militaire (Niv 2-3)</strong> - a ces niveaux, les pertes s'accumulent vite : produire plus vite est la seule facon de maintenir une armee suffisante.</li>
+          <li><strong>Boon Bonus (Niv 1)</strong> - le 6e Boon a 50 minutes est une amelioration decisive qui permet de corriger ou de consolider le set en fin de run.</li>
+          <li><strong>Vitesse de construction (Niv 1-2)</strong> - reparer les murs entre les vagues est plus rapide, ce qui reduit la vulnerabilite en phase de recuperation.</li>
+        </ul>
+        <div class="ep-prio-desc">L'objectif passe du "survivre" au "maximiser les synergies". Investir dans des Perks qui amplifient les forces du set de Boons choisi.</div>
+      </div>
+
+      <div class="ep-prio-card expert">
+        <div class="ep-prio-header">
+          <div class="ep-prio-label">
+            <span class="ep-prio-icon">💀</span>
+            <span class="ep-prio-title">Expert</span>
+          </div>
+          <span class="ep-prio-diff">NIVEAUX 7 A 8 (MARECHAL - CONQUERANT)</span>
+        </div>
+        <ul class="ep-prio-perks">
+          <li><strong>Reroll de Boons (Niv 2)</strong> - indispensable : une selection defavorable a 10 ou 20 minutes sur ces difficultes compromet toute la run. Le Reroll est une assurance.</li>
+          <li><strong>PV des batiments (Niv 3)</strong> - les vagues ininterrompues apres 25 minutes mettent les murs et les tours sous un feu continu; ce Perk fait la difference entre tenir et s'effondrer.</li>
+          <li><strong>Portee des tours (Niv 2)</strong> - les ennemis arrivent plus vite et en formation serree ; une portee accrue permet aux tours de traiter les cibles avant qu'elles n'atteignent les murs.</li>
+          <li><strong>Delai avant la premiere vague (Niv 2)</strong> - 3 minutes supplementaires pour poser une defense complete avant meme le 1er assaut changent totalement l'equilibre initial.</li>
+        </ul>
+        <div class="ep-prio-desc">A ces niveaux, chaque Boon mal choisi et chaque seconde de reparation perdue peut couter la run. Investir dans les Perks de fiabilite et de resilience defensive avant tout.</div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ═══ 5. BOONS ═══ -->
+  <div class="section ep-section-panel" id="ep-boons" style="margin-bottom:2.5rem;">
+    <div class="section-title"><span class="section-icon">✨</span>Le Systeme de Boons</div>
+
+    <!-- Intro + calendrier visuel -->
+    <div class="ep-boon-intro">
+      <div class="ep-boon-intro-text">
+        Toutes les <strong style="color:var(--gold-pale)">10 minutes</strong>, la partie s'interrompt et propose <strong style="color:var(--gold-pale)">3 Boons aleatoires</strong> parmi lesquels en choisir un seul. Chaque Boon est une amelioration permanente pour la run en cours. Le maximum est de <strong style="color:var(--gold-pale)">5 Boons par run</strong>, ou <strong style="color:var(--gold-pale)">6 avec le Perk Boon Bonus</strong> deblocable entre les runs. Certains Boons comportent un <strong style="color:var(--red)">effet negatif (malus), signale en rouge</strong> dans l'interface du jeu : lire attentivement avant de valider. Certains Boons accordent un <strong style="color:var(--blue)">bonus immediat dont l'ampleur scale avec le temps ecoule</strong> : plus ils sont choisis tard dans la run, plus le bonus est important.
+      </div>
+      <div class="ep-boon-timing-block">
+        <div class="ep-boon-timing-label">Calendrier des propositions</div>
+        <div class="ep-boon-timeline">
+          <div class="ep-boon-tick on"><div class="ep-boon-tick-dot"></div><div class="ep-boon-tick-lbl">10 min</div></div>
+          <div class="ep-boon-connector on"></div>
+          <div class="ep-boon-tick on"><div class="ep-boon-tick-dot"></div><div class="ep-boon-tick-lbl">20 min</div></div>
+          <div class="ep-boon-connector on"></div>
+          <div class="ep-boon-tick on"><div class="ep-boon-tick-dot"></div><div class="ep-boon-tick-lbl">30 min</div></div>
+          <div class="ep-boon-connector on"></div>
+          <div class="ep-boon-tick on"><div class="ep-boon-tick-dot"></div><div class="ep-boon-tick-lbl">40 min</div></div>
+          <div class="ep-boon-connector" style="background:rgba(90,191,122,.25);"></div>
+          <div class="ep-boon-tick bonus"><div class="ep-boon-tick-dot"></div><div class="ep-boon-tick-lbl">50 min</div></div>
+          <div class="ep-boon-connector" style="background:rgba(90,191,122,.12);"></div>
+          <div class="ep-boon-tick bonus" style="opacity:.45;"><div class="ep-boon-tick-dot" style="border-style:dashed;"></div><div class="ep-boon-tick-lbl">60 min</div></div>
+        </div>
+        <div class="ep-boon-timing-note" style="color:var(--gold);margin-top:.4rem;">● Boon standard (5 max)</div>
+        <div class="ep-boon-timing-note" style="color:var(--green);">● Boon bonus (Perk requis)</div>
+      </div>
+    </div>
+
+    <!-- ── Militaire ── -->
+    <div class="ep-boon-cat-header">
+      <span class="ep-boon-cat-label mil">⚔️ Militaire</span>
+      <span class="ep-boon-cat-desc">Ameliore vos unites et accelere la production d'armee</span>
+    </div>
+    <div class="ep-boon-grid">
+
+      <div class="ep-boon-card mil">
+        <div class="ep-boon-name">Forge de Guerre</div>
+        <div class="ep-boon-effect">Toutes vos unites militaires actuelles et futures infligent +20% de degats pour le reste de la run.</div>
+        <div class="ep-boon-scaling">Bonus immediat : +4 a +12 unites de caserne selon le temps ecoule</div>
+      </div>
+
+      <div class="ep-boon-card mil">
+        <div class="ep-boon-name">Caserne Acceleree</div>
+        <div class="ep-boon-effect">La production de toutes les unites militaires est +40% plus rapide dans chaque caserne, ecurie et atelier de siege.</div>
+      </div>
+
+      <div class="ep-boon-card mil">
+        <div class="ep-boon-name">Renfort Immediat</div>
+        <div class="ep-boon-effect">Un groupe d'unites militaires aleatoires apparait instantanement sans cout en ressources.</div>
+        <div class="ep-boon-scaling">Bonus immediat : de 8 a 22 unites selon le temps ecoule au moment du choix</div>
+        <div class="ep-boon-malus"><span class="ep-boon-malus-icon">⚠</span>Malus : toutes vos casernes sont inutilisables pendant 90 secondes apres activation.</div>
+      </div>
+
+      <div class="ep-boon-card mil">
+        <div class="ep-boon-name">Chevaliers d'Elite</div>
+        <div class="ep-boon-effect">Toute votre cavalerie gagne +30% de PV et +20% de vitesse de deplacement. Vos cavaliers chargent plus fort et tiennent plus longtemps.</div>
+        <div class="ep-boon-malus"><span class="ep-boon-malus-icon">⚠</span>Malus : le cout en or de chaque unite de cavalerie augmente de +25% pour le reste de la run.</div>
+      </div>
+
+    </div>
+
+    <!-- ── Economique ── -->
+    <div class="ep-boon-cat-header">
+      <span class="ep-boon-cat-label eco">💰 Economique</span>
+      <span class="ep-boon-cat-desc">Renforce vos revenus et augmente votre main-d'oeuvre</span>
+    </div>
+    <div class="ep-boon-grid">
+
+      <div class="ep-boon-card eco">
+        <div class="ep-boon-name">Cache de Ressources</div>
+        <div class="ep-boon-effect">Vous recevez un stock immediat de toutes les ressources de base.</div>
+        <div class="ep-boon-scaling">Bonus immediat : de +200 a +800 de chaque ressource selon le temps ecoule</div>
+      </div>
+
+      <div class="ep-boon-card eco">
+        <div class="ep-boon-name">Recolte Intensive</div>
+        <div class="ep-boon-effect">Tous vos villageois actuels et futurs recoltent +35% plus vite pour le reste de la run, toutes ressources confondues.</div>
+      </div>
+
+      <div class="ep-boon-card eco">
+        <div class="ep-boon-name">Villageois Bonus</div>
+        <div class="ep-boon-effect">Cinq villageois supplementaires sont crees instantanement dans votre Centre-Ville, prets a etre assignes.</div>
+        <div class="ep-boon-malus"><span class="ep-boon-malus-icon">⚠</span>Malus : votre Centre-Ville ne peut plus produire de villageois pendant les 3 prochaines minutes.</div>
+      </div>
+
+      <div class="ep-boon-card eco">
+        <div class="ep-boon-name">Commerce Royal</div>
+        <div class="ep-boon-effect">Generation d'or passive de +60 or par minute, independamment de vos unites commerciales ou de votre economie.</div>
+        <div class="ep-boon-scaling">Bonus immediat : +100 or pour chaque minute ecoulee depuis le debut de la run</div>
+      </div>
+
+    </div>
+
+    <!-- ── Defensif ── -->
+    <div class="ep-boon-cat-header">
+      <span class="ep-boon-cat-label def">🛡️ Defensif</span>
+      <span class="ep-boon-cat-desc">Fortifie vos structures et protege la Merveille sur la duree</span>
+    </div>
+    <div class="ep-boon-grid">
+
+      <div class="ep-boon-card def">
+        <div class="ep-boon-name">Murs Renforcees</div>
+        <div class="ep-boon-effect">Tous vos murs, tours et portes existants voient leurs PV doubler instantanement. S'applique aussi aux constructions futures.</div>
+        <div class="ep-boon-malus"><span class="ep-boon-malus-icon">⚠</span>Malus : la construction et la reparation de toutes les fortifications est 30% plus lente pour le reste de la run.</div>
+      </div>
+
+      <div class="ep-boon-card def">
+        <div class="ep-boon-name">Regeneration de la Merveille</div>
+        <div class="ep-boon-effect">Votre Merveille regenere +8 PV par seconde tant qu'elle ne subit pas de degats. La regeneration s'interrompt en cas d'attaque et reprend 5 secondes apres le dernier coup recu.</div>
+      </div>
+
+      <div class="ep-boon-card def">
+        <div class="ep-boon-name">Bastions de Pierre</div>
+        <div class="ep-boon-effect">Toutes vos tours de guet et tours de muraille gagnent +50% de portee d'attaque et +30% de degats. Chaque tour couvre une zone considerablement elargie.</div>
+      </div>
+
+      <div class="ep-boon-card def">
+        <div class="ep-boon-name">Armure Lourde</div>
+        <div class="ep-boon-effect">Toutes vos unites militaires subissent -25% de degats de toutes les sources pour le reste de la run. Tres puissant contre les vagues d'elite.</div>
+        <div class="ep-boon-malus"><span class="ep-boon-malus-icon">⚠</span>Malus : la vitesse de deplacement de toutes vos unites est reduite de -15% de maniere permanente et irreversible.</div>
+      </div>
+
+    </div>
+
+    <!-- ── Special ── -->
+    <div class="ep-boon-cat-header">
+      <span class="ep-boon-cat-label spe">✨ Special</span>
+      <span class="ep-boon-cat-desc">Mecaniques uniques qui modifient les regles de la run en cours</span>
+    </div>
+    <div class="ep-boon-grid">
+
+      <div class="ep-boon-card spe">
+        <div class="ep-boon-name">Reroll de Boon</div>
+        <div class="ep-boon-effect">Rejette immediatement les 3 Boons actuellement proposes et en genere 3 nouveaux aleatoires. Le Reroll ne consomme pas un emplacement de Boon : vous choisissez ensuite parmi les 3 nouveaux.</div>
+      </div>
+
+      <div class="ep-boon-card spe">
+        <div class="ep-boon-name">Boon Bonus</div>
+        <div class="ep-boon-effect">Augmente le plafond de Boons pour cette run de 5 a 6. Une sixieme proposition aura lieu a la 50eme minute, permettant un set plus complet ou une correction de strategie tardive.</div>
+      </div>
+
+      <div class="ep-boon-card spe">
+        <div class="ep-boon-name">Temps Beni</div>
+        <div class="ep-boon-effect">La prochaine vague ennemie est retardee de 3 minutes supplementaires, vous accordant un temps precieux pour consolider vos defenses ou completer une construction critique.</div>
+        <div class="ep-boon-malus"><span class="ep-boon-malus-icon">⚠</span>Malus : la vague retardee arrive avec +35% d'unites en compensation. Le delai est un gain, pas une suppression.</div>
+      </div>
+
+      <div class="ep-boon-card spe">
+        <div class="ep-boon-name">Eclaireurs Fantomes</div>
+        <div class="ep-boon-effect">Visibilite permanente sur l'integralite de la carte : vous observez les mouvements ennemis avant leur arrivee et pouvez repositionner vos troupes en consequence.</div>
+        <div class="ep-boon-malus"><span class="ep-boon-malus-icon">⚠</span>Malus : tous vos revenus de ressources sont reduits de -20% en permanence. A eviter en set economique.</div>
+      </div>
+
+    </div>
+
+    <!-- Guide de synergie -->
+    <div class="section-title" style="margin-top:2rem;font-size:1rem;"><span class="section-icon">🧩</span>Guide de Synergie</div>
+    <div class="strategy-box" style="margin-bottom:1rem;">
+      <div class="strat-title">Pourquoi construire un set coherent plutot que picker au hasard ?</div>
+      <div class="strat-desc">Choisir 5 Boons disparates produit des runs mediocres. Un set coordonne cree des effets de seuil : Murs Renforcees doublie les PV, mais combine avec Bastions de Pierre et Regeneration de la Merveille, vous obtenez une ligne defensive quasi-indestructible ou les tours tuent avant que les ennemis n'atteignent les murs, et ou la Merveille recupère entre chaque vague. La regle d'or est de decider votre archetype des le premier Boon a 10 minutes et de ne jamais devier. Un Boon hors-theme gaspille un emplacement precieux.</div>
+    </div>
+    <div class="ep-synergy-grid">
+
+      <div class="ep-synergy-card def">
+        <div class="ep-synergy-header">
+          <span class="ep-synergy-icon">🏰</span>
+          <div>
+            <div class="ep-synergy-name">Forteresse Pure</div>
+            <span class="ep-synergy-diff">DIFFICULTES 6 A 8</span>
+          </div>
+        </div>
+        <div class="ep-synergy-boons">
+          <span class="ep-syn-boon">Murs Renforcees</span>
+          <span class="ep-syn-boon">Regeneration Merveille</span>
+          <span class="ep-syn-boon">Bastions de Pierre</span>
+          <span class="ep-syn-boon">Armure Lourde</span>
+          <span class="ep-syn-boon">Boon Bonus</span>
+        </div>
+        <div class="ep-synergy-desc">Le set indispensable pour les hautes difficultes. La regeneration compense les degats entre vagues, Bastions de Pierre tue a distance avant l'impact, Armure Lourde maintient vos unites en vie malgre la lenteur. Le Boon Bonus en 5eme position laisse un 6eme slot pour ajuster selon la situation a 50 minutes. Le malus de vitesse d'Armure Lourde est negligeable si vos murs tiennent.</div>
+      </div>
+
+      <div class="ep-synergy-card eco">
+        <div class="ep-synergy-header">
+          <span class="ep-synergy-icon">💰</span>
+          <div>
+            <div class="ep-synergy-name">Arsenal Economique</div>
+            <span class="ep-synergy-diff">DIFFICULTES 3 A 5</span>
+          </div>
+        </div>
+        <div class="ep-synergy-boons">
+          <span class="ep-syn-boon">Cache de Ressources</span>
+          <span class="ep-syn-boon">Recolte Intensive</span>
+          <span class="ep-syn-boon">Villageois Bonus</span>
+          <span class="ep-syn-boon">Forge de Guerre</span>
+          <span class="ep-syn-boon">Caserne Acceleree</span>
+        </div>
+        <div class="ep-synergy-desc">Les 3 premiers Boons construisent une economie si solide que les pertes de villageois ne ralentissent plus la production. Les 2 derniers convertissent cette richesse en flux d'unites militaires continu. A partir de la minute 30, vous sortez une armee en permanence et les ressources ne sont plus une contrainte. Ce set gere moins bien les niveaux 6+ car les ennemis absorbent les unites trop rapidement.</div>
+      </div>
+
+      <div class="ep-synergy-card mix">
+        <div class="ep-synergy-header">
+          <span class="ep-synergy-icon">🏹</span>
+          <div>
+            <div class="ep-synergy-name">Tour de Tir</div>
+            <span class="ep-synergy-diff">DIFFICULTES 4 A 7</span>
+          </div>
+        </div>
+        <div class="ep-synergy-boons">
+          <span class="ep-syn-boon">Bastions de Pierre</span>
+          <span class="ep-syn-boon">Murs Renforcees</span>
+          <span class="ep-syn-boon">Forge de Guerre</span>
+          <span class="ep-syn-boon">Regeneration Merveille</span>
+          <span class="ep-syn-boon">Cache de Ressources</span>
+        </div>
+        <div class="ep-synergy-desc">Hybride defensif et militaire a distance. Les Bastions de Pierre transforment vos tours en batteries d'artillerie qui deciment les vagues avant qu'elles n'atteignent les murs. Forge de Guerre booste aussi bien les archers en garnison que les soldats au sol. Tres efficace contre la cavalerie qui charge vite mais meurt vite sous le feu concentre des tours upgradees.</div>
+      </div>
+
+      <div class="ep-synergy-card mil">
+        <div class="ep-synergy-header">
+          <span class="ep-synergy-icon">⚔️</span>
+          <div>
+            <div class="ep-synergy-name">Avalanche Militaire</div>
+            <span class="ep-synergy-diff">DIFFICULTES 1 A 4</span>
+          </div>
+        </div>
+        <div class="ep-synergy-boons">
+          <span class="ep-syn-boon">Renfort Immediat</span>
+          <span class="ep-syn-boon">Caserne Acceleree</span>
+          <span class="ep-syn-boon">Forge de Guerre</span>
+          <span class="ep-syn-boon">Chevaliers d'Elite</span>
+          <span class="ep-syn-boon">Commerce Royal</span>
+        </div>
+        <div class="ep-synergy-desc">Full offensif pour les difficultes intermediaires. Renfort Immediat donne une armee instantanee au moment crucial, Caserne Acceleree la reconstruit apres chaque perte. Forge de Guerre et Chevaliers d'Elite assurent que chaque unite vaut le double en combat. Commerce Royal finance le tout sans pression de gestion. Attention : ce set n'est pas viable au-dela du niveau 5 car les ennemis resistants absorbent les unites trop vite pour etre rentable.</div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ═══ 6. OBJECTIFS SECONDAIRES ═══ -->
+  <div class="section ep-section-panel" id="ep-objectifs" style="margin-bottom:2.5rem;">
+    <div class="section-title"><span class="section-icon">🎯</span>Objectifs Secondaires et Evenements Speciaux</div>
+
+    <!-- Intro -->
+    <div class="ep-obj-intro">
+      Au debut de chaque run, le jeu tire aleatoirement <strong>2 objectifs secondaires</strong> parmi un pool disponible. Les completer est facultatif mais recompense fortement : chaque objectif accompli offre un avantage significant pour le reste de la run. La contrepartie est qu'ils vous obligent a <strong>quitter la proximite de la Merveille</strong> et a diviser votre armee, parfois au moment le plus critique. Evaluer le timing et la distance avant de vous lancer est une competence cle aux hautes difficultes.
+    </div>
+
+    <!-- Les 4 objectifs -->
+    <div class="ep-obj-grid">
+
+      <div class="ep-obj-card">
+        <div class="ep-obj-header">
+          <span class="ep-obj-icon">🛒</span>
+          <div>
+            <div class="ep-obj-name">Chariot de Reliques</div>
+            <span class="ep-obj-sub">Capture de convoi</span>
+          </div>
+        </div>
+        <div class="ep-obj-task">
+          Un chariot ennemi progresse vers votre Merveille escorte par un groupe de gardes. Eliminez tous les gardes pour immobiliser le chariot, puis interagissez avec lui pour le capturer. Les gardes reapparaissent en force si vous abandonnez la zone avant la capture.
+        </div>
+        <div class="ep-obj-reward-lbl">Recompense</div>
+        <div class="ep-obj-reward">Le chariot converti rejoint votre base et fournit <strong>2 Reliques</strong> generant de l'or passif. Les unites militaires dans un rayon autour du chariot beneficient d'une <strong>aura de combat : +15% degats et +10% vitesse</strong>.</div>
+      </div>
+
+      <div class="ep-obj-card">
+        <div class="ep-obj-header">
+          <span class="ep-obj-icon">🏛️</span>
+          <div>
+            <div class="ep-obj-name">Sauver le Landmark allie</div>
+            <span class="ep-obj-sub">Defense d'un batiment</span>
+          </div>
+        </div>
+        <div class="ep-obj-task">
+          Un Landmark allie avec <strong>100 000 points de vie</strong> est attaque en permanence par une force ennemie independante. Deplacez une partie de votre armee pour le defendre et eliminer toutes les unites hostiles autour de lui avant qu'il ne soit detruit.
+        </div>
+        <div class="ep-obj-reward-lbl">Recompense</div>
+        <div class="ep-obj-reward">Un groupe de <strong>Hommes d'Armes de haut niveau</strong> spawn immediatement au Landmark sauve et rejoignent votre armee principale. Ils restent sous votre commandement pour le reste de la run.</div>
+      </div>
+
+      <div class="ep-obj-card">
+        <div class="ep-obj-header">
+          <span class="ep-obj-icon">🎓</span>
+          <div>
+            <div class="ep-obj-name">College Militaire</div>
+            <span class="ep-obj-sub">Activation de batiment</span>
+          </div>
+        </div>
+        <div class="ep-obj-task">
+          Un College Militaire neutre est occupe par des ennemis. Nettoyez la zone, puis activez le batiment pour lancer un cycle d'entrainement. Garnissez-y jusqu'a <strong>100 unites</strong> : apres exactement <strong>2 minutes</strong>, elles ressortent avec des statistiques permanentes ameliorees.
+        </div>
+        <div class="ep-obj-reward-lbl">Recompense</div>
+        <div class="ep-obj-reward">Les unites entrainées ressortent avec <strong>+100% de points de vie</strong> et <strong>+2 d'armure</strong> pour le reste de la run. Une armée reduite mais quasi-indestructible face aux vagues suivantes.</div>
+      </div>
+
+      <div class="ep-obj-card">
+        <div class="ep-obj-header">
+          <span class="ep-obj-icon">💀</span>
+          <div>
+            <div class="ep-obj-name">Vaincre le Heros ennemi</div>
+            <span class="ep-obj-sub">Assassination d'elite</span>
+          </div>
+        </div>
+        <div class="ep-obj-task">
+          Un Heros ennemi puissant patrouille une zone eloignee, entoure de ses gardes du corps. Il a une quantite de vie elevee, des resistances importantes et des attaques de zone. Eliminez ses gardes en premier, puis terminez le Heros et nettoyez la zone restante.
+        </div>
+        <div class="ep-obj-reward-lbl">Recompense</div>
+        <div class="ep-obj-reward">Vous recrutez un <strong>Heros Grenadier</strong> unique qui lance des explosifs en zone sur les groupes ennemis. Unite persistante jusqu'a la fin de la run, tres efficace contre les vagues serrees.</div>
+      </div>
+
+    </div>
+
+    <!-- Conseil strategique -->
+    <div class="section-title" style="margin-top:1rem;font-size:1rem;"><span class="section-icon">⚖️</span>Quand ignorer un objectif pour rester sur la Merveille</div>
+    <div class="strategy-box" style="margin-bottom:1rem;">
+      <div class="strat-title">La regle des trois criteres</div>
+      <div class="strat-desc">Avant de vous lancer sur un objectif, evaluez : (1) le <strong>temps restant avant la prochaine vague</strong> - il faut au minimum 3 minutes pour l'aller, l'execution et le retour ; (2) la <strong>distance de l'objectif</strong> par rapport a la Merveille ; (3) le <strong>niveau de difficulté en cours</strong> - plus il est eleve, plus la Merveille est vulnerable sans armee. Si l'un de ces trois criteres est defavorable, l'objectif doit etre reporte ou ignore.</div>
+    </div>
+
+    <div class="ep-obj-strat-title">Grille de decision selon situation</div>
+    <div class="ep-obj-strat-list">
+
+      <div class="ep-obj-strat-row">
+        <div class="ep-obj-strat-cond">
+          Niveaux 1 a 3, prochaine vague dans plus de 4 minutes
+          <em>L'armee ennemie est faible, la Merveille peut absorber quelques coups. Le detour vaut systématiquement la recompense.</em>
+        </div>
+        <span class="ep-obj-verdict go">Toujours faire</span>
+      </div>
+
+      <div class="ep-obj-strat-row">
+        <div class="ep-obj-strat-cond">
+          Niveaux 4 a 6, objectif situe a moins de 30 secondes, vague dans plus de 3 minutes
+          <em>Distance courte et temps suffisant : risque calcule. Priorite aux objectifs proches comme le Chariot de Reliques ou le College Militaire.</em>
+        </div>
+        <span class="ep-obj-verdict maybe">Cas par cas</span>
+      </div>
+
+      <div class="ep-obj-strat-row">
+        <div class="ep-obj-strat-cond">
+          Vague imminente (moins de 90 secondes) quel que soit le niveau ou la difficulté
+          <em>Impossible de completer et revenir a temps. S'eloigner maintenant equivaut a abandonner la Merveille sous les premiers assauts.</em>
+        </div>
+        <span class="ep-obj-verdict skip">Ignorer</span>
+      </div>
+
+      <div class="ep-obj-strat-row">
+        <div class="ep-obj-strat-cond">
+          Niveaux 7 a 8, apres la minute 25
+          <em>Les vagues s'enchainent sans pause significant. Quitter la Merveille meme 2 minutes peut signifier sa destruction avant votre retour.</em>
+        </div>
+        <span class="ep-obj-verdict skip">Ignorer</span>
+      </div>
+
+      <div class="ep-obj-strat-row">
+        <div class="ep-obj-strat-cond">
+          Chariot de Reliques disponible avant la minute 20, tous niveaux
+          <em>Exception strategique : les 2 Reliques generent de l'or passif toute la run et l'aura de combat sur vos unites est disproportionnement puissante. Le retour sur investissement justifie presque toujours le detour.</em>
+        </div>
+        <span class="ep-obj-verdict go">Priorite absolue</span>
+      </div>
+
+      <div class="ep-obj-strat-row">
+        <div class="ep-obj-strat-cond">
+          Vaincre le Heros ennemi, objectif tres eloigne ou apres la minute 30
+          <em>Le Grenadier est puissant mais l'objectif prend du temps. Si la Merveille est deja sous pression reguliere, le Heros peut etre abandonne sans penalite.</em>
+        </div>
+        <span class="ep-obj-verdict maybe">Selon la pression</span>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ═══ 7. MODES SPECIAUX ═══ -->
+  <div class="section ep-section-panel" id="ep-modes" style="margin-bottom:2.5rem;">
+    <div class="section-title"><span class="section-icon">⚡</span>Modes Speciaux</div>
+    <div class="ep-modes">
+
+      <div class="ep-mode-card">
+        <div class="ep-mode-header">
+          <span class="ep-mode-icon">♾️</span>
+          <span class="ep-mode-name">Mode Sans Fin</span>
+          <span class="ep-mode-badge">DISPONIBLE DES L'ACCES</span>
+        </div>
+        <p class="ep-mode-desc">Continuer après les 45 minutes réglementaires sans limite de temps. Les vagues continuent de s'intensifier après la médaille Or mais aucune récompense supplémentaire en Points de Perks n'est distribuée. C'est un mode de prestige pur : le seul objectif est de battre son propre record ou celui d'autres joueurs.</p>
+        <div class="ep-mode-note">Aucun perk bonus apres 45 min. Score de survie uniquement.</div>
+      </div>
+
+      <div class="ep-mode-card special">
+        <div class="ep-mode-header">
+          <span class="ep-mode-icon">⚔️</span>
+          <span class="ep-mode-name">Mode Conquérant</span>
+          <span class="ep-mode-lock">DIFFICULTÉS 7-8 REQUISES</span>
+        </div>
+        <p class="ep-mode-desc">Le défi ultime de L'Épreuve. Déblocable uniquement après avoir obtenu la médaille Or aux niveaux de difficulté Maréchal (7) ou Conquérant (8). Les vagues arrivent plus vite, les ennemis ont des bonus supprimés normalement, et des modificateurs aléatoires s'activent chaque quart d'heure : réduction de visibilité, gel des productions, vagues doubles, etc.</p>
+        <div class="ep-mode-note">Récompense : titre de prestige exclusif + Points de Perks x2.</div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ═══ 8. GUIDE PAR CIVILISATION ═══ -->
+  <div class="section ep-section-panel" id="ep-civguide" style="margin-bottom:2.5rem;">
+    <div class="section-title"><span class="section-icon">🛡️</span>Guide par Civilisation</div>
+    <p style="font-size:.92rem;color:var(--text-muted);font-style:italic;margin-bottom:1.2rem;">Cliquez sur une civilisation pour voir ses forces spécifiques à L'Épreuve, son build order de départ, ses Boons prioritaires et ses conseils par palier de difficulté.</p>
+
+    <!-- Selecteur 24 civs -->
+    <div class="ep-civs-grid">
+      <button class="ep-civ-btn" data-civ="anglais" onclick="openEpCiv('anglais')"><span class="ep-civ-btn-flag">🏴󠁧󠁢󠁥󠁮󠁧󠁿</span><span class="ep-civ-btn-name">Anglais</span></button>
+      <button class="ep-civ-btn" data-civ="francais" onclick="openEpCiv('francais')"><span class="ep-civ-btn-flag">⚜️</span><span class="ep-civ-btn-name">Francais</span></button>
+      <button class="ep-civ-btn" data-civ="hre" onclick="openEpCiv('hre')"><span class="ep-civ-btn-flag">🦅</span><span class="ep-civ-btn-name">Saint-Empire</span></button>
+      <button class="ep-civ-btn" data-civ="mongols" onclick="openEpCiv('mongols')"><span class="ep-civ-btn-flag">🏹</span><span class="ep-civ-btn-name">Mongols</span></button>
+      <button class="ep-civ-btn" data-civ="rus" onclick="openEpCiv('rus')"><span class="ep-civ-btn-flag">🪶</span><span class="ep-civ-btn-name">Rus</span></button>
+      <button class="ep-civ-btn" data-civ="abbasides" onclick="openEpCiv('abbasides')"><span class="ep-civ-btn-flag">🌙</span><span class="ep-civ-btn-name">Abbasides</span></button>
+      <button class="ep-civ-btn" data-civ="ottomans" onclick="openEpCiv('ottomans')"><span class="ep-civ-btn-flag">🌺</span><span class="ep-civ-btn-name">Ottomans</span></button>
+      <button class="ep-civ-btn" data-civ="mali" onclick="openEpCiv('mali')"><span class="ep-civ-btn-flag">🌞</span><span class="ep-civ-btn-name">Mali</span></button>
+      <button class="ep-civ-btn" data-civ="byzantins" onclick="openEpCiv('byzantins')"><span class="ep-civ-btn-flag">🔱</span><span class="ep-civ-btn-name">Byzantins</span></button>
+      <button class="ep-civ-btn" data-civ="chine" onclick="openEpCiv('chine')"><span class="ep-civ-btn-flag">🐉</span><span class="ep-civ-btn-name">Chine</span></button>
+      <button class="ep-civ-btn" data-civ="delhi" onclick="openEpCiv('delhi')"><span class="ep-civ-btn-flag">🐘</span><span class="ep-civ-btn-name">Delhi</span></button>
+      <button class="ep-civ-btn" data-civ="japonais" onclick="openEpCiv('japonais')"><span class="ep-civ-btn-flag">🌸</span><span class="ep-civ-btn-name">Japonais</span></button>
+      <button class="ep-civ-btn" data-civ="zhuxilegacy" onclick="openEpCiv('zhuxilegacy')"><span class="ep-civ-btn-flag">🏯</span><span class="ep-civ-btn-name">Zhu Xi</span></button>
+      <button class="ep-civ-btn" data-civ="ayyoubides" onclick="openEpCiv('ayyoubides')"><span class="ep-civ-btn-flag">⚔️</span><span class="ep-civ-btn-name">Ayyoubides</span></button>
+      <button class="ep-civ-btn" data-civ="jeannedarc" onclick="openEpCiv('jeannedarc')"><span class="ep-civ-btn-flag">⚜️🔥</span><span class="ep-civ-btn-name">Jeanne d'Arc</span></button>
+      <button class="ep-civ-btn" data-civ="ordresmoines" onclick="openEpCiv('ordresmoines')"><span class="ep-civ-btn-flag">✝️</span><span class="ep-civ-btn-name">Ordre Dragon</span></button>
+      <button class="ep-civ-btn" data-civ="templiers" onclick="openEpCiv('templiers')"><span class="ep-civ-btn-flag">✝️⚔️</span><span class="ep-civ-btn-name">Templiers</span></button>
+      <button class="ep-civ-btn" data-civ="lancaster" onclick="openEpCiv('lancaster')"><span class="ep-civ-btn-flag">🌹</span><span class="ep-civ-btn-name">Lancaster</span></button>
+      <button class="ep-civ-btn" data-civ="hordedor" onclick="openEpCiv('hordedor')"><span class="ep-civ-btn-flag">🐎</span><span class="ep-civ-btn-name">Horde d'Or</span></button>
+      <button class="ep-civ-btn" data-civ="macedonienne" onclick="openEpCiv('macedonienne')"><span class="ep-civ-btn-flag">⚡</span><span class="ep-civ-btn-name">Macédonienne</span></button>
+      <button class="ep-civ-btn" data-civ="sengokudaimyo" onclick="openEpCiv('sengokudaimyo')"><span class="ep-civ-btn-flag">⛩️</span><span class="ep-civ-btn-name">Sengoku</span></button>
+      <button class="ep-civ-btn" data-civ="tughluq" onclick="openEpCiv('tughluq')"><span class="ep-civ-btn-flag">🕌</span><span class="ep-civ-btn-name">Tughluq</span></button>
+      <button class="ep-civ-btn" data-civ="jindynasty" onclick="openEpCiv('jindynasty')"><span class="ep-civ-btn-flag">🏮</span><span class="ep-civ-btn-name">Dynastie Jin</span></button>
+    </div>
+
+    <!-- ─── ANGLAIS ─── -->
+    <div id="epciv-anglais" class="ep-civ-panel"><div class="ep-civp-inner">
+      <div class="ep-civp-header"><span class="ep-civp-flag">🏴󠁧󠁢󠁥󠁮󠁧󠁿</span><div><div class="ep-civp-name">Anglais</div><div class="ep-civp-playstyle">Defense passive par tours - idéal pour la survie de Merveille</div></div></div>
+      <div class="ep-civp-grid">
+        <div class="ep-civp-block"><div class="ep-civp-block-title">⚡ Forces dans L'Épreuve</div><ul class="ep-civp-list">
+          <li>Network of Castles : les tours de guet se boostent mutuellement quand des unites ennemies sont proches, creant un DPS passif record sans micro.</li>
+          <li>Council Hall double la vitesse de production des Longbowmen - une file ininterrompue d'archers a distance sans effort.</li>
+          <li>Longbowmen en kite : peuvent se deplacer tout en tirant, ideaux pour contenir les vagues sans engagement direct.</li>
+        </ul></div>
+        <div class="ep-civp-block"><div class="ep-civp-block-title">🏗️ Build Order de depart</div><ol class="ep-civp-bo">
+          <li>6 vills nourriture - priorite eco de depart</li>
+          <li>3 vills bois + camp bois immediat</li>
+          <li>2 vills or + camp or</li>
+          <li>Monter en Féodal a 14 vills - Council Hall en premier Landmark</li>
+          <li>3 Longbowmen + 2 tours garnies avant la minute 5</li>
+          <li>Disposer les tours en arc devant la Merveille (V ou demi-cercle)</li>
+        </ol></div>
+        <div class="ep-civp-block"><div class="ep-civp-block-title">✨ Boons Prioritaires</div><div class="ep-civp-boons">
+          <div class="ep-civp-boon"><div class="ep-civp-boon-name">Bastions de Pierre</div><div class="ep-civp-boon-why">Les tours Anglaises avec +50% portee couvrent une zone enorme - synergie directe avec Network of Castles.</div></div>
+          <div class="ep-civp-boon"><div class="ep-civp-boon-name">Murs Renforcees</div><div class="ep-civp-boon-why">Canaliser les vagues vers les zones de tir des tours - l'attaque ne passe jamais le meme chemin.</div></div>
+          <div class="ep-civp-boon"><div class="ep-civp-boon-name">Forge de Guerre</div><div class="ep-civp-boon-why">Longbowmen a +20% degats + Network of Castles actif = les groupes ennemis fondent avant d'atteindre les murs.</div></div>
+        </div></div>
+        <div class="ep-civp-block"><div class="ep-civp-block-title">🎯 Conseils par Difficulté</div><div class="ep-civp-difftips">
+          <div class="ep-civp-difftip"><span class="ep-civp-diff-badge green">Facile / Inter</span><span>3 tours en V + 4 Longbowmen gerent seuls les 6 premieres vagues sans micro avance.</span></div>
+          <div class="ep-civp-difftip"><span class="ep-civp-diff-badge gold">Hard / Hardest</span><span>Doubler les tours (6+), rechercher les ameliorations de tir rapide, garder 3 Longbowmen en reserve a l'interieur.</span></div>
+          <div class="ep-civp-difftip"><span class="ep-civp-diff-badge red">Expert</span><span>Positionner les tours sur les hauteurs si possible - la portee de Bastions de Pierre sur terrain eleve est decisive aux niveaux 7-8.</span></div>
+        </div></div>
+      </div>
+    </div></div>
+
+    <!-- ─── FRANCAIS ─── -->
+    <div id="epciv-francais" class="ep-civ-panel"><div class="ep-civp-inner">
+      <div class="ep-civp-header"><span class="ep-civp-flag">⚜️</span><div><div class="ep-civp-name">Francais</div><div class="ep-civp-playstyle">Cavalerie de charge - intercepter les vagues avant impact</div></div></div>
+      <div class="ep-civp-grid">
+        <div class="ep-civp-block"><div class="ep-civp-block-title">⚡ Forces dans L'Épreuve</div><ul class="ep-civp-list">
+          <li>Royal Knights avec charge puissante : interceptent les groupes a pleine vitesse avant qu'ils n'atteignent la Merveille, ideal pour les maps ouvertes.</li>
+          <li>Corps de Castillon : infliger des degats en retour aux attaquants qui chargent - efficace contre la cavalerie ennemie des vagues avancees.</li>
+          <li>Royal Institute : acces rapide aux ameliorations de cavalerie - les Knights progressent vite et restent dominants longtemps.</li>
+        </ul></div>
+        <div class="ep-civp-block"><div class="ep-civp-block-title">🏗️ Build Order de depart</div><ol class="ep-civp-bo">
+          <li>5 vills nourriture</li>
+          <li>4 vills bois</li>
+          <li>2 vills or</li>
+          <li>Monter en Féodal a 14 vills - Royal Institute en premier Landmark</li>
+          <li>4 Royal Knights avant la premiere vague lourde</li>
+          <li>1 caserne Spearmen en parallele (counter cavalerie ennemie)</li>
+        </ol></div>
+        <div class="ep-civp-block"><div class="ep-civp-block-title">✨ Boons Prioritaires</div><div class="ep-civp-boons">
+          <div class="ep-civp-boon"><div class="ep-civp-boon-name">Chevaliers d'Elite</div><div class="ep-civp-boon-why">Royal Knights avec +30% PV et +20% vitesse = inarretables en interception, ils tiennent beaucoup plus longtemps.</div></div>
+          <div class="ep-civp-boon"><div class="ep-civp-boon-name">Forge de Guerre</div><div class="ep-civp-boon-why">La charge a +20% degats devient une one-shot sur les unites legeres - la vague est annihilee avant d'atteindre la Merveille.</div></div>
+          <div class="ep-civp-boon"><div class="ep-civp-boon-name">Caserne Acceleree</div><div class="ep-civp-boon-why">Maintenir un flux continu de Royal Knights sans interruption - la perte de 2-3 Knights est compensee en 30 secondes.</div></div>
+        </div></div>
+        <div class="ep-civp-block"><div class="ep-civp-block-title">🎯 Conseils par Difficulté</div><div class="ep-civp-difftips">
+          <div class="ep-civp-difftip"><span class="ep-civp-diff-badge green">Facile / Inter</span><span>5-6 Royal Knights en interception permanente gerent les 30 premieres minutes sans soutien.</span></div>
+          <div class="ep-civp-difftip"><span class="ep-civp-diff-badge gold">Hard / Hardest</span><span>Mixer Royal Knights (front) + archers depuis les tours (flancs) pour couvrir les angles que les Knights manquent.</span></div>
+          <div class="ep-civp-difftip"><span class="ep-civp-diff-badge red">Expert</span><span>La charge doit etre orientee perpendiculairement a la Merveille - jamais en ligne droite vers elle pour eviter les debordements.</span></div>
+        </div></div>
+      </div>
+    </div></div>
+
+    <!-- ─── SAINT-EMPIRE ─── -->
+    <div id="epciv-hre" class="ep-civ-panel"><div class="ep-civp-inner">
+      <div class="ep-civp-header"><span class="ep-civp-flag">🦅</span><div><div class="ep-civp-name">Saint-Empire</div><div class="ep-civp-playstyle">Boost economique par Prelats - economie superieure tout au long de la run</div></div></div>
+      <div class="ep-civp-grid">
+        <div class="ep-civp-block"><div class="ep-civp-block-title">⚡ Forces dans L'Épreuve</div><ul class="ep-civp-list">
+          <li>Prelats : inspirent les villageois proches pour +20% vitesse de recolte - 1 Prelat transforme l'economie entiere du depart.</li>
+          <li>Landsknecht : infanterie avec degats en zone devastateurs contre les vagues serrees, parfait pour les groupes denses.</li>
+          <li>Burgrave Palace : acces aux murs de pierre et tours a cout reduit - base fortifiee construite deux fois plus vite.</li>
+        </ul></div>
+        <div class="ep-civp-block"><div class="ep-civp-block-title">🏗️ Build Order de depart</div><ol class="ep-civp-bo">
+          <li>6 vills nourriture</li>
+          <li>3 vills bois</li>
+          <li>Produire 1 Prelat immediatement depuis la Chapelle</li>
+          <li>Assigner le Prelat au groupe de villageois le plus dense</li>
+          <li>2 vills or + camp or</li>
+          <li>Monter en Féodal a 16-17 vills (Prelat accelere le timing)</li>
+        </ol></div>
+        <div class="ep-civp-block"><div class="ep-civp-block-title">✨ Boons Prioritaires</div><div class="ep-civp-boons">
+          <div class="ep-civp-boon"><div class="ep-civp-boon-name">Recolte Intensive</div><div class="ep-civp-boon-why">Combine avec le Prelat : les villageois inspirés recoltent deja +20%, le Boon ajoute +35% - revenus presque doubles.</div></div>
+          <div class="ep-civp-boon"><div class="ep-civp-boon-name">Murs Renforcees</div><div class="ep-civp-boon-why">Burgrave Palace + murs avec PV x2 = forteresse impenetrable - les Landsknecht derriere completent la defense.</div></div>
+          <div class="ep-civp-boon"><div class="ep-civp-boon-name">Bastions de Pierre</div><div class="ep-civp-boon-why">Tours HRE reduites en cout + portee +50% - une ligne de tours couvrante construite a moitie prix.</div></div>
+        </div></div>
+        <div class="ep-civp-block"><div class="ep-civp-block-title">🎯 Conseils par Difficulté</div><div class="ep-civp-difftips">
+          <div class="ep-civp-difftip"><span class="ep-civp-diff-badge green">Facile / Inter</span><span>1 Prelat booste toute l'economie - investir les surplus en Landsknecht pour des vagues nettoyees proprement.</span></div>
+          <div class="ep-civp-difftip"><span class="ep-civp-diff-badge gold">Hard / Hardest</span><span>2 Prelats : 1 sur la zone eco, 1 qui inspire les combattants en front - double le rendement de chaque categorie.</span></div>
+          <div class="ep-civp-difftip"><span class="ep-civp-diff-badge red">Expert</span><span>Prelat en rotation entre eco et front - jamais laisse sans affectation. Le Burgrave Palace doit etre construit avant la minute 20.</span></div>
+        </div></div>
+      </div>
+    </div></div>
+
+    <!-- ─── MONGOLS ─── -->
+    <div id="epciv-mongols" class="ep-civ-panel"><div class="ep-civp-inner">
+      <div class="ep-civp-header"><span class="ep-civp-flag">🏹</span><div><div class="ep-civp-name">Mongols</div><div class="ep-civp-playstyle">Base mobile - s'adapter en temps reel a la direction des vagues</div></div></div>
+      <div class="ep-civp-grid">
+        <div class="ep-civp-block"><div class="ep-civp-block-title">⚡ Forces dans L'Épreuve</div><ul class="ep-civp-list">
+          <li>Base 100% mobile : replier et redéployer tous les batiments selon la direction d'attaque - unique en L'Épreuve.</li>
+          <li>Mangudai : archers montés tirant en deplacement, kite parfait et indefini contre les vagues les plus lentes.</li>
+          <li>Khan : aura de commandement permanente qui booste toutes les unites dans un rayon - maintenir au centre du dispositif.</li>
+        </ul></div>
+        <div class="ep-civp-block"><div class="ep-civp-block-title">🏗️ Build Order de depart</div><ol class="ep-civp-bo">
+          <li>Deployer camp en position centrale (couverture maximale 360 deg)</li>
+          <li>6 vills nourriture</li>
+          <li>3 vills bois</li>
+          <li>2 ecurie -> Mangudai en production continue</li>
+          <li>Khan avec l'armee principale en permanence</li>
+          <li>Observer la premiere vague : replier la base si une direction est dominante</li>
+        </ol></div>
+        <div class="ep-civp-block"><div class="ep-civp-block-title">✨ Boons Prioritaires</div><div class="ep-civp-boons">
+          <div class="ep-civp-boon"><div class="ep-civp-boon-name">Chevaliers d'Elite</div><div class="ep-civp-boon-why">Mangudai avec +30% PV et +20% vitesse : kite encore plus efficace, les pertes chutent drastiquement.</div></div>
+          <div class="ep-civp-boon"><div class="ep-civp-boon-name">Recolte Intensive</div><div class="ep-civp-boon-why">La base mobile recolte moins efficacement - ce Boon compense le manque de stabilite eco des Mongols.</div></div>
+          <div class="ep-civp-boon"><div class="ep-civp-boon-name">Renfort Immediat</div><div class="ep-civp-boon-why">Les unites instantanees comblent les pertes rapides dues au kite intensif sans perturber la production normale.</div></div>
+        </div></div>
+        <div class="ep-civp-block"><div class="ep-civp-block-title">🎯 Conseils par Difficulté</div><div class="ep-civp-difftips">
+          <div class="ep-civp-difftip"><span class="ep-civp-diff-badge green">Facile / Inter</span><span>Mangudai seuls en kite gerent les 6 premieres vagues sans presque aucune perte.</span></div>
+          <div class="ep-civp-difftip"><span class="ep-civp-diff-badge gold">Hard / Hardest</span><span>Mixer Mangudai (kite exterieur) + quelques tours fixes (ancre centrale) pour les vagues qui percent le kite.</span></div>
+          <div class="ep-civp-difftip"><span class="ep-civp-diff-badge red">Expert</span><span>Apres la minute 25, replier la base si une direction s'avere systematiquement plus agressive - l'adaptation est la force principale des Mongols.</span></div>
+        </div></div>
+      </div>
+    </div></div>
+
+    <!-- ─── RUS ─── -->
+    <div id="epciv-rus" class="ep-civ-panel"><div class="ep-civp-inner">
+      <div class="ep-civp-header"><span class="ep-civp-flag">🪶</span><div><div class="ep-civp-name">Rus</div><div class="ep-civp-playstyle">Chasse passive + Fort avance - 2 lignes de defense independantes</div></div></div>
+      <div class="ep-civp-grid">
+        <div class="ep-civp-block"><div class="ep-civp-block-title">⚡ Forces dans L'Épreuve</div><ul class="ep-civp-list">
+          <li>Scout hunting : les eclaireurs rapportent nourriture et or en chassant les animaux - economie acceleree sans villageois supplementaires.</li>
+          <li>Fort : batiment defensif avec production d'unites propre - une deuxieme ligne de production independante de la base.</li>
+          <li>Horse Archers : archers montes pour le kite des vagues lineaires, tres efficaces sur les maps a couloirs.</li>
+        </ul></div>
+        <div class="ep-civp-block"><div class="ep-civp-block-title">🏗️ Build Order de depart</div><ol class="ep-civp-bo">
+          <li>2 eclaireurs en chasse immediate (ressources passives)</li>
+          <li>5 vills nourriture</li>
+          <li>3 vills bois</li>
+          <li>Fort en position avancee (2e ligne de defense)</li>
+          <li>Horse Archers depuis la premiere ecurie</li>
+          <li>2 vills or des que camp or accessible</li>
+        </ol></div>
+        <div class="ep-civp-block"><div class="ep-civp-block-title">✨ Boons Prioritaires</div><div class="ep-civp-boons">
+          <div class="ep-civp-boon"><div class="ep-civp-boon-name">Commerce Royal</div><div class="ep-civp-boon-why">Se cumule avec les revenus de chasse : les eclaireurs + le Boon generent assez d'or pour toute la run.</div></div>
+          <div class="ep-civp-boon"><div class="ep-civp-boon-name">Caserne Acceleree</div><div class="ep-civp-boon-why">Horse Archers produits plus vite depuis le Fort - le flux de renforts est ininterrompu meme sous pression.</div></div>
+          <div class="ep-civp-boon"><div class="ep-civp-boon-name">Bastions de Pierre</div><div class="ep-civp-boon-why">Fort + tours autour = bastion avance qui absorbe les vagues avant qu'elles atteignent la Merveille.</div></div>
+        </div></div>
+        <div class="ep-civp-block"><div class="ep-civp-block-title">🎯 Conseils par Difficulté</div><div class="ep-civp-difftips">
+          <div class="ep-civp-difftip"><span class="ep-civp-diff-badge green">Facile / Inter</span><span>Chasse + Commerce Royal finance toute la run - se concentrer sur l'eco passive et produire uniquement des Horse Archers.</span></div>
+          <div class="ep-civp-difftip"><span class="ep-civp-diff-badge gold">Hard / Hardest</span><span>Fort avance avec 3-4 tours adjacentes : une 2e ligne impenetrante qui stoppe les vagues sans engager l'armee principale.</span></div>
+          <div class="ep-civp-difftip"><span class="ep-civp-diff-badge red">Expert</span><span>Produire des Streltsy depuis le Fort aux niveaux 7-8 - les unites a poudre percent les blindages epais des vagues d'elite.</span></div>
+        </div></div>
+      </div>
+    </div></div>
+
+    <!-- ─── ABBASIDES ─── -->
+    <div id="epciv-abbasides" class="ep-civ-panel"><div class="ep-civp-inner">
+      <div class="ep-civp-header"><span class="ep-civp-flag">🌙</span><div><div class="ep-civp-name">Abbasides</div><div class="ep-civp-playstyle">House of Wisdom - recherches a cout reduit, avantage technologique decisif</div></div></div>
+      <div class="ep-civp-grid">
+        <div class="ep-civp-block"><div class="ep-civp-block-title">⚡ Forces dans L'Épreuve</div><ul class="ep-civp-list">
+          <li>House of Wisdom : toutes les branches de recherche disponibles depuis un seul batiment - progression technologique sans lacune.</li>
+          <li>Preservation of Knowledge : reduit le cout de toutes les technologies - les ameliorations decisives arrivent bien plus tot que chez les autres civs.</li>
+          <li>Camels de guerre : resistant aux charges de cavalerie ennemie, ideaux contre les vagues mixtes incluant de la cavalerie lourde.</li>
+        </ul></div>
+        <div class="ep-civp-block"><div class="ep-civp-block-title">🏗️ Build Order de depart</div><ol class="ep-civp-bo">
+          <li>6 vills nourriture + Granary immediat</li>
+          <li>3 vills bois</li>
+          <li>House of Wisdom -> activer Preservation of Knowledge</li>
+          <li>2 vills or</li>
+          <li>Rechercher la premiere amelioration de l'aile Militaire</li>
+          <li>Camels de guerre depuis la 1ere ecurie au Féodal</li>
+        </ol></div>
+        <div class="ep-civp-block"><div class="ep-civp-block-title">✨ Boons Prioritaires</div><div class="ep-civp-boons">
+          <div class="ep-civp-boon"><div class="ep-civp-boon-name">Recolte Intensive</div><div class="ep-civp-boon-why">Granary Abbasides + Boon sur la nourriture = revenus alimentaires qui financent toutes les recherches sans effort.</div></div>
+          <div class="ep-civp-boon"><div class="ep-civp-boon-name">Murs Renforcees</div><div class="ep-civp-boon-why">La strategie Abbasides est defense statique : murs PV x2 avec les recherches defensives de la House of Wisdom = forteresse.</div></div>
+          <div class="ep-civp-boon"><div class="ep-civp-boon-name">Cache de Ressources</div><div class="ep-civp-boon-why">Compense les pics de depenses lors du switch entre ailes de la House of Wisdom.</div></div>
+        </div></div>
+        <div class="ep-civp-block"><div class="ep-civp-block-title">🎯 Conseils par Difficulté</div><div class="ep-civp-difftips">
+          <div class="ep-civp-difftip"><span class="ep-civp-diff-badge green">Facile / Inter</span><span>Se concentrer sur l'Economic Wing de la House pour maximaliser les revenus - les Camels gerent le reste.</span></div>
+          <div class="ep-civp-difftip"><span class="ep-civp-diff-badge gold">Hard / Hardest</span><span>Activer les 2 premiers niveaux de l'aile Militaire avant la minute 20 - les ameliorations de combat sont vitales.</span></div>
+          <div class="ep-civp-difftip"><span class="ep-civp-diff-badge red">Expert</span><span>La House of Wisdom doit etre placee en position protegee - jamais exposee aux vagues. Prioriser l'aile Defensive des le debut.</span></div>
+        </div></div>
+      </div>
+    </div></div>
+
+    <!-- ─── OTTOMANS ─── -->
+    <div id="epciv-ottomans" class="ep-civ-panel"><div class="ep-civp-inner">
+      <div class="ep-civp-header"><span class="ep-civp-flag">🌺</span><div><div class="ep-civp-name">Ottomans</div><div class="ep-civp-playstyle">Production automatique - economie auto-geree, micro concentre sur le combat</div></div></div>
+      <div class="ep-civp-grid">
+        <div class="ep-civp-block"><div class="ep-civp-block-title">⚡ Forces dans L'Épreuve</div><ul class="ep-civp-list">
+          <li>Grand Bazaar produit des villageois automatiquement - l'economie se gere seule, le micro est entierement dedie au combat.</li>
+          <li>Military School : production d'unites passives en parallele des casernes normales - double flux de renforts.</li>
+          <li>Janissaires : unites de poudre a canon avec DPS eleve, efficaces contre les unites blindees des vagues avancees.</li>
+        </ul></div>
+        <div class="ep-civp-block"><div class="ep-civp-block-title">🏗️ Build Order de depart</div><ol class="ep-civp-bo">
+          <li>Grand Bazaar en premiere priorite absolue</li>
+          <li>4 vills bois (les vills se produisent seuls via Bazaar)</li>
+          <li>3 vills pierre -> defenses rapidement</li>
+          <li>Military School en position avancee</li>
+          <li>Janissaires depuis la premiere caserne speciale</li>
+          <li>Ne pas micro les vills - se concentrer 100% sur l'armee</li>
+        </ol></div>
+        <div class="ep-civp-block"><div class="ep-civp-block-title">✨ Boons Prioritaires</div><div class="ep-civp-boons">
+          <div class="ep-civp-boon"><div class="ep-civp-boon-name">Caserne Acceleree</div><div class="ep-civp-boon-why">Military School passive + casernes normales + Boon = trois sources de production d'unites simultanees.</div></div>
+          <div class="ep-civp-boon"><div class="ep-civp-boon-name">Commerce Royal</div><div class="ep-civp-boon-why">Se cumule avec les revenus du Grand Bazaar - les Ottomans ont l'economie la plus stable de toutes les civs.</div></div>
+          <div class="ep-civp-boon"><div class="ep-civp-boon-name">Cache de Ressources</div><div class="ep-civp-boon-why">Compense le manque de micro eco en debut de run avant que le Bazaar atteigne sa vitesse de croisiere.</div></div>
+        </div></div>
+        <div class="ep-civp-block"><div class="ep-civp-block-title">🎯 Conseils par Difficulté</div><div class="ep-civp-difftips">
+          <div class="ep-civp-difftip"><span class="ep-civp-diff-badge green">Facile / Inter</span><span>Laisser le Bazaar tourner, construire les defenses, produire des Janissaires - la civ tourne presque en auto-pilote.</span></div>
+          <div class="ep-civp-difftip"><span class="ep-civp-diff-badge gold">Hard / Hardest</span><span>Aligner 2 Military Schools pour doubler la production passive - les renforts compensent les pertes sans action du joueur.</span></div>
+          <div class="ep-civp-difftip"><span class="ep-civp-diff-badge red">Expert</span><span>Les Janissaires ont une faible mobilite - les positionner derriere les murs, pas en premiere ligne ou ils se font deborder.</span></div>
+        </div></div>
+      </div>
+    </div></div>
+
+    <!-- ─── MALI ─── -->
+    <div id="epciv-mali" class="ep-civ-panel"><div class="ep-civp-inner">
+      <div class="ep-civp-header"><span class="ep-civp-flag">🌞</span><div><div class="ep-civp-name">Mali</div><div class="ep-civp-playstyle">Pit Mines passives + construction rapide - base fortifiee en un temps record</div></div></div>
+      <div class="ep-civp-grid">
+        <div class="ep-civp-block"><div class="ep-civp-block-title">⚡ Forces dans L'Épreuve</div><ul class="ep-civp-list">
+          <li>Pit Mines : mines d'or entierement passives sans villageois assignes - revenu en or stable en permanence.</li>
+          <li>Griot : booste la vitesse de production des villageois et des batiments proches - accelere toute la phase de construction initiale.</li>
+          <li>Construction 2x plus rapide : une ligne de murs et de tours complete en deux fois moins de temps que n'importe quelle autre civ.</li>
+        </ul></div>
+        <div class="ep-civp-block"><div class="ep-civp-block-title">🏗️ Build Order de depart</div><ol class="ep-civp-bo">
+          <li>1-2 Pit Mines en priorite absolue (or passif immediat)</li>
+          <li>5 vills nourriture</li>
+          <li>3 vills bois</li>
+          <li>Griot en permanence pres du Centre-Ville</li>
+          <li>Construction de 3 tours en arc devant la Merveille (2x plus vite)</li>
+          <li>Donsos en masse depuis 2 casernes parallelees</li>
+        </ol></div>
+        <div class="ep-civp-block"><div class="ep-civp-block-title">✨ Boons Prioritaires</div><div class="ep-civp-boons">
+          <div class="ep-civp-boon"><div class="ep-civp-boon-name">Commerce Royal</div><div class="ep-civp-boon-why">Se cumule avec les Pit Mines - les deux sources passives d'or donnent une base financiere inarretable.</div></div>
+          <div class="ep-civp-boon"><div class="ep-civp-boon-name">Villageois Bonus</div><div class="ep-civp-boon-why">5 vills supplementaires + construction 2x plus rapide Mali = une 2e enceinte construite pendant que les autres civs finissent leur 1ere.</div></div>
+          <div class="ep-civp-boon"><div class="ep-civp-boon-name">Recolte Intensive</div><div class="ep-civp-boon-why">Griot + Recolte Intensive sur une meme ressource = revenus presque doubles sur ce type - hyper-specialisation.</div></div>
+        </div></div>
+        <div class="ep-civp-block"><div class="ep-civp-block-title">🎯 Conseils par Difficulté</div><div class="ep-civp-difftips">
+          <div class="ep-civp-difftip"><span class="ep-civp-diff-badge green">Facile / Inter</span><span>Pit Mines + Commerce Royal finance la run entiere - construire des tours, spammer des Donsos, ne jamais se soucier de l'or.</span></div>
+          <div class="ep-civp-difftip"><span class="ep-civp-diff-badge gold">Hard / Hardest</span><span>Construire un 2e cercle de murs exterieurs - le bonus de vitesse Mali permet de le boucler avant la minute 15.</span></div>
+          <div class="ep-civp-difftip"><span class="ep-civp-diff-badge red">Expert</span><span>Les Donsos sont fragiles aux niveaux 7-8 - basculer vers des unites lourdes (Donso Elite + cavalerie) des le passage en Chateau.</span></div>
+        </div></div>
+      </div>
+    </div></div>
+
+    <!-- ─── BYZANTINS ─── -->
+    <div id="epciv-byzantins" class="ep-civ-panel"><div class="ep-civp-inner">
+      <div class="ep-civp-header"><span class="ep-civp-flag">🔱</span><div><div class="ep-civp-name">Byzantins</div><div class="ep-civp-playstyle">Defense statique de reference - Siphonarioi et Kataphraktos</div></div></div>
+      <div class="ep-civp-grid">
+        <div class="ep-civp-block"><div class="ep-civp-block-title">⚡ Forces dans L'Épreuve</div><ul class="ep-civp-list">
+          <li>Siphonarioi (lance-flammes) : degats de feu en zone devastateurs contre les vagues d'infanterie denses - la meilleure unite anti-groupe du jeu.</li>
+          <li>Mercenaires : recruter des unites specialisees avec de l'or selon le besoin - flexibilite militaire unique en L'Épreuve.</li>
+          <li>Kataphraktos : cavalerie tres resistante avec bonus de sante, ideale pour tenir la ligne centrale de la Merveille.</li>
+        </ul></div>
+        <div class="ep-civp-block"><div class="ep-civp-block-title">🏗️ Build Order de depart</div><ol class="ep-civp-bo">
+          <li>5 vills nourriture</li>
+          <li>3 vills bois</li>
+          <li>3 vills pierre (murs + Hippodrome)</li>
+          <li>Hippodrome en priorite pour acceder aux Mercenaires</li>
+          <li>2-3 Siphonarioi des que accessible (age Féodal)</li>
+          <li>Monter en Chateau pour Kataphraktos</li>
+        </ol></div>
+        <div class="ep-civp-block"><div class="ep-civp-block-title">✨ Boons Prioritaires</div><div class="ep-civp-boons">
+          <div class="ep-civp-boon"><div class="ep-civp-boon-name">Murs Renforcees</div><div class="ep-civp-boon-why">Les Byzantins sont la civ defensive de reference - murs avec PV x2 canalisant les vagues vers les Siphonarioi.</div></div>
+          <div class="ep-civp-boon"><div class="ep-civp-boon-name">Regeneration de la Merveille</div><div class="ep-civp-boon-why">La defense statique Byzantine permet a la Merveille de regenerer entre chaque vague - 8 PV/s sur 10 minutes = beaucoup.</div></div>
+          <div class="ep-civp-boon"><div class="ep-civp-boon-name">Bastions de Pierre</div><div class="ep-civp-boon-why">Tours Byzantines avec +50% portee + Siphonarioi en garnison = zone de feu infranchissable.</div></div>
+        </div></div>
+        <div class="ep-civp-block"><div class="ep-civp-block-title">🎯 Conseils par Difficulté</div><div class="ep-civp-difftips">
+          <div class="ep-civp-difftip"><span class="ep-civp-diff-badge green">Facile / Inter</span><span>Siphonarioi en premiere ligne devant les murs - les vagues d'infanterie fondent dans les flammes.</span></div>
+          <div class="ep-civp-difftip"><span class="ep-civp-diff-badge gold">Hard / Hardest</span><span>Mercenaires en reserve pour couvrir les breches - choisir le type selon la vague entrante (archers vs cavalerie vs infanterie).</span></div>
+          <div class="ep-civp-difftip"><span class="ep-civp-diff-badge red">Expert</span><span>Regeneration Merveille + Kataphraktos en front + Siphonarioi en support = le set defensif le plus solide aux niveaux 7-8.</span></div>
+        </div></div>
+      </div>
+    </div></div>
+
+    <!-- ─── CHINE ─── -->
+    <div id="epciv-chine" class="ep-civ-panel"><div class="ep-civp-inner">
+      <div class="ep-civp-header"><span class="ep-civp-flag">🐉</span><div><div class="ep-civp-name">Chine</div><div class="ep-civp-playstyle">Dynasties et Nest of Bees - DPS de zone record</div></div></div>
+      <div class="ep-civp-grid">
+        <div class="ep-civp-block"><div class="ep-civp-block-title">⚡ Forces dans L'Épreuve</div><ul class="ep-civp-list">
+          <li>Nest of Bees : salves de fleches en zone dechainées sur les groupes serres - l'unite anti-vague la plus explosive du jeu.</li>
+          <li>Zhuge Nu : arbalete legere a cadence de tir tres elevee, DPS exceptionnel contre tout type d'ennemi.</li>
+          <li>Systeme des Dynasties : passer les Dynasties accumule des bonus permanents tout au long de la run.</li>
+        </ul></div>
+        <div class="ep-civp-block"><div class="ep-civp-block-title">🏗️ Build Order de depart</div><ol class="ep-civp-bo">
+          <li>6 vills nourriture</li>
+          <li>4 vills bois</li>
+          <li>2 vills or</li>
+          <li>Monter en Féodal a 14 vills, activer le 1er bonus dynastique</li>
+          <li>2 casernes -> Zhuge Nu en production continue</li>
+          <li>1 Nest of Bees au passage en Chateau (min 15-18)</li>
+        </ol></div>
+        <div class="ep-civp-block"><div class="ep-civp-block-title">✨ Boons Prioritaires</div><div class="ep-civp-boons">
+          <div class="ep-civp-boon"><div class="ep-civp-boon-name">Caserne Acceleree</div><div class="ep-civp-boon-why">2 casernes de Zhuge Nu + Boon = une pluie de fleches ininterrompue qui ne laisse aucune pause aux vagues.</div></div>
+          <div class="ep-civp-boon"><div class="ep-civp-boon-name">Bastions de Pierre</div><div class="ep-civp-boon-why">Tours Chinoises + Nest of Bees + portee +50% = zone de mort total avant les murs.</div></div>
+          <div class="ep-civp-boon"><div class="ep-civp-boon-name">Forge de Guerre</div><div class="ep-civp-boon-why">Zhuge Nu avec +20% degats transforme chaque salve en catastrophe pour les groupes ennemis.</div></div>
+        </div></div>
+        <div class="ep-civp-block"><div class="ep-civp-block-title">🎯 Conseils par Difficulté</div><div class="ep-civp-difftips">
+          <div class="ep-civp-difftip"><span class="ep-civp-diff-badge green">Facile / Inter</span><span>6-8 Zhuge Nu suffisent pour les 30 premieres minutes - aucun micro avance requis.</span></div>
+          <div class="ep-civp-difftip"><span class="ep-civp-diff-badge gold">Hard / Hardest</span><span>1 Nest of Bees poste en hauteur avec vue sur la Merveille annihile les vagues a distance.</span></div>
+          <div class="ep-civp-difftip"><span class="ep-civp-diff-badge red">Expert</span><span>Activer les Dynasties rapidement est prioritaire - les bonus s'accumulent et changent le rapport de force. Ne jamais sauter une Dynastic.</span></div>
+        </div></div>
+      </div>
+    </div></div>
+
+    <!-- ─── DELHI ─── -->
+    <div id="epciv-delhi" class="ep-civ-panel"><div class="ep-civp-inner">
+      <div class="ep-civp-header"><span class="ep-civp-flag">🐘</span><div><div class="ep-civp-name">Delhi Sultanat</div><div class="ep-civp-playstyle">Recherches gratuites - tout l'or pour l'armee, avantage technologique massif</div></div></div>
+      <div class="ep-civp-grid">
+        <div class="ep-civp-block"><div class="ep-civp-block-title">⚡ Forces dans L'Épreuve</div><ul class="ep-civp-list">
+          <li>Recherches gratuites mais lentes : zero or depense en technologies - la totalite du budget va dans l'armee.</li>
+          <li>Scholars : garnis dans les Mosquees, ils accelerent toutes les recherches - 2 Scholars = recherches au rythme des autres civs avec leur or.</li>
+          <li>Tower War Elephants : unites defensives mobiles avec tour integree - quasi-indestructibles, ideales pour absorber les assauts lourds.</li>
+        </ul></div>
+        <div class="ep-civp-block"><div class="ep-civp-block-title">🏗️ Build Order de depart</div><ol class="ep-civp-bo">
+          <li>2 Scholars depuis la Mosquee immediatement</li>
+          <li>6 vills nourriture</li>
+          <li>3 vills bois</li>
+          <li>Demarrer les recherches technologiques de depart (gratuites)</li>
+          <li>2 vills or (uniquement pour les unites militaires)</li>
+          <li>Tower War Elephant au passage en Chateau</li>
+        </ol></div>
+        <div class="ep-civp-block"><div class="ep-civp-block-title">✨ Boons Prioritaires</div><div class="ep-civp-boons">
+          <div class="ep-civp-boon"><div class="ep-civp-boon-name">Recolte Intensive</div><div class="ep-civp-boon-why">Aucun or depense en recherches = tout reinvesti dans l'armee. Recolte Intensive amplifie encore cet avantage eco.</div></div>
+          <div class="ep-civp-boon"><div class="ep-civp-boon-name">Murs Renforcees</div><div class="ep-civp-boon-why">Delhi peut se permettre les murs les plus epais - les ressources economisees en recherches financent une double enceinte.</div></div>
+          <div class="ep-civp-boon"><div class="ep-civp-boon-name">Armure Lourde</div><div class="ep-civp-boon-why">Tower War Elephants + Armure Lourde = unites pratiquement impossibles a detruire, meme en niveau Conquerant.</div></div>
+        </div></div>
+        <div class="ep-civp-block"><div class="ep-civp-block-title">🎯 Conseils par Difficulté</div><div class="ep-civp-difftips">
+          <div class="ep-civp-difftip"><span class="ep-civp-diff-badge green">Facile / Inter</span><span>Rechercher en priorite les ameliorations de protection de la Merveille - gratuites, elles sont disponibles immediatement.</span></div>
+          <div class="ep-civp-difftip"><span class="ep-civp-diff-badge gold">Hard / Hardest</span><span>2+ Scholars dans la Mosquee pour accelerer les recherches defensives critiques avant la minute 20.</span></div>
+          <div class="ep-civp-difftip"><span class="ep-civp-diff-badge red">Expert</span><span>Tower Elephants positionnés en arc devant la Merveille : tankers permanents qui encaissent les assauts pendant que l'armee recupere.</span></div>
+        </div></div>
+      </div>
+    </div></div>
+
+    <!-- ─── JAPONAIS ─── -->
+    <div id="epciv-japonais" class="ep-civ-panel"><div class="ep-civp-inner">
+      <div class="ep-civp-header"><span class="ep-civp-flag">🌸</span><div><div class="ep-civp-name">Japonais</div><div class="ep-civp-playstyle">Machines de siege accelerees + Daimyo - la reference aux hautes difficultes</div></div></div>
+      <div class="ep-civp-grid">
+        <div class="ep-civp-block"><div class="ep-civp-block-title">⚡ Forces dans L'Épreuve</div><ul class="ep-civp-list">
+          <li>Production en siege acceleree : Mangonels et Trebuches disponibles plus vite et a moindre cout - la meilleure civ pour le siege defensif.</li>
+          <li>Daimyo : aura de commandement similaire au Khan, booste toutes les unites dans son rayon - a maintenir au centre du dispositif.</li>
+          <li>Onna Bugeisha : infanterie feminine resistante avec bonus de combat en terrain difficile - complementaire du siege.</li>
+        </ul></div>
+        <div class="ep-civp-block"><div class="ep-civp-block-title">🏗️ Build Order de depart</div><ol class="ep-civp-bo">
+          <li>5 vills nourriture</li>
+          <li>4 vills bois</li>
+          <li>2 vills pierre (acces au siege)</li>
+          <li>1 Daimyo immediatement - rester avec l'armee</li>
+          <li>2 Mangonels avant la 5e vague</li>
+          <li>Monter en Chateau pour Trebuchet (min 18-22)</li>
+        </ol></div>
+        <div class="ep-civp-block"><div class="ep-civp-block-title">✨ Boons Prioritaires</div><div class="ep-civp-boons">
+          <div class="ep-civp-boon"><div class="ep-civp-boon-name">Bastions de Pierre</div><div class="ep-civp-boon-why">Tours Japonaises + Mangonels + portee +50% = zone d'interdiction totale devant la Merveille.</div></div>
+          <div class="ep-civp-boon"><div class="ep-civp-boon-name">Caserne Acceleree</div><div class="ep-civp-boon-why">Unites d'infanterie en soutien du siege - produits plus vite pour combler les breches dans la ligne.</div></div>
+          <div class="ep-civp-boon"><div class="ep-civp-boon-name">Forge de Guerre</div><div class="ep-civp-boon-why">Daimyo aura + Boon degats : toutes les unites sous l'aura infligent +20% supplementaires - multiplicateur massif.</div></div>
+        </div></div>
+        <div class="ep-civp-block"><div class="ep-civp-block-title">🎯 Conseils par Difficulté</div><div class="ep-civp-difftips">
+          <div class="ep-civp-difftip"><span class="ep-civp-diff-badge green">Facile / Inter</span><span>2 Mangonels couvrant la Merveille gerent les 3 premieres phases sans micro avance requis.</span></div>
+          <div class="ep-civp-difftip"><span class="ep-civp-diff-badge gold">Hard / Hardest</span><span>Daimyo en melee (front) + Mangonels (milieu) + tours (flancs) : 3 lignes de defense qui se couvrent mutuellement.</span></div>
+          <div class="ep-civp-difftip"><span class="ep-civp-diff-badge red">Expert</span><span>Les Japonais sont la civ de reference pour les niveaux 7-8 grace au siege. 2 Trebuchets en place avant la minute 25 changent tout.</span></div>
+        </div></div>
+      </div>
+    </div></div>
+
+    <!-- ─── ZHU XI ─── -->
+    <div id="epciv-zhuxilegacy" class="ep-civ-panel"><div class="ep-civp-inner">
+      <div class="ep-civp-header"><span class="ep-civp-flag">🏯</span><div><div class="ep-civp-name">Heritage de Zhu Xi</div><div class="ep-civp-playstyle">Tours boostees + Scholars - la defense passive la plus solide du jeu</div></div></div>
+      <div class="ep-civp-grid">
+        <div class="ep-civp-block"><div class="ep-civp-block-title">⚡ Forces dans L'Épreuve</div><ul class="ep-civp-list">
+          <li>Tours de guet avec bonus de degats supplementaires : les plus destructrices du jeu avec Bastions de Pierre - DPS par tour record.</li>
+          <li>Imperial Academy : acces accelere aux Scholars pour les recherches - progression technologique rapide.</li>
+          <li>Formation Shaolin : unites combattantes avec regeneration de PV hors combat - tiennent sur la duree sans renfort constant.</li>
+        </ul></div>
+        <div class="ep-civp-block"><div class="ep-civp-block-title">🏗️ Build Order de depart</div><ol class="ep-civp-bo">
+          <li>6 vills nourriture</li>
+          <li>3 vills bois</li>
+          <li>Imperial Academy en Féodal - Scholars immediats</li>
+          <li>3 tours en arc devant la Merveille des le debut du Féodal</li>
+          <li>Zhuge Nu en garnison dans les tours</li>
+          <li>2 Scholars dans les batiments de recherche</li>
+        </ol></div>
+        <div class="ep-civp-block"><div class="ep-civp-block-title">✨ Boons Prioritaires</div><div class="ep-civp-boons">
+          <div class="ep-civp-boon"><div class="ep-civp-boon-name">Bastions de Pierre</div><div class="ep-civp-boon-why">Tours deja boostees par la civ + Boon = portee et DPS absolument records. La combinaison la plus forte du jeu en defense passive.</div></div>
+          <div class="ep-civp-boon"><div class="ep-civp-boon-name">Murs Renforcees</div><div class="ep-civp-boon-why">Combo tours boostees + murs PV x2 : les vagues s'epuisent contre les murs pendant que les tours font le travail.</div></div>
+          <div class="ep-civp-boon"><div class="ep-civp-boon-name">Regeneration de la Merveille</div><div class="ep-civp-boon-why">Les tours absorbent les premières salves, la regeneration compense les degats residuels entre chaque vague.</div></div>
+        </div></div>
+        <div class="ep-civp-block"><div class="ep-civp-block-title">🎯 Conseils par Difficulté</div><div class="ep-civp-difftips">
+          <div class="ep-civp-difftip"><span class="ep-civp-diff-badge green">Facile / Inter</span><span>3-4 tours garnies en Zhuge Nu gerent seules les difficultes 1 a 4 - la civ la plus facile a jouer en L'Épreuve.</span></div>
+          <div class="ep-civp-difftip"><span class="ep-civp-diff-badge gold">Hard / Hardest</span><span>Ajouter Murs Renforcees pour canaliser les vagues vers les zones de tir maximales des tours.</span></div>
+          <div class="ep-civp-difftip"><span class="ep-civp-diff-badge red">Expert</span><span>Le set Tours + Bastions de Pierre + Regeneration de la Merveille est le build le plus solide aux niveaux 7-8.</span></div>
+        </div></div>
+      </div>
+    </div></div>
+
+    <!-- ─── AYYOUBIDES ─── -->
+    <div id="epciv-ayyoubides" class="ep-civ-panel"><div class="ep-civp-inner">
+      <div class="ep-civp-header"><span class="ep-civp-flag">⚔️</span><div><div class="ep-civp-name">Ayyoubides</div><div class="ep-civp-playstyle">Wing System flexible - s'adapter a chaque situation en cours de run</div></div></div>
+      <div class="ep-civp-grid">
+        <div class="ep-civp-block"><div class="ep-civp-block-title">⚡ Forces dans L'Épreuve</div><ul class="ep-civp-list">
+          <li>Desert Raiders : cavalerie hyper-mobile pour intercepter les vagues avant impact, comparable aux Royal Knights Francais.</li>
+          <li>Wing System : basculer entre Economic/Military/Trade Wing selon la situation - flexibilite strategique unique en L'Épreuve.</li>
+          <li>Camel Archers : archers montes avec DPS eleve, kite parfait sur les maps ouvertes.</li>
+        </ul></div>
+        <div class="ep-civp-block"><div class="ep-civp-block-title">🏗️ Build Order de depart</div><ol class="ep-civp-bo">
+          <li>Choisir Economic Wing en debut de run (boost eco immediat)</li>
+          <li>5 vills nourriture</li>
+          <li>4 vills bois</li>
+          <li>Camel Archers depuis la 1ere ecurie</li>
+          <li>Switcher sur Military Wing a la minute 15</li>
+          <li>Fort en avant-poste a l'age Féodal</li>
+        </ol></div>
+        <div class="ep-civp-block"><div class="ep-civp-block-title">✨ Boons Prioritaires</div><div class="ep-civp-boons">
+          <div class="ep-civp-boon"><div class="ep-civp-boon-name">Chevaliers d'Elite</div><div class="ep-civp-boon-why">Camel Archers avec +30% PV et +20% vitesse : kite indefini, les pertes deviennent quasi-nulles.</div></div>
+          <div class="ep-civp-boon"><div class="ep-civp-boon-name">Forge de Guerre</div><div class="ep-civp-boon-why">Desert Raiders avec +20% degats en interception : les groupes ennemis sont neutralises avant d'atteindre les murs.</div></div>
+          <div class="ep-civp-boon"><div class="ep-civp-boon-name">Cache de Ressources</div><div class="ep-civp-boon-why">Chaque switch de Wing consomme des ressources - ce Boon evite les periodes de sec lors des transitions.</div></div>
+        </div></div>
+        <div class="ep-civp-block"><div class="ep-civp-block-title">🎯 Conseils par Difficulté</div><div class="ep-civp-difftips">
+          <div class="ep-civp-difftip"><span class="ep-civp-diff-badge green">Facile / Inter</span><span>Economic Wing en debut, puis Military Wing a 15 min - le switch garantit une eco solide puis une armee dominante.</span></div>
+          <div class="ep-civp-difftip"><span class="ep-civp-diff-badge gold">Hard / Hardest</span><span>Fort avance + Camel Archers en kite = 2 lignes de defense. Switcher sur Trade Wing apres 30 min pour l'or passif.</span></div>
+          <div class="ep-civp-difftip"><span class="ep-civp-diff-badge red">Expert</span><span>Garder les Desert Raiders en mobilite permanente pour couvrir les 2 fronts simultanement aux niveaux 7-8.</span></div>
+        </div></div>
+      </div>
+    </div></div>
+
+    <!-- ─── JEANNE D'ARC ─── -->
+    <div id="epciv-jeannedarc" class="ep-civ-panel"><div class="ep-civp-inner">
+      <div class="ep-civp-header"><span class="ep-civp-flag">⚜️🔥</span><div><div class="ep-civp-name">Jeanne d'Arc</div><div class="ep-civp-playstyle">Hero persistant - le booste d'armee le plus puissant de L'Épreuve</div></div></div>
+      <div class="ep-civp-grid">
+        <div class="ep-civp-block"><div class="ep-civp-block-title">⚡ Forces dans L'Épreuve</div><ul class="ep-civp-list">
+          <li>Jeanne : hero unique persistant qui booste toutes les unites proches - son aura active en permanence est le meilleur buff d'armee du jeu.</li>
+          <li>Resurrection : si Jeanne tombe, elle revient apres 120 secondes - ne perdez jamais la run a cause d'elle.</li>
+          <li>Formes adaptables : Champion (combat), Commandante (production), Mystique (soutien) - s'ajuster selon la phase de jeu.</li>
+        </ul></div>
+        <div class="ep-civp-block"><div class="ep-civp-block-title">🏗️ Build Order de depart</div><ol class="ep-civp-bo">
+          <li>Jeanne en forme Commandante pour booster la production initiale</li>
+          <li>5 vills nourriture</li>
+          <li>3 vills bois</li>
+          <li>2 vills or</li>
+          <li>Hommes d'Armes en continu depuis la caserne (synergie aura)</li>
+          <li>Passer Jeanne en Champion a la premiere vague importante</li>
+        </ol></div>
+        <div class="ep-civp-block"><div class="ep-civp-block-title">✨ Boons Prioritaires</div><div class="ep-civp-boons">
+          <div class="ep-civp-boon"><div class="ep-civp-boon-name">Forge de Guerre</div><div class="ep-civp-boon-why">Jeanne Champion + Boon degats : le hero seul fait autant de degats que 4 Hommes d'Armes normaux.</div></div>
+          <div class="ep-civp-boon"><div class="ep-civp-boon-name">Caserne Acceleree</div><div class="ep-civp-boon-why">Les Hommes d'Armes sont la force principale - les produire plus vite evite les periodes sans armee.</div></div>
+          <div class="ep-civp-boon"><div class="ep-civp-boon-name">Chevaliers d'Elite</div><div class="ep-civp-boon-why">Si pivot vers cavalerie, Jeanne Commandante booste aussi la cavalerie - set tres puissant en mid-game.</div></div>
+        </div></div>
+        <div class="ep-civp-block"><div class="ep-civp-block-title">🎯 Conseils par Difficulté</div><div class="ep-civp-difftips">
+          <div class="ep-civp-difftip"><span class="ep-civp-diff-badge green">Facile / Inter</span><span>Jeanne Champion en front avec 6-8 Hommes d'Armes suffit jusqu'a 35 minutes sans micro avance.</span></div>
+          <div class="ep-civp-difftip"><span class="ep-civp-diff-badge gold">Hard / Hardest</span><span>Jeanne Commandante derriere la ligne pour le boost de production - switch en Champion uniquement lors des vagues critiques.</span></div>
+          <div class="ep-civp-difftip"><span class="ep-civp-diff-badge red">Expert</span><span>Ne jamais laisser Jeanne en premiere ligne seule aux niveaux 7-8 - si elle tombe, 120 secondes sans hero = catastrophe.</span></div>
+        </div></div>
+      </div>
+    </div></div>
+
+    <!-- ─── ORDRE DU DRAGON ─── -->
+    <div id="epciv-ordresmoines" class="ep-civ-panel"><div class="ep-civp-inner">
+      <div class="ep-civp-header"><span class="ep-civp-flag">✝️</span><div><div class="ep-civp-name">Ordre du Dragon</div><div class="ep-civp-playstyle">Regeneration et Chevaliers Dragons - la survie absolue sur la duree</div></div></div>
+      <div class="ep-civp-grid">
+        <div class="ep-civp-block"><div class="ep-civp-block-title">⚡ Forces dans L'Épreuve</div><ul class="ep-civp-list">
+          <li>Chevaliers Dragons : cavalerie lourde regenerant des PV hors combat - les runs longues jouent en leur faveur, les pertes s'auto-reparent.</li>
+          <li>Bapteme par le Feu : les unites regagnent des PV pres des lieux de culte - positionner les Monasteres strategiquement pres du front.</li>
+          <li>Monture de Dragon : forme speciale de Chevalier avec capacites de soin actives - un soutien de combat unique.</li>
+        </ul></div>
+        <div class="ep-civp-block"><div class="ep-civp-block-title">🏗️ Build Order de depart</div><ol class="ep-civp-bo">
+          <li>5 vills nourriture</li>
+          <li>3 vills bois</li>
+          <li>3 vills or (les Chevaliers Dragons coutent cher)</li>
+          <li>Monastere en position de midfield pour la regeneration</li>
+          <li>3-4 Chevaliers Dragons des le Féodal</li>
+          <li>Lieux de culte sur les flancs pour regeneration avancee</li>
+        </ol></div>
+        <div class="ep-civp-block"><div class="ep-civp-block-title">✨ Boons Prioritaires</div><div class="ep-civp-boons">
+          <div class="ep-civp-boon"><div class="ep-civp-boon-name">Regeneration de la Merveille</div><div class="ep-civp-boon-why">Le theme de regeneration de la civ se prolonge a la Merveille - tout se repare entre les vagues.</div></div>
+          <div class="ep-civp-boon"><div class="ep-civp-boon-name">Armure Lourde</div><div class="ep-civp-boon-why">Chevaliers Dragons + Armure Lourde = quasiment indestructibles. La penalite de vitesse ne compte pas pour une civ statique.</div></div>
+          <div class="ep-civp-boon"><div class="ep-civp-boon-name">Murs Renforcees</div><div class="ep-civp-boon-why">Canaliser les vagues vers les zones ou les Chevaliers peuvent regenerer entre les combats - synergie parfaite.</div></div>
+        </div></div>
+        <div class="ep-civp-block"><div class="ep-civp-block-title">🎯 Conseils par Difficulté</div><div class="ep-civp-difftips">
+          <div class="ep-civp-difftip"><span class="ep-civp-diff-badge green">Facile / Inter</span><span>4 Chevaliers Dragons avec 1 Monastere central : se soignent seuls entre chaque vague - aucune gestion des pertes requise.</span></div>
+          <div class="ep-civp-difftip"><span class="ep-civp-diff-badge gold">Hard / Hardest</span><span>2 Monasteres + Regeneration Merveille : la base entiere se regenere pendant les inter-vagues, minimisant les pertes nettes.</span></div>
+          <div class="ep-civp-difftip"><span class="ep-civp-diff-badge red">Expert</span><span>Les Chevaliers Dragons sont la seule cavalerie viable en niveau 8 grace a la regen - ne jamais les remplacer par autre chose.</span></div>
+        </div></div>
+      </div>
+    </div></div>
+
+    <!-- ─── TEMPLIERS ─── -->
+    <div id="epciv-templiers" class="ep-civ-panel"><div class="ep-civp-inner">
+      <div class="ep-civp-header"><span class="ep-civp-flag">✝️⚔️</span><div><div class="ep-civp-name">Templiers</div><div class="ep-civp-playstyle">Commanderie regenerante - le bastion le plus inexpugnable de L'Épreuve</div></div></div>
+      <div class="ep-civp-grid">
+        <div class="ep-civp-block"><div class="ep-civp-block-title">⚡ Forces dans L'Épreuve</div><ul class="ep-civp-list">
+          <li>Commanderie : batiment qui regenere les Chevaliers Templiers au repos - les pertes disparaissent entre chaque vague.</li>
+          <li>Chevaliers Templiers : cavalerie lourde avec bonus de resistance aux degats des structures ennemies - ideale face aux machines de siege.</li>
+          <li>Croix Templiere : formation defensive qui repousse les attaquants et protege la zone de la Commanderie.</li>
+        </ul></div>
+        <div class="ep-civp-block"><div class="ep-civp-block-title">🏗️ Build Order de depart</div><ol class="ep-civp-bo">
+          <li>4 vills nourriture</li>
+          <li>3 vills bois</li>
+          <li>4 vills pierre (Commanderie + murs)</li>
+          <li>Commanderie en position centrale pres de la Merveille</li>
+          <li>3 Chevaliers Templiers des le Féodal</li>
+          <li>Formation Croix Templiere en front permanent</li>
+        </ol></div>
+        <div class="ep-civp-block"><div class="ep-civp-block-title">✨ Boons Prioritaires</div><div class="ep-civp-boons">
+          <div class="ep-civp-boon"><div class="ep-civp-boon-name">Murs Renforcees</div><div class="ep-civp-boon-why">Commanderie + murs PV x2 = forteresse concentrique - les vagues n'atteignent jamais les Chevaliers derriere.</div></div>
+          <div class="ep-civp-boon"><div class="ep-civp-boon-name">Regeneration de la Merveille</div><div class="ep-civp-boon-why">Synergy avec la Commanderie : tout se regenere entre les vagues - la Merveille et les Chevaliers simultanement.</div></div>
+          <div class="ep-civp-boon"><div class="ep-civp-boon-name">Bastions de Pierre</div><div class="ep-civp-boon-why">Tours aux 4 coins de la Commanderie + portee +50% : une zone de mort avant meme les murs.</div></div>
+        </div></div>
+        <div class="ep-civp-block"><div class="ep-civp-block-title">🎯 Conseils par Difficulté</div><div class="ep-civp-difftips">
+          <div class="ep-civp-difftip"><span class="ep-civp-diff-badge green">Facile / Inter</span><span>Commanderie + 4 Chevaliers : se regenerent apres chaque vague, jamais de renouvellement necessaire.</span></div>
+          <div class="ep-civp-difftip"><span class="ep-civp-diff-badge gold">Hard / Hardest</span><span>Tours aux 4 coins de la Commanderie pour couvrir les angles que les Chevaliers ne peuvent pas couvrir.</span></div>
+          <div class="ep-civp-difftip"><span class="ep-civp-diff-badge red">Expert</span><span>Les Templiers sont la meilleure civ pour absorber les premiers assauts des niveaux 7-8 : solides, regenerants, inexpugnables.</span></div>
+        </div></div>
+      </div>
+    </div></div>
+
+    <!-- ─── LANCASTER ─── -->
+    <div id="epciv-lancaster" class="ep-civ-panel"><div class="ep-civp-inner">
+      <div class="ep-civp-header"><span class="ep-civp-flag">🌹</span><div><div class="ep-civp-name">Lancaster</div><div class="ep-civp-playstyle">Manor Houses passives + Vassaux - economie auto-financee</div></div></div>
+      <div class="ep-civp-grid">
+        <div class="ep-civp-block"><div class="ep-civp-block-title">⚡ Forces dans L'Épreuve</div><ul class="ep-civp-list">
+          <li>Manor Houses : generent nourriture et or passifs en continu - revenus stables sans assigner de villageois supplementaires.</li>
+          <li>Longbowmen ameliores : cadence de tir superieure avec les recherches specifiques Lancaster - plus de DPS que les Anglais standards.</li>
+          <li>Vassaux : recruter des types d'unites varies selon le seigneur choisi - Spearmen, Chevaliers ou Arbaletriers selon la menace.</li>
+        </ul></div>
+        <div class="ep-civp-block"><div class="ep-civp-block-title">🏗️ Build Order de depart</div><ol class="ep-civp-bo">
+          <li>3 Manor Houses en priorite absolue (revenus passifs)</li>
+          <li>4 vills bois</li>
+          <li>3 vills pierre (defenses)</li>
+          <li>Longbowmen depuis le Manor Hall des le Féodal</li>
+          <li>Vassaux Spearmen en Hard, Chevaliers en Expert</li>
+          <li>2 vills or pour les ameliorations critiques</li>
+        </ol></div>
+        <div class="ep-civp-block"><div class="ep-civp-block-title">✨ Boons Prioritaires</div><div class="ep-civp-boons">
+          <div class="ep-civp-boon"><div class="ep-civp-boon-name">Commerce Royal</div><div class="ep-civp-boon-why">Se cumule avec les Manor Houses : les deux sources passives d'or rendent le financement militaire presque illimite.</div></div>
+          <div class="ep-civp-boon"><div class="ep-civp-boon-name">Bastions de Pierre</div><div class="ep-civp-boon-why">Longbowmen Lancaster ameliores + tours portee +50% = le mur de fleches le plus efficace de tout le jeu.</div></div>
+          <div class="ep-civp-boon"><div class="ep-civp-boon-name">Recolte Intensive</div><div class="ep-civp-boon-why">Les vills couvrent moins de types de ressources - Recolte Intensive compense en amplifiant chaque ressource recoltee.</div></div>
+        </div></div>
+        <div class="ep-civp-block"><div class="ep-civp-block-title">🎯 Conseils par Difficulté</div><div class="ep-civp-difftips">
+          <div class="ep-civp-difftip"><span class="ep-civp-diff-badge green">Facile / Inter</span><span>3 Manor Houses + Commerce Royal financent toute la run - ne plus jamais se preoccuper de l'or.</span></div>
+          <div class="ep-civp-difftip"><span class="ep-civp-diff-badge gold">Hard / Hardest</span><span>Vassaux Spearmen en front pour absorber + Longbowmen derriere pour le DPS - combo ou chaque unite fait son travail.</span></div>
+          <div class="ep-civp-difftip"><span class="ep-civp-diff-badge red">Expert</span><span>Les Longbowmen Lancaster avec toutes les recherches sont les meilleurs archers du jeu - investir en priorite dans leurs ameliorations.</span></div>
+        </div></div>
+      </div>
+    </div></div>
+
+    <!-- ─── HORDE D'OR ─── -->
+    <div id="epciv-hordedor" class="ep-civ-panel"><div class="ep-civp-inner">
+      <div class="ep-civp-header"><span class="ep-civp-flag">🐎</span><div><div class="ep-civp-name">Horde d'Or</div><div class="ep-civp-playstyle">Yam Network + Kipchak - vitesse et DPS de kite maximaux</div></div></div>
+      <div class="ep-civp-grid">
+        <div class="ep-civp-block"><div class="ep-civp-block-title">⚡ Forces dans L'Épreuve</div><ul class="ep-civp-list">
+          <li>Yam Network : augmente la vitesse de mouvement de toutes les unites - les repositionnements d'une vague a l'autre sont deux fois plus rapides.</li>
+          <li>Kipchak : archer monte tirant 3 fleches par salve, DPS massif en kite - presque aucune perte possible avec un bon micro.</li>
+          <li>Tumen : cavalerie d'elite tres puissante avec hauts PV, complementaire du Kipchak pour couvrir les brèches.</li>
+        </ul></div>
+        <div class="ep-civp-block"><div class="ep-civp-block-title">🏗️ Build Order de depart</div><ol class="ep-civp-bo">
+          <li>5 vills nourriture</li>
+          <li>3 vills bois</li>
+          <li>2 vills or</li>
+          <li>Yam Network en priorite immediate (avant les casernes)</li>
+          <li>Kipchak depuis 2 ecuries en parallele</li>
+          <li>Tumen des le passage en Chateau</li>
+        </ol></div>
+        <div class="ep-civp-block"><div class="ep-civp-block-title">✨ Boons Prioritaires</div><div class="ep-civp-boons">
+          <div class="ep-civp-boon"><div class="ep-civp-boon-name">Chevaliers d'Elite</div><div class="ep-civp-boon-why">Tumen avec +30% PV : la cavalerie lourde la plus resistante du jeu, capable d'absorber les assauts des vagues d'elite.</div></div>
+          <div class="ep-civp-boon"><div class="ep-civp-boon-name">Caserne Acceleree</div><div class="ep-civp-boon-why">Kipchak spam depuis 2 ecuries + Boon = une pluie de salves ininterrompue qui ne laisse aucun ennemi s'approcher.</div></div>
+          <div class="ep-civp-boon"><div class="ep-civp-boon-name">Forge de Guerre</div><div class="ep-civp-boon-why">Bonus immediat en unites + les Kipchak existants amplifient leurs 3 fleches par salve - tres rentable au moment du choix.</div></div>
+        </div></div>
+        <div class="ep-civp-block"><div class="ep-civp-block-title">🎯 Conseils par Difficulté</div><div class="ep-civp-difftips">
+          <div class="ep-civp-difftip"><span class="ep-civp-diff-badge green">Facile / Inter</span><span>Kipchak en kite autour de la Merveille : les 4 premieres vagues disparaissent sans presque aucune perte.</span></div>
+          <div class="ep-civp-difftip"><span class="ep-civp-diff-badge gold">Hard / Hardest</span><span>Tumen en melee (front) + Kipchak en kite (exterieur) : combo qui couvre toutes les situations sans point faible.</span></div>
+          <div class="ep-civp-difftip"><span class="ep-civp-diff-badge red">Expert</span><span>Le Yam Network donne un avantage de repositionnement crucial aux niveaux 7-8 : toujours etre en place avant la vague, jamais en retard.</span></div>
+        </div></div>
+      </div>
+    </div></div>
+
+    <!-- ─── MACEDONIENNE ─── -->
+    <div id="epciv-macedonienne" class="ep-civ-panel"><div class="ep-civp-inner">
+      <div class="ep-civp-header"><span class="ep-civp-flag">⚡</span><div><div class="ep-civp-name">Macédonienne</div><div class="ep-civp-playstyle">Galena Gathering + Varangian Guard - argent passif et infanterie nordique</div></div></div>
+      <div class="ep-civp-grid">
+        <div class="ep-civp-block"><div class="ep-civp-block-title">⚡ Forces dans L'Épreuve</div><ul class="ep-civp-list">
+          <li>Galena Gathering : les villageois sur or et pierre generent automatiquement de l'argent, qui finance l'Arsenal Varegue sans sacrifier l'economie classique.</li>
+          <li>Varangian Guard : infanterie lourde unique disponible des le Feodal depuis la Forteresse Varegue, ideale pour tenir le front pres de la Merveille.</li>
+          <li>Cataphractes et Cheirosiphons herites des Byzantins pour scaler en Chateau/Imperial.</li>
+        </ul></div>
+        <div class="ep-civp-block"><div class="ep-civp-block-title">🏗️ Build Order de depart</div><ol class="ep-civp-bo">
+          <li>5 vills nourriture</li>
+          <li>3 vills bois</li>
+          <li>2 vills or + 1 vill pierre (Galena Gathering)</li>
+          <li>Forteresse Varegue des le Feodal -> Varangian Guard</li>
+          <li>Atgeirmaðr/Bogmaðr en soutien de la Varangian Guard</li>
+          <li>Arsenal Varegue : premiers paliers payes en argent</li>
+        </ol></div>
+        <div class="ep-civp-block"><div class="ep-civp-block-title">✨ Boons Prioritaires</div><div class="ep-civp-boons">
+          <div class="ep-civp-boon"><div class="ep-civp-boon-name">Armure Lourde</div><div class="ep-civp-boon-why">Varangian Guard et Cataphractes -25% degats recus : un front quasi indestructible pres de la Merveille.</div></div>
+          <div class="ep-civp-boon"><div class="ep-civp-boon-name">Forge de Guerre</div><div class="ep-civp-boon-why">Varangian Guard et Atgeirmaðr +20% degats : la pression Feodal devient devastatrice.</div></div>
+          <div class="ep-civp-boon"><div class="ep-civp-boon-name">Bastions de Pierre</div><div class="ep-civp-boon-why">Golden Horn Tower et tours + portee +50% : defense d'arbaletriers renforcee derriere la Varangian Guard.</div></div>
+        </div></div>
+        <div class="ep-civp-block"><div class="ep-civp-block-title">🎯 Conseils par Difficulté</div><div class="ep-civp-difftips">
+          <div class="ep-civp-difftip"><span class="ep-civp-diff-badge green">Facile / Inter</span><span>Varangian Guard en front gere les premieres vagues sans aide grace a ses PV eleves et sa capacite de berserk.</span></div>
+          <div class="ep-civp-difftip"><span class="ep-civp-diff-badge gold">Hard / Hardest</span><span>Varangian Guard + Bogmaðr en soutien pour percer l'armure des unites lourdes ennemies.</span></div>
+          <div class="ep-civp-difftip"><span class="ep-civp-diff-badge red">Expert</span><span>Galena Gathering bien geree = Arsenal Varegue maximise avant le Chateau, pour des Cataphractes ameliores en defense de Merveille.</span></div>
+        </div></div>
+      </div>
+    </div></div>
+
+    <!-- ─── SENGOKU DAIMYO ─── -->
+    <div id="epciv-sengokudaimyo" class="ep-civ-panel"><div class="ep-civp-inner">
+      <div class="ep-civp-header"><span class="ep-civp-flag">⛩️</span><div><div class="ep-civp-name">Sengoku Daimyo</div><div class="ep-civp-playstyle">Daimyo Estate - clan au choix et economie alimentaire continue</div></div></div>
+      <div class="ep-civp-grid">
+        <div class="ep-civp-block"><div class="ep-civp-block-title">⚡ Forces dans L'Épreuve</div><ul class="ep-civp-list">
+          <li>Daimyo Estate (Hojo/Oda/Takeda) : choisis le clan adapte au matchup - infanterie de melee, infanterie a distance ou cavalerie.</li>
+          <li>Daimyo : cavalerie lourde heroique dont l'aura de vitesse d'attaque persiste meme apres sa mort - ideal pres de la Merveille.</li>
+          <li>Yatai + Matsuri : economie de nourriture qui ne s'epuise jamais, avec gibier revele des le debut.</li>
+        </ul></div>
+        <div class="ep-civp-block"><div class="ep-civp-block-title">🏗️ Build Order de depart</div><ol class="ep-civp-bo">
+          <li>5 vills nourriture</li>
+          <li>4 vills bois</li>
+          <li>Yatai sur le gibier revele des le debut</li>
+          <li>2 vills or</li>
+          <li>Ryokan en Feodal (population + soin hors combat)</li>
+          <li>Daimyo Estate selon le matchup, puis Daimyo en soutien</li>
+        </ol></div>
+        <div class="ep-civp-block"><div class="ep-civp-block-title">✨ Boons Prioritaires</div><div class="ep-civp-boons">
+          <div class="ep-civp-boon"><div class="ep-civp-boon-name">Caserne Acceleree</div><div class="ep-civp-boon-why">Production continue de Yari Cavalry, Yumi Ashigaru ou Tanegashima Ashigaru selon le clan choisi - l'armee se renouvelle sans interruption.</div></div>
+          <div class="ep-civp-boon"><div class="ep-civp-boon-name">Forge de Guerre</div><div class="ep-civp-boon-why">Kanabo Samurai et Tanegashima Ashigaru +20% degats : les vagues ennemies tombent plus vite, surtout face a des unites a hauts PV.</div></div>
+          <div class="ep-civp-boon"><div class="ep-civp-boon-name">Recolte Intensive</div><div class="ep-civp-boon-why">Complete l'economie Matsuri/Yatai pour financer le Daimyo Estate et les Daimyo, unites couteuses mais decisives.</div></div>
+        </div></div>
+        <div class="ep-civp-block"><div class="ep-civp-block-title">🎯 Conseils par Difficulté</div><div class="ep-civp-difftips">
+          <div class="ep-civp-difftip"><span class="ep-civp-diff-badge green">Facile / Inter</span><span>Le Matsuri et les Yatai couvrent la nourriture sans effort - concentre-toi sur la production militaire du clan choisi.</span></div>
+          <div class="ep-civp-difftip"><span class="ep-civp-diff-badge gold">Hard / Hardest</span><span>Le Daimyo en reserve avec son aura de vitesse d'attaque transforme chaque combat pres de la Merveille en victoire.</span></div>
+          <div class="ep-civp-difftip"><span class="ep-civp-diff-badge red">Expert</span><span>Kanabo Samurai (Hojo) avec Armure Lourde : leurs degats proportionnels aux PV ennemis percent meme les unites les plus tanky.</span></div>
+        </div></div>
+      </div>
+    </div></div>
+
+    <!-- ─── TUGHLUQ ─── -->
+    <div id="epciv-tughluq" class="ep-civ-panel"><div class="ep-civp-inner">
+      <div class="ep-civp-header"><span class="ep-civp-flag">🕌</span><div><div class="ep-civp-name">Tughluq</div><div class="ep-civp-playstyle">Worker Elephants + Tower of Victory - economie mobile et elephants accelerees</div></div></div>
+      <div class="ep-civp-grid">
+        <div class="ep-civp-block"><div class="ep-civp-block-title">⚡ Forces dans L'Épreuve</div><ul class="ep-civp-list">
+          <li>Worker Elephants : remplacent Moulin/Camp de Bois/Camp Minier - depots mobiles places au plus pres de chaque vague de ressources.</li>
+          <li>Tower of Victory : +20% vitesse d'attaque pour tous les elephants dans sa zone d'influence - synergie directe avec Raider/Ballista/Healer Elephant.</li>
+          <li>Erudition : toutes les technologies (hors emplacements) en 5 secondes - rattrape le retard tech meme avec un temps limite.</li>
+        </ul></div>
+        <div class="ep-civp-block"><div class="ep-civp-block-title">🏗️ Build Order de depart</div><ol class="ep-civp-bo">
+          <li>5 vills nourriture</li>
+          <li>3 vills bois</li>
+          <li>2 vills pierre</li>
+          <li>2 vills or</li>
+          <li>Worker Elephants places sur les ressources eloignees des l'age Sombre</li>
+          <li>Tower of Victory en Feodal pres de la zone de combat</li>
+        </ol></div>
+        <div class="ep-civp-block"><div class="ep-civp-block-title">✨ Boons Prioritaires</div><div class="ep-civp-boons">
+          <div class="ep-civp-boon"><div class="ep-civp-boon-name">Récolte Intensive</div><div class="ep-civp-boon-why">Compense le surcout de 20% d'Erudition sur chaque technologie recherchee.</div></div>
+          <div class="ep-civp-boon"><div class="ep-civp-boon-name">Armure Lourde</div><div class="ep-civp-boon-why">Raider/Ballista/Healer Elephant -25% degats : des tanks quasi indestructibles sous la Tower of Victory.</div></div>
+          <div class="ep-civp-boon"><div class="ep-civp-boon-name">Forge de Guerre</div><div class="ep-civp-boon-why">+20% degats pour les elephants, combine avec le bonus de vitesse d'attaque de la Tower of Victory.</div></div>
+        </div></div>
+        <div class="ep-civp-block"><div class="ep-civp-block-title">🎯 Conseils par Difficulté</div><div class="ep-civp-difftips">
+          <div class="ep-civp-difftip"><span class="ep-civp-diff-badge green">Facile / Inter</span><span>Place les Worker Elephants pres de chaque vague de ressources pour eviter les trajets inutiles.</span></div>
+          <div class="ep-civp-difftip"><span class="ep-civp-diff-badge gold">Hard / Hardest</span><span>Construis la Tower of Victory au centre de la zone de defense : tous les elephants en beneficient en continu.</span></div>
+          <div class="ep-civp-difftip"><span class="ep-civp-diff-badge red">Expert</span><span>Active un Gouverneur de Fort de Tughlaqabad adapte (Multan pour la production, Ajmer pour les Amir Warriors gratuits) selon la vague.</span></div>
+        </div></div>
+      </div>
+    </div></div>
+
+    <!-- ─── DYNASTIE JIN ─── -->
+    <div id="epciv-jindynasty" class="ep-civ-panel"><div class="ep-civp-inner">
+      <div class="ep-civp-header"><span class="ep-civp-flag">🏮</span><div><div class="ep-civp-name">Dynastie Jin</div><div class="ep-civp-playstyle">Systeme de murs + Arbaletriers - la defense la plus solide a bas cout</div></div></div>
+      <div class="ep-civp-grid">
+        <div class="ep-civp-block"><div class="ep-civp-block-title">⚡ Forces dans L'Épreuve</div><ul class="ep-civp-list">
+          <li>Systeme de murs avance : bonus de construction de murs + gardes sur les chemins de ronde - une enceinte vivante et active.</li>
+          <li>Arbaletriers specialises : haut DPS avec bonus de degats contre les unites blindees - parfaits pour les vagues d'elite en armure.</li>
+          <li>Cavalerie Jurchen : cavalerie lourde blindee unique avec stats de base superieures pour les contre-attaques decisives.</li>
+        </ul></div>
+        <div class="ep-civp-block"><div class="ep-civp-block-title">🏗️ Build Order de depart</div><ol class="ep-civp-bo">
+          <li>4 vills nourriture</li>
+          <li>3 vills bois</li>
+          <li>4 vills pierre (systeme de murs en priorite)</li>
+          <li>Murs en demi-cercle devant la Merveille des la minute 3</li>
+          <li>Arbaletriers en garnison dans les tours</li>
+          <li>Cavalerie Jurchen au Féodal pour les contre-attaques</li>
+        </ol></div>
+        <div class="ep-civp-block"><div class="ep-civp-block-title">✨ Boons Prioritaires</div><div class="ep-civp-boons">
+          <div class="ep-civp-boon"><div class="ep-civp-boon-name">Murs Renforcees</div><div class="ep-civp-boon-why">Le bonus de murs Dynastie Jin + PV x2 = les murs les plus epais du jeu. Pratiquement impenetrables meme en niveau 8.</div></div>
+          <div class="ep-civp-boon"><div class="ep-civp-boon-name">Bastions de Pierre</div><div class="ep-civp-boon-why">Arbaletriers en garnison dans les tours + portee +50% = zone de mort absolue avant les murs.</div></div>
+          <div class="ep-civp-boon"><div class="ep-civp-boon-name">Chevaliers d'Elite</div><div class="ep-civp-boon-why">Cavalerie Jurchen avec +30% PV : les meilleures unites de contre-attaque du jeu pour nettoyer les percees.</div></div>
+        </div></div>
+        <div class="ep-civp-block"><div class="ep-civp-block-title">🎯 Conseils par Difficulté</div><div class="ep-civp-difftips">
+          <div class="ep-civp-difftip"><span class="ep-civp-diff-badge green">Facile / Inter</span><span>Murs en demi-cercle + Arbaletriers en garnison : defense passive optimale qui se gere seule.</span></div>
+          <div class="ep-civp-difftip"><span class="ep-civp-diff-badge gold">Hard / Hardest</span><span>Double couche de murs + Bastions de Pierre : les vagues ne passent pas avant la minute 35 meme sans micro.</span></div>
+          <div class="ep-civp-difftip"><span class="ep-civp-diff-badge red">Expert</span><span>Cavalerie Jurchen en reserve pour les percees locales quand les murs cedent sous pression continue.</span></div>
+        </div></div>
+      </div>
+    </div></div>
+
+  </div>
+
+  <!-- ═══ 9. PLAN DE JEU ═══ -->
+  <div class="section ep-section-panel ep-visible" id="ep-planjeu" style="margin-bottom:2.5rem;">
+    <div class="section-title"><span class="section-icon">📋</span>Plan de Jeu Personnalise</div>
+    <p style="font-size:.92rem;color:var(--text-muted);font-style:italic;margin-bottom:1.2rem;">Configurez votre partie et obtenez un plan complet adapte a votre civilisation, votre map et votre niveau de difficulté.</p>
+
+    <!-- Formulaire -->
+    <div class="ep-plan-form">
+      <div class="ep-plan-selects">
+        <div class="ep-plan-field">
+          <label>🗺️ Map</label>
+          <select id="ep-plan-map">
+            <option value="cote">Cote Contestee</option>
+            <option value="vallee">Vallee Sacree</option>
+            <option value="steppes">Steppes Brulantes</option>
+            <option value="desert">Remparts du Desert</option>
+          </select>
+        </div>
+        <div class="ep-plan-field">
+          <label>⚔️ Difficulté</label>
+          <select id="ep-plan-diff">
+            <option value="facile">Facile</option>
+            <option value="inter">Intermédiaire</option>
+            <option value="hard">Hard</option>
+            <option value="hardest">Hardest</option>
+            <option value="ridiculous">Ridiculous</option>
+            <option value="outrageous">Outrageous</option>
+            <option value="absurde">Absurde</option>
+            <option value="conquerant">Conquerant</option>
+          </select>
+        </div>
+        <div class="ep-plan-field">
+          <label>🛡️ Civilisation</label>
+          <select id="ep-plan-civ">
+            <option value="anglais">🏴󠁧󠁢󠁥󠁮󠁧󠁿 Anglais</option>
+            <option value="francais">⚜️ Francais</option>
+            <option value="hre">🦅 Saint-Empire</option>
+            <option value="mongols">🏹 Mongols</option>
+            <option value="rus">🪶 Rus</option>
+            <option value="abbasides">🌙 Abbasides</option>
+            <option value="ottomans">🌺 Ottomans</option>
+            <option value="mali">🌞 Mali</option>
+            <option value="byzantins">🔱 Byzantins</option>
+            <option value="chine">🐉 Chine</option>
+            <option value="delhi">🐘 Delhi Sultanat</option>
+            <option value="japonais">🌸 Japonais</option>
+            <option value="zhuxilegacy">🏯 Heritage de Zhu Xi</option>
+            <option value="ayyoubides">⚔️ Ayyoubides</option>
+            <option value="jeannedarc">⚜️🔥 Jeanne d'Arc</option>
+            <option value="ordresmoines">✝️ Ordre du Dragon</option>
+            <option value="templiers">✝️⚔️ Templiers</option>
+            <option value="lancaster">🌹 Lancaster</option>
+            <option value="hordedor">🐎 Horde d'Or</option>
+            <option value="macedonienne">⚡ Macédonienne</option>
+            <option value="sengokudaimyo">⛩️ Sengoku Daimyo</option>
+            <option value="tughluq">🕌 Tughluq</option>
+            <option value="jindynasty">🏮 Dynastie Jin</option>
+          </select>
+        </div>
+      </div>
+      <button class="ep-plan-btn" onclick="renderEpPlan()">Generer le Plan de Jeu</button>
+    </div>
+
+    <!-- Resultats -->
+    <div id="ep-plan-result" class="ep-plan-result">
+      <div class="ep-plan-header">
+        <span class="ep-plan-header-flag"></span>
+        <div class="ep-plan-header-info">
+          <div class="ep-plan-header-title"></div>
+          <div class="ep-plan-header-meta"></div>
+        </div>
+      </div>
+
+      <div class="ep-plan-blocks">
+        <!-- Bloc 1 - Build Order -->
+        <div class="ep-plan-block">
+          <div class="ep-plan-block-title">🏗️ Build Order de depart</div>
+          <div id="ep-plan-bo-content"></div>
+        </div>
+
+        <!-- Bloc 2 - Defense -->
+        <div class="ep-plan-block">
+          <div class="ep-plan-block-title">🛡️ Strategie de defense</div>
+          <div id="ep-plan-def-content"></div>
+        </div>
+
+        <!-- Bloc 3 - Boons -->
+        <div class="ep-plan-block">
+          <div class="ep-plan-block-title">✨ Boons recommandes dans l'ordre</div>
+          <div id="ep-plan-boons-content" class="ep-plan-boons"></div>
+        </div>
+
+        <!-- Bloc 4 - Phases -->
+        <div class="ep-plan-block full">
+          <div class="ep-plan-block-title">📅 Plan par phase de jeu</div>
+          <div id="ep-plan-phases-content"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ 10. NIVEAUX DE DIFFICULTE ═══ -->
+  <div class="section ep-section-panel" id="ep-difficultes" style="margin-bottom:2.5rem;">
+    <div class="section-title"><span class="section-icon">🎯</span>Les 8 Niveaux de Difficulté</div>
+    <p style="font-size:.92rem;color:var(--text-muted);font-style:italic;margin-bottom:1.2rem;">Chaque niveau augmente l'agressivite, la resistance et la vitesse des vagues ennemies. Le niveau se choisit avant chaque run et ne peut pas etre modifie en cours de partie.</p>
+    <div class="ep-diff-list">
+
+      <div class="ep-diff-row">
+        <div class="ep-diff-n">1</div>
+        <div class="ep-diff-info">
+          <div class="ep-diff-name">Pionnier</div>
+          <div class="ep-diff-desc">Introduction au mode. Vagues espacees, ennemis sans armure. Ideal pour decouvrir les mecaniques et tester des compositions defensives.</div>
+        </div>
+        <div class="ep-diff-bar-wrap">
+          <div class="ep-diff-bar"><div class="ep-diff-fill" style="width:12%;background:#5abf7a;"></div></div>
+        </div>
+      </div>
+
+      <div class="ep-diff-row">
+        <div class="ep-diff-n">2</div>
+        <div class="ep-diff-info">
+          <div class="ep-diff-name">Milicien</div>
+          <div class="ep-diff-desc">Frequence des vagues legèrement augmentee. Les ennemis ont +10% de PV. Premiere introduction aux archers lances depuis des positions hautes.</div>
+        </div>
+        <div class="ep-diff-bar-wrap">
+          <div class="ep-diff-bar"><div class="ep-diff-fill" style="width:25%;background:#7ac870;"></div></div>
+        </div>
+      </div>
+
+      <div class="ep-diff-row">
+        <div class="ep-diff-n">3</div>
+        <div class="ep-diff-info">
+          <div class="ep-diff-name">Sergent</div>
+          <div class="ep-diff-desc">Ennemis avec armure de base (+15% resistance aux degats). Compositions mixtes infanterie et archers. Premiere vague de cavalerie legere a la minute 12.</div>
+        </div>
+        <div class="ep-diff-bar-wrap">
+          <div class="ep-diff-bar"><div class="ep-diff-fill" style="width:37%;background:#a8c040;"></div></div>
+        </div>
+      </div>
+
+      <div class="ep-diff-row">
+        <div class="ep-diff-n">4</div>
+        <div class="ep-diff-info">
+          <div class="ep-diff-name">Capitaine</div>
+          <div class="ep-diff-desc">Compositions variees avec sous-officiers ennemis qui renforcent les unites proches. Cavalerie lourde integree dans les vagues a partir de la minute 20.</div>
+        </div>
+        <div class="ep-diff-bar-wrap">
+          <div class="ep-diff-bar"><div class="ep-diff-fill" style="width:50%;background:#c8a830;"></div></div>
+        </div>
+      </div>
+
+      <div class="ep-diff-row">
+        <div class="ep-diff-n">5</div>
+        <div class="ep-diff-info">
+          <div class="ep-diff-name">Chevalier</div>
+          <div class="ep-diff-desc">Groupes d'elite apparaissent des la vague 8. Les ennemis ont +25% de PV et +15% de degats. Les vagues se rapprochent : le temps de recuperation est reduit.</div>
+        </div>
+        <div class="ep-diff-bar-wrap">
+          <div class="ep-diff-bar"><div class="ep-diff-fill" style="width:62%;background:#d09020;"></div></div>
+        </div>
+      </div>
+
+      <div class="ep-diff-row">
+        <div class="ep-diff-n">6</div>
+        <div class="ep-diff-info">
+          <div class="ep-diff-name">Commandant</div>
+          <div class="ep-diff-desc">Double front d'attaque possible apres 30 minutes. Engins de siege ennemis (trebuchets, springalds) introduits tot. Resistance globale +35%.</div>
+        </div>
+        <div class="ep-diff-bar-wrap">
+          <div class="ep-diff-bar"><div class="ep-diff-fill" style="width:75%;background:#e07020;"></div></div>
+        </div>
+      </div>
+
+      <div class="ep-diff-row">
+        <div class="ep-diff-n">7</div>
+        <div class="ep-diff-info">
+          <div class="ep-diff-name">Marechal</div>
+          <div class="ep-diff-desc">Heros ennemis renforcant les vagues a partir de la minute 15. Unites geantes (elephants de guerre, catapultes monumentales) incluses dans les assauts lourds. Debloque le mode Conquerant.</div>
+        </div>
+        <div class="ep-diff-bar-wrap">
+          <div class="ep-diff-bar"><div class="ep-diff-fill" style="width:87%;background:#e04040;"></div></div>
+        </div>
+      </div>
+
+      <div class="ep-diff-row conquerant">
+        <div class="ep-diff-n">8</div>
+        <div class="ep-diff-info">
+          <div class="ep-diff-name">Conquerant</div>
+          <div class="ep-diff-desc">Intensite maximale. Toutes les mecaniques precedentes actives simultanement. Les ennemis ont +60% de PV, +40% de degats, et les vagues s'enchainent sans pause significative apres 25 minutes. Seuls les meilleurs joueurs franchissent les 35 minutes.</div>
+        </div>
+        <div class="ep-diff-bar-wrap">
+          <div class="ep-diff-bar"><div class="ep-diff-fill" style="width:100%;background:#c0102a;"></div></div>
+          <span class="ep-diff-tag">NIVEAU MAX</span>
+        </div>
+      </div>
+
+    </div>
+    <div class="disclaimer" style="margin-top:1.5rem;">
+      <strong>Conseil :</strong> Commencez par les niveaux 1 a 3 pour maitriser le systeme de vagues et debloquer des perks. Les niveaux 4 a 6 constituent le coeur du mode pour la plupart des joueurs. Les niveaux 7-8 sont reserves aux joueurs tres experimentes recherchant le prestige maximal.
+    </div>
+  </div>
+
+  </div><!-- /ep-tab-content -->
+<script src="js/data.js"></script>
+<script src="js/main.js"></script>
+<script src="js/epreuve.js"></script>
+</body>
+</html>

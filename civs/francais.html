@@ -1,0 +1,85 @@
+﻿<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<title>Francais — AOE IV Hub</title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+<div class="page-bg-global"></div>
+<div id="hub-toast" class="hub-toast" role="status" aria-live="polite"></div>
+<button id="back-to-top" class="back-to-top" onclick="scrollToTop()" aria-label="Retour en haut">&#8679;</button>
+<div id="hub-quote" class="hub-quote-bar"></div>
+<nav></nav>
+
+<div class="layout">
+  <aside class="toc">
+    <div class="toc-title">Sommaire</div>
+    <a class="toc-link" href="#overview">Vue d'ensemble</a>
+    <a class="toc-link" href="#bonus">Bonus uniques</a>
+    <a class="toc-link" href="#landmarks">Landmarks</a>
+    <a class="toc-link" href="#units">Troupes par âge</a>
+    <a class="toc-link" href="#strategy">Stratégies</a>
+    <div class="toc-sep"></div>
+    <div class="toc-title">Autres civs</div>
+    <a class="toc-civ-link" href="anglais.html">🏴󠁧󠁢󠁥󠁮󠁧󠁿 Anglais</a>
+    <a class="toc-civ-link" href="francais.html">⚜️ Français</a>
+    <a class="toc-civ-link" href="hre.html">🦅 Saint-Empire</a>
+    <a class="toc-civ-link" href="mongols.html">🏹 Mongols</a>
+    <a class="toc-civ-link" href="rus.html">🪶 Rus</a>
+    <a class="toc-civ-link" href="abbasides.html">🌙 Abbasides</a>
+    <a class="toc-civ-link" href="ottomans.html">🌺 Ottomans</a>
+    <a class="toc-civ-link" href="chine.html">🐉 Chine</a>
+    <a class="toc-civ-link" href="delhi.html">🐘 Delhi</a>
+    <a class="toc-civ-link" href="japonais.html">🌸 Japonais</a>
+  </aside>
+  <main class="main">
+    <div class="breadcrumb"><a href="../index.html">Accueil</a><span style="opacity:.4">›</span><a href="../guide.html">Guide Civs</a><span style="opacity:.4">›</span><span>Français</span></div>
+    <button class="fav-btn" id="fav-btn-francais" onclick="toggleFav('francais')" title="Ajouter aux favoris">⭐</button>
+    <div class="variant-banner"><span class="variant-banner-label">VARIANTES</span><a class="variant-banner-link" href="jeannedarc.html">⚜️🔥 Jeanne d'Arc →</a><a class="variant-banner-link" href="templiers.html">✝️⚔️ Templiers →</a></div>
+      <div class="civ-hero" id="overview">
+      <div class="civ-hero-flag">⚜️</div>
+      <div class="civ-hero-info">
+        <div class="civ-difficulty"><div class="diff-stars-inline"><svg class="ds on" viewBox="0 0 16 16"><path d="M8 1l1.9 3.9 4.1.6-3 2.9.7 4.1L8 10.5l-3.7 1.9.7-4.1-3-2.9 4.1-.6z"/></svg><svg class="ds off" viewBox="0 0 16 16"><path d="M8 1l1.9 3.9 4.1.6-3 2.9.7 4.1L8 10.5l-3.7 1.9.7-4.1-3-2.9 4.1-.6z"/></svg><svg class="ds off" viewBox="0 0 16 16"><path d="M8 1l1.9 3.9 4.1.6-3 2.9.7 4.1L8 10.5l-3.7 1.9.7-4.1-3-2.9 4.1-.6z"/></svg></div><span class="diff-badge">FACILE</span></div>
+        <div class="civ-name-hero">Français</div>
+        <div class="civ-tagline-hero">La cavalerie royale et le commerce médiéval</div>
+        <p class="civ-playstyle">Les Français misent sur une cavalerie d'élite disponible très tôt et une économie commerciale extrêmement flexible. Le Royal Knight possède une Charge de Dévastement déclenchable manuellement, dont les dégâts sont proportionnels à la distance parcourue. Les traders peuvent rapporter n'importe quelle ressource. Le Royal Institute regroupe toutes les technologies uniques françaises sans condition d'âge.</p>
+        <div class="str-weak">
+          <div class="sw-col str"><div class="sw-label str">Forces</div><ul class="sw-list str"><li class="sw-item">Royal Knight avec Charge de Dévastement</li><li class="sw-item">Traders polyvalents (toute ressource)</li><li class="sw-item">Royal Institute - toutes techs sans condition d'âge</li><li class="sw-item">Écuries +20% vitesse (School of Cavalry)</li><li class="sw-item">Canon royal sans Chimie (College of Artillery)</li></ul></div>
+          <div class="sw-col wk"><div class="sw-label wk">Faiblesses</div><ul class="sw-list wk"><li class="sw-item">Coûteux en or</li><li class="sw-item">Vulnérable aux piques et anti-cavalerie</li><li class="sw-item">Dépend des routes commerciales</li></ul></div>
+        </div>
+      </div>
+    </div>
+    <div class="section" id="bonus"><div class="section-title"><span class="section-icon">⚡</span>Bonus de civilisation</div><div class="bonus-list"><div class="bonus-item"><div class="bonus-icon">🐴</div><div class="bonus-text"><div class="bt-title">Royal Knight - Charge de Dévastement</div><div class="bt-desc">Le Royal Knight possède une capacité de charge déclenchable manuellement. Les dégâts bonus sont proportionnels à la distance parcourue avant l'impact. La charge se recharge avec le temps. Aucun cumul de kills.</div></div></div><div class="bonus-item"><div class="bonus-icon">🛒</div><div class="bonus-text"><div class="bt-title">Traders flexibles</div><div class="bt-desc">Les Traders peuvent choisir de rapporter de la nourriture, du bois ou de l'or à chaque retour. Essentiel pour équilibrer ton économie en cours de partie.</div></div></div><div class="bonus-item"><div class="bonus-icon">📜</div><div class="bonus-text"><div class="bt-title">Chivalry - Régénération du Royal Knight</div><div class="bt-desc">La technologie Chivalry, recherchée au Royal Institute, permet aux Royal Knights de régénérer +1 PV par seconde hors combat. Les technologies de forge standard ont un coût normal.</div></div></div><div class="bonus-item"><div class="bonus-icon">🗺️</div><div class="bonus-text"><div class="bt-title">Trade Posts visibles</div><div class="bt-desc">Les Posts de commerce sont révélés sur la carte dès le début de la partie. Avantage commercial dès les premières minutes.</div></div></div></div></div>
+    <div class="section" id="landmarks">
+      <div class="section-title"><span class="section-icon">🏯</span>Landmarks - Choix par âge</div>
+      <p style="font-size:.95rem;color:var(--text-muted);font-style:italic;margin-bottom:1.5rem;">À chaque montée d'âge, tu choisis l'un des deux landmarks.</p>
+      <div class="landmark-pair"><div class="age-label-lm">Âge II - Féodal</div><div class="landmark-card"><div class="lm-name">School of Cavalry</div><div class="lm-desc">Fonctionne comme une Écurie. Toutes les Écuries de la carte produisent des unités 20% plus vite. Choix offensif idéal pour un rush Royal Knight dès le Féodal.</div></div><div class="landmark-card"><div class="lm-name">Chamber of Commerce</div><div class="lm-desc">Fonctionne comme un Marché. Les Traders rapportent 30% de ressources supplémentaires à chaque retour. Excellent pour une économie commerciale dominante en mid-game.</div></div></div>
+      <div class="landmark-pair"><div class="age-label-lm">Âge III - Château</div><div class="landmark-card"><div class="lm-name">Guild Hall</div><div class="lm-desc">Génère et stocke en continu une ressource au choix : nourriture, bois, pierre ou or. La ressource peut être changée à tout moment selon les besoins.</div></div><div class="landmark-card"><div class="lm-name">Royal Institute</div><div class="lm-desc">Contient toutes les technologies uniques françaises. Disponibles sans condition d'âge et 30% moins chères. Inclut notamment Chivalry (Royal Knights régénèrent +1 PV/s hors combat).</div></div></div>
+      <div class="landmark-pair"><div class="age-label-lm">Âge IV - Impérial</div><div class="landmark-card"><div class="lm-name">College of Artillery</div><div class="lm-desc">Produit des versions Royales des unités de siège à poudre (+30% de dégâts). Donne accès au Canon Royal sans nécessiter la technologie Chimie. Puissant pour les pushes impériaux.</div></div><div class="landmark-card"><div class="lm-name">Red Palace</div><div class="lm-desc">Keep amélioré avec emplacements Arbalète haute puissance. Chaque unité garrisonnée ajoute un Arbalète supplémentaire. Défense redoutable en fin de partie.</div></div></div>
+    </div>
+    <div class="section" id="units">
+      <div class="section-title"><span class="section-icon">⚔️</span>Troupes par âge</div>
+      <div class="age-tabs"><div class="age-tab active" onclick="setAge(0,this)">I - Sombre</div><div class="age-tab" onclick="setAge(1,this)">II - Féodal</div><div class="age-tab" onclick="setAge(2,this)">III - Château</div><div class="age-tab" onclick="setAge(3,this)">IV - Impérial</div></div>
+      <div class="age-panel active" id="age-0"><div class="item-grid"><div class="item-card "><div class="item-icon-name"><div class="item-icon">🐎</div><div class="item-name">Scout</div></div><div class="item-desc">Éclaireur rapide.</div><div class="item-stats"><span class="istat">65 🍖 · 23s</span></div></div><div class="item-card "><div class="item-icon-name"><div class="item-icon">👷</div><div class="item-name">Villageois</div></div><div class="item-desc">Économie et construction.</div><div class="item-stats"><span class="istat">50 🍖 · 20s</span></div></div></div></div>
+      <div class="age-panel" id="age-1"><div class="item-grid"><div class="item-card unique"><div class="item-icon-name"><div class="item-icon">🏇✨</div><div class="item-name">Royal Knight</div></div><div class="item-desc">Cavalier lourd unique avec Charge de Dévastement manuelle. Les dégâts sont proportionnels à la distance parcourue. La charge se recharge avec le temps. Pas de cumul de kills.</div><div class="item-stats"><span class="istat">100 🍖 · 100 🪙 · 30s</span></div><div class="unique-badge">UNITÉ UNIQUE</div></div><div class="item-card "><div class="item-icon-name"><div class="item-icon">🏇</div><div class="item-name">Horseman</div></div><div class="item-desc">Cavalier léger rapide.</div><div class="item-stats"><span class="istat">100 🍖 · 20s</span></div></div><div class="item-card "><div class="item-icon-name"><div class="item-icon">🗡️</div><div class="item-name">Man-at-Arms</div></div><div class="item-desc">Infanterie lourde féodale.</div><div class="item-stats"><span class="istat">100 🍖 · 20 🪙 · 22s</span></div></div><div class="item-card "><div class="item-icon-name"><div class="item-icon">🗡️</div><div class="item-name">Spearman</div></div><div class="item-desc">Piquier contre-cavalerie.</div><div class="item-stats"><span class="istat">60 🍖 · 20 🪵 · 22s</span></div></div></div></div>
+      <div class="age-panel" id="age-2"><div class="item-grid"><div class="item-card "><div class="item-icon-name"><div class="item-icon">🏇</div><div class="item-name">Knight</div></div><div class="item-desc">Cavalier lourd - très résistant.</div><div class="item-stats"><span class="istat">140 🍖 · 100 🪙 · 30s</span></div></div><div class="item-card "><div class="item-icon-name"><div class="item-icon">🏹</div><div class="item-name">Arbalétrier</div></div><div class="item-desc">Archer lourd contre infanterie.</div><div class="item-stats"><span class="istat">80 🍖 · 40 🪙</span></div></div><div class="item-card unique"><div class="item-icon-name"><div class="item-icon">🔧</div><div class="item-name">Ribauldequin</div></div><div class="item-desc">Artillerie unique multiple tubes - zone de dégâts.</div><div class="item-stats"><span class="istat">350 🪵 · 350 🪙</span></div><div class="unique-badge">UNITÉ UNIQUE</div></div></div></div>
+      <div class="age-panel" id="age-3"><div class="item-grid"><div class="item-card "><div class="item-icon-name"><div class="item-icon">💥</div><div class="item-name">Bombard</div></div><div class="item-desc">Canon de siège lourd.</div><div class="item-stats"><span class="istat">400 🪵 · 400 🪙</span></div></div><div class="item-card "><div class="item-icon-name"><div class="item-icon">🔫</div><div class="item-name">Handcannoneer</div></div><div class="item-desc">Arquebusier impérial.</div><div class="item-stats"><span class="istat">120 🍖 · 60 🪙</span></div></div><div class="item-card "><div class="item-icon-name"><div class="item-icon">🏇</div><div class="item-name">Lancer</div></div><div class="item-desc">Cavalier de charge impérial.</div><div class="item-stats"><span class="istat">160 🍖 · 120 🪙</span></div></div></div></div>
+    </div>
+    <div class="section" id="strategy">
+      <div class="section-title"><span class="section-icon">🗺️</span>Stratégies recommandées</div>
+      <div class="strategy-box"><div class="strat-title">Royal Knight Rush - Pression Féodale</div><div class="strat-desc">Produis des Royal Knights en masse dès l'âge Féodal. Utilise la Charge de Dévastement pour maximiser les dégâts - prends de l'élan avant chaque frappe.</div><ol class="strat-steps"><li class="strat-step"><div class="step-n">1</div><div>4 villageois sur nourriture, 4 sur bois dès le départ</div></li><li class="strat-step"><div class="step-n">2</div><div>Monter Féodal à 14-15 villageois - School of Cavalry pour production +20%</div></li><li class="strat-step"><div class="step-n">3</div><div>Construire 1-2 Écuries + 1 Caserne immédiatement</div></li><li class="strat-step"><div class="step-n">4</div><div>Spam Royal Knights en permanence</div></li><li class="strat-step"><div class="step-n">5</div><div>Prends de la distance avant chaque Charge de Dévastement pour maximiser les dégâts</div></li><li class="strat-step"><div class="step-n">6</div><div>Maintenir la pression tout en continuant l'économie</div></li></ol></div>
+      <div class="strategy-box"><div class="strat-title">Double Trade + Royal Institute - Économie dominante</div><div class="strat-desc">Sécurise des routes commerciales et utilise le Royal Institute pour accéder aux technologies uniques françaises sans condition d'âge.</div><ol class="strat-steps"><li class="strat-step"><div class="step-n">1</div><div>Viser 20+ villageois avant de monter</div></li><li class="strat-step"><div class="step-n">2</div><div>Chamber of Commerce en Féodal - traders +30% ressources</div></li><li class="strat-step"><div class="step-n">3</div><div>Construire 4-6 Traders dès l'âge Château</div></li><li class="strat-step"><div class="step-n">4</div><div>Royal Institute en Château - rechercher Chivalry pour Royal Knights régénérants</div></li><li class="strat-step"><div class="step-n">5</div><div>Âge 4 → College of Artillery pour Canons Royaux sans Chimie</div></li></ol></div>
+    </div>
+    <div class="civ-nav-bar">
+      <a class="civ-nav-btn" href="../guide.html">← Retour au guide</a>
+      <a class="civ-nav-btn" href="hre.html">Saint-Empire 🦅 →</a>
+    </div>
+  </main>
+<script src="../js/data.js"></script>
+<script src="../js/main.js"></script>
+<script src="../js/civ.js"></script>
+</body>
+</html>

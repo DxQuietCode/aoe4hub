@@ -1,0 +1,290 @@
+﻿<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<title>Anglais — AOE IV Hub</title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+<div class="page-bg-global"></div>
+<div id="hub-toast" class="hub-toast" role="status" aria-live="polite"></div>
+<button id="back-to-top" class="back-to-top" onclick="scrollToTop()" aria-label="Retour en haut">&#8679;</button>
+<div id="hub-quote" class="hub-quote-bar"></div>
+<nav></nav>
+
+<div class="layout">
+  <!-- TABLE OF CONTENTS -->
+  <aside class="toc">
+    <div class="toc-title">Sommaire</div>
+    <a class="toc-link" href="#overview">Vue d'ensemble</a>
+    <a class="toc-link" href="#bonus">Bonus uniques</a>
+    <a class="toc-link" href="#landmarks">Landmarks</a>
+    <a class="toc-link" href="#units">Troupes par âge</a>
+    <a class="toc-link" href="#buildings">Bâtiments</a>
+    <a class="toc-link" href="#techs">Recherches</a>
+    <a class="toc-link" href="#strategy">Stratégies</a>
+    <div class="toc-sep"></div>
+    <div class="toc-title">Autres civs</div>
+    <a class="toc-civ-link" href="francais.html">⚜️ Français</a>
+    <a class="toc-civ-link" href="hre.html">🦅 Saint-Empire</a>
+    <a class="toc-civ-link" href="mongols.html">🏹 Mongols</a>
+    <a class="toc-civ-link" href="rus.html">🪶 Rus</a>
+    <a class="toc-civ-link" href="abbasides.html">🌙 Abbasides</a>
+    <a class="toc-civ-link" href="ottomans.html">🌺 Ottomans</a>
+    <a class="toc-civ-link" href="chine.html">🐉 Chine</a>
+    <a class="toc-civ-link" href="delhi.html">🐘 Delhi</a>
+    <a class="toc-civ-link" href="japonais.html">🌸 Japonais</a>
+  </aside>
+
+  <main class="main">
+    <div class="breadcrumb">
+      <a href="../index.html">Accueil</a><span style="opacity:.4">›</span>
+      <a href="../guide.html">Guide Civs</a><span style="opacity:.4">›</span>
+      <span>Anglais</span>
+    </div>
+
+    <!-- ══ HERO ══ -->
+    <button class="fav-btn" id="fav-btn-anglais" onclick="toggleFav('anglais')" title="Ajouter aux favoris">⭐</button>
+    <div class="variant-banner"><span class="variant-banner-label">VARIANTE</span><a class="variant-banner-link" href="lancaster.html">🌹 Lancaster →</a></div>
+      <div class="civ-hero" id="overview">
+      <div class="civ-hero-flag">🏴󠁧󠁢󠁥󠁮󠁧󠁿</div>
+      <div class="civ-hero-info">
+        <div class="civ-difficulty">
+          <div class="diff-stars-inline">
+            <svg class="ds on" viewBox="0 0 16 16"><path d="M8 1l1.9 3.9 4.1.6-3 2.9.7 4.1L8 10.5l-3.7 1.9.7-4.1-3-2.9 4.1-.6z"/></svg>
+            <svg class="ds off" viewBox="0 0 16 16"><path d="M8 1l1.9 3.9 4.1.6-3 2.9.7 4.1L8 10.5l-3.7 1.9.7-4.1-3-2.9 4.1-.6z"/></svg>
+            <svg class="ds off" viewBox="0 0 16 16"><path d="M8 1l1.9 3.9 4.1.6-3 2.9.7 4.1L8 10.5l-3.7 1.9.7-4.1-3-2.9 4.1-.6z"/></svg>
+          </div>
+          <span class="diff-badge">FACILE</span>
+        </div>
+        <div class="civ-name-hero">Anglais</div>
+        <div class="civ-tagline-hero">La forteresse défensive du champ de bataille médiéval</div>
+        <p class="civ-playstyle">Les Anglais excellent dans la défense et le contrôle du territoire. Grâce à leurs Longbowmen - la meilleure unité d'archer du jeu - ils créent des zones de déni d'accès redoutables. Leur économie stable basée sur les moutons et leurs centres-villes défensifs en font la civilisation idéale pour apprendre à tenir une position et à punir les attaques adverses.</p>
+        <div class="str-weak">
+          <div class="sw-col str">
+            <div class="sw-label str">Forces</div>
+            <ul class="sw-list str">
+              <li class="sw-item">Longbowman - meilleur archer du jeu</li>
+              <li class="sw-item">Défense très solide dès le départ</li>
+              <li class="sw-item">Économie stable et fiable</li>
+              <li class="sw-item">Centres-villes défensifs uniques</li>
+              <li class="sw-item">Pression nulle à gérer en early</li>
+            </ul>
+          </div>
+          <div class="sw-col wk">
+            <div class="sw-label wk">Faiblesses</div>
+            <ul class="sw-list wk">
+              <li class="sw-item">Peu agressive avant l'âge féodal</li>
+              <li class="sw-item">Vulnérable aux rush de cavalerie</li>
+              <li class="sw-item">Manque d'unités d'assaut spéciales</li>
+              <li class="sw-item">Naval moins fort que d'autres civs</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══ BONUS UNIQUES ══ -->
+    <div class="section" id="bonus">
+      <div class="section-title"><span class="section-icon">⚡</span>Bonus de civilisation</div>
+      <div class="bonus-list">
+        <div class="bonus-item"><div class="bonus-icon">🐑</div><div class="bonus-text"><div class="bt-title">Wool Industries - Troupeaux de départ</div><div class="bt-desc">Démarre avec +4 moutons supplémentaires. Chaque Centre-Ville supplémentaire fait apparaître 4 moutons. Les villageois récoltent la nourriture des moutons 20% plus vite.</div></div></div>
+        <div class="bonus-item"><div class="bonus-icon">🏰</div><div class="bonus-text"><div class="bt-title">Defensive Byrig - Centres-Villes défensifs</div><div class="bt-desc">Le Centre-Ville capital tire une flèche supplémentaire. Les villageois brandissent des arcs courts pour attaquer les unités ennemies qui s'approchent du Centre-Ville.</div></div></div>
+        <div class="bonus-item"><div class="bonus-icon">👑</div><div class="bonus-text"><div class="bt-title">A House Unified - Gardes du Comte</div><div class="bt-desc">Les Keeps génèrent 3 Gardes du Comte gratuits à leur construction. Chaque Keep actif donne +1 dégât aux Demilancers et Gardes du Comte (max +4, +6 avec Berkshire Palace).</div></div></div>
+        <div class="bonus-item"><div class="bonus-icon">⛵</div><div class="bonus-text"><div class="bt-title">Shipwrights - Navires moins chers</div><div class="bt-desc">Les navires coûtent 10% moins cher à produire.</div></div></div>
+        <div class="bonus-item"><div class="bonus-icon">🏡</div><div class="bonus-text"><div class="bt-title">Feudalism - Manors féodaux</div><div class="bt-desc">Peut construire des Manors dès l'âge Féodal. Chaque Manor donne +5 de population. Ils ne génèrent pas de ressources dans la version de base (génération liée au DLC Lancaster uniquement).</div></div></div>
+        <div class="bonus-item"><div class="bonus-icon">⚡</div><div class="bonus-text"><div class="bt-title">Network of Castles - Vitesse d'attaque accrue</div><div class="bt-desc">Les unités proches de Tours, Keeps et Centres-Villes gagnent +25% de vitesse d'attaque. Positionnez vos armées près de vos défenses pour amplifier leur efficacité au combat.</div></div></div>
+      </div>
+    </div>
+
+    <!-- ══ LANDMARKS ══ -->
+    <div class="section" id="landmarks">
+      <div class="section-title"><span class="section-icon">🏯</span>Landmarks - Choix par âge</div>
+      <p style="font-size:.95rem;color:var(--text-muted);font-style:italic;margin-bottom:1.5rem;">À chaque montée d'âge, tu choisis l'un des deux landmarks. Chacun oriente ta stratégie différemment.</p>
+
+      <div class="landmark-pair">
+        <div class="age-label-lm">Âge II - Féodal</div>
+        <div class="landmark-card">
+          <div class="lm-name">Abbey of Kings</div>
+          <div class="lm-desc">Abbaye qui soigne passivement les unités alliées proches hors combat. Génère un Roi héros (cavalerie) qui soigne les troupes alliées au contact. Choix solide pour un jeu défensif durable.</div>
+        </div>
+        <div class="landmark-card">
+          <div class="lm-name">Council Hall</div>
+          <div class="lm-desc">Les Longbowmen s'entraînent 100% plus vite depuis ce bâtiment. Indispensable pour une stratégie archer-rush en masse dès l'âge Féodal.</div>
+        </div>
+      </div>
+
+      <div class="landmark-pair">
+        <div class="age-label-lm">Âge III - Château</div>
+        <div class="landmark-card">
+          <div class="lm-name">The White Tower</div>
+          <div class="lm-desc">Fonctionne comme un Keep amélioré avec des bonus de production d'armes. Peut produire des unités militaires directement. Renforce considérablement la ligne de défense.</div>
+        </div>
+        <div class="landmark-card">
+          <div class="lm-name">King's Palace</div>
+          <div class="lm-desc">Fonctionne comme un Centre-Ville supplémentaire avec une vitesse de production accrue. Idéal pour accélérer l'économie en âge Château tout en ajoutant un point défensif.</div>
+        </div>
+      </div>
+
+      <div class="landmark-pair">
+        <div class="age-label-lm">Âge IV - Impérial</div>
+        <div class="landmark-card">
+          <div class="lm-name">Berkshire Palace</div>
+          <div class="lm-desc">Keep amélioré avec +50% de portée sur toutes les armes et double les emplacements d'armes. Augmente le bonus Gardes du Comte à +6. Forteresse défensive redoutable en âge Impérial.</div>
+        </div>
+        <div class="landmark-card">
+          <div class="lm-name">Wynguard Palace</div>
+          <div class="lm-desc">Produit périodiquement l'Armée Wynguard : 1 Man-at-Arms, 1 Spearman, 1 Longbowman, 1 Knight et 1 Trébuchet. Très puissant pour submerger l'adversaire en late game.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══ TROUPES PAR ÂGE ══ -->
+    <div class="section" id="units">
+      <div class="section-title"><span class="section-icon">⚔️</span>Troupes par âge</div>
+      <div class="age-tabs">
+        <div class="age-tab active" onclick="setAge(0,this)">I - Sombre</div>
+        <div class="age-tab" onclick="setAge(1,this)">II - Féodal</div>
+        <div class="age-tab" onclick="setAge(2,this)">III - Château</div>
+        <div class="age-tab" onclick="setAge(3,this)">IV - Impérial</div>
+      </div>
+
+      <!-- AGE I -->
+      <div class="age-panel active" id="age-0">
+        <div class="item-grid">
+          <div class="item-card"><div class="item-icon-name"><div class="item-icon">👷</div><div class="item-name">Villageois</div></div><div class="item-desc">Collecte toutes les ressources, construit les bâtiments. Base de toute économie.</div><div class="item-stats"><span class="istat">60 🍖</span><span class="istat">20s</span></div></div>
+          <div class="item-card"><div class="item-icon-name"><div class="item-icon">🐎</div><div class="item-name">Scout</div></div><div class="item-desc">Éclaireur rapide pour explorer la mappe et repérer l'adversaire.</div><div class="item-stats"><span class="istat">65 🍖</span><span class="istat">23s</span></div></div>
+          <div class="item-card unique"><div class="item-icon-name"><div class="item-icon">🐑</div><div class="item-name">Moutons</div></div><div class="item-desc">Source de nourriture passée - 4 supplémentaires au départ, +4 par Centre-Ville additionnel.</div><div class="unique-badge">BONUS ANGLAIS</div></div>
+        </div>
+      </div>
+
+      <!-- AGE II -->
+      <div class="age-panel" id="age-1">
+        <div class="item-grid">
+          <div class="item-card unique"><div class="item-icon-name"><div class="item-icon">🏹</div><div class="item-name">Longbowman</div></div><div class="item-desc">Archer d'élite à très longue portée. Peut se déployer pour décupler ses dégâts depuis une position fixe. Meilleur archer du jeu.</div><div class="item-stats"><span class="istat">60 🍖</span><span class="istat">30 🪵</span><span class="istat">22s</span></div><div class="unique-badge">UNITÉ UNIQUE</div></div>
+          <div class="item-card"><div class="item-icon-name"><div class="item-icon">🗡️</div><div class="item-name">Man-at-Arms</div></div><div class="item-desc">Infanterie lourde disponible dès l'âge Féodal - rare et puissant. Contre efficacement les archers.</div><div class="item-stats"><span class="istat">100 🍖</span><span class="istat">20 🪙</span><span class="istat">22s</span></div></div>
+          <div class="item-card"><div class="item-icon-name"><div class="item-icon">🏇</div><div class="item-name">Horseman</div></div><div class="item-desc">Cavalier léger rapide, efficace contre les archers ennemis. Vulnerable aux Hommes d'Armes.</div><div class="item-stats"><span class="istat">100 🍖</span><span class="istat">20s</span></div></div>
+          <div class="item-card"><div class="item-icon-name"><div class="item-icon">🗡️</div><div class="item-name">Spearman</div></div><div class="item-desc">Piquier générique - contres la cavalerie. Peu coûteux, utile en masse pour défendre.</div><div class="item-stats"><span class="istat">60 🍖</span><span class="istat">20 🪵</span><span class="istat">22s</span></div></div>
+          <div class="item-card"><div class="item-icon-name"><div class="item-icon">👑</div><div class="item-name">Earl's Guard</div></div><div class="item-desc">Infanterie lourde générée gratuitement par les Keeps (3 par Keep). Bonus de dégâts par Keep actif.</div><div class="item-stats"><span class="istat">GRATUIT</span><span class="istat">Via Keeps</span></div><div class="unique-badge">BONUS ANGLAIS</div></div>
+        </div>
+      </div>
+
+      <!-- AGE III -->
+      <div class="age-panel" id="age-2">
+        <div class="item-grid">
+          <div class="item-card"><div class="item-icon-name"><div class="item-icon">🏇</div><div class="item-name">Knight</div></div><div class="item-desc">Cavalier lourd très résistant. Idéal pour flanquer et écraser l'infanterie légère.</div><div class="item-stats"><span class="istat">140 🍖</span><span class="istat">100 🪙</span><span class="istat">30s</span></div></div>
+          <div class="item-card"><div class="item-icon-name"><div class="item-icon">💣</div><div class="item-name">Springald</div></div><div class="item-desc">Arbalète de siège - tire des boulons puissants contre les unités et les bâtiments à longue portée.</div><div class="item-stats"><span class="istat">250 🪵</span><span class="istat">250 🪙</span></div></div>
+          <div class="item-card"><div class="item-icon-name"><div class="item-icon">🪓</div><div class="item-name">Arbalétrier</div></div><div class="item-desc">Archer à arbalète - dégâts élevés, rechargement lent. Fort contre l'infanterie lourde.</div><div class="item-stats"><span class="istat">80 🍖</span><span class="istat">40 🪙</span></div></div>
+          <div class="item-card unique"><div class="item-icon-name"><div class="item-icon">🚩</div><div class="item-name">Demilancer</div></div><div class="item-desc">Cavalier semi-lourd unique aux Anglais. Gagne en dégâts avec chaque Keep actif (+1 par Keep).</div><div class="item-stats"><span class="istat">120 🍖</span><span class="istat">80 🪙</span></div><div class="unique-badge">UNITÉ UNIQUE</div></div>
+        </div>
+      </div>
+
+      <!-- AGE IV -->
+      <div class="age-panel" id="age-3">
+        <div class="item-grid">
+          <div class="item-card"><div class="item-icon-name"><div class="item-icon">💥</div><div class="item-name">Bombard</div></div><div class="item-desc">Canon de siège lourd - détruit les bâtiments et les grandes armées. Lent à déployer.</div><div class="item-stats"><span class="istat">400 🪵</span><span class="istat">400 🪙</span></div></div>
+          <div class="item-card"><div class="item-icon-name"><div class="item-icon">🔫</div><div class="item-name">Handcannoneer</div></div><div class="item-desc">Arquebusier impérial - dégâts énormes contre l'infanterie lourde. Contre les Man-at-Arms.</div><div class="item-stats"><span class="istat">120 🍖</span><span class="istat">60 🪙</span></div></div>
+          <div class="item-card unique"><div class="item-icon-name"><div class="item-icon">👑</div><div class="item-name">Le Roi (King)</div></div><div class="item-desc">Cavalier héros généré par l'Abbey of Kings. Soigne passivement les unités alliées proches. Aucune condition de défaite liée au Roi dans AOE4 - il peut mourir et réapparaître.</div><div class="item-stats"><span class="istat">Abbey of Kings</span></div><div class="unique-badge">UNITÉ UNIQUE</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══ BÂTIMENTS ══ -->
+    <div class="section" id="buildings">
+      <div class="section-title"><span class="section-icon">🏗️</span>Bâtiments</div>
+      <div class="item-grid">
+        <div class="item-card"><div class="item-icon-name"><div class="item-icon">🏠</div><div class="item-name">Maison</div></div><div class="item-desc">+10 population. Construire en continu pour ne jamais être plafonné.</div><div class="item-stats"><span class="istat">50 🪵</span></div></div>
+        <div class="item-card unique"><div class="item-icon-name"><div class="item-icon">🏡</div><div class="item-name">Manor</div></div><div class="item-desc">Remplace les maisons dès l'âge Féodal. Donne +5 de population. Ne génère pas de ressources dans la version de base (uniquement avec le DLC Lancaster).</div><div class="item-stats"><span class="istat">Âge II+</span><span class="istat">+5 pop</span></div><div class="unique-badge">BÂTIMENT UNIQUE</div></div>
+        <div class="item-card"><div class="item-icon-name"><div class="item-icon">⛏️</div><div class="item-name">Camp de ressources</div></div><div class="item-desc">Bûcheron, Mine d'or, Ferme - construire toujours à portée des ressources.</div><div class="item-stats"><span class="istat">50-75 🪵</span></div></div>
+        <div class="item-card"><div class="item-icon-name"><div class="item-icon">🏰</div><div class="item-name">Caserne</div></div><div class="item-desc">Produit Man-at-Arms et Spearman. Plusieurs casernes = production rapide d'infanterie.</div><div class="item-stats"><span class="istat">150 🪵</span></div></div>
+        <div class="item-card"><div class="item-icon-name"><div class="item-icon">🏹</div><div class="item-name">Archery Range</div></div><div class="item-desc">Produit Longbowmen et Arbalétriers. Cœur de l'armée anglaise - construire en priorité.</div><div class="item-stats"><span class="istat">150 🪵</span></div></div>
+        <div class="item-card"><div class="item-icon-name"><div class="item-icon">🐴</div><div class="item-name">Écurie</div></div><div class="item-desc">Produit Horsemen et Knights. Cavalerie de soutien pour flanquer.</div><div class="item-stats"><span class="istat">150 🪵</span></div></div>
+        <div class="item-card"><div class="item-icon-name"><div class="item-icon">🔨</div><div class="item-name">Forge (Blacksmith)</div></div><div class="item-desc">Améliore les armes et armures de toutes les unités militaires. Essentiel pour le mid-game.</div><div class="item-stats"><span class="istat">150 🪵</span></div></div>
+        <div class="item-card"><div class="item-icon-name"><div class="item-icon">🗼</div><div class="item-name">Tour de guet</div></div><div class="item-desc">Défense de base - place en avant-poste ou pour défendre les ressources.</div><div class="item-stats"><span class="istat">100 🪵</span><span class="istat">25 🪨</span></div></div>
+        <div class="item-card"><div class="item-icon-name"><div class="item-icon">🏯</div><div class="item-name">Keep</div></div><div class="item-desc">Tour défensive majeure. Génère 3 Gardes du Comte gratuits. Chaque Keep amplifie les Demilancers.</div><div class="item-stats"><span class="istat">350 🪵</span><span class="istat">200 🪨</span></div></div>
+        <div class="item-card"><div class="item-icon-name"><div class="item-icon">🧱</div><div class="item-name">Mur de pierre</div></div><div class="item-desc">Défense permanente. Très efficace pour protéger la base et forcer l'adversaire à s'étaler.</div><div class="item-stats"><span class="istat">3 🪨/tuile</span></div></div>
+        <div class="item-card"><div class="item-icon-name"><div class="item-icon">⚙️</div><div class="item-name">Atelier de siège</div></div><div class="item-desc">Construit Springalds, Trebuchets et Bombards. Âge III-IV.</div><div class="item-stats"><span class="istat">300 🪵</span></div></div>
+        <div class="item-card"><div class="item-icon-name"><div class="item-icon">⚓</div><div class="item-name">Dock</div></div><div class="item-desc">Construction navale et pêche. Les navires anglais coûtent -10%.</div><div class="item-stats"><span class="istat">150 🪵</span></div></div>
+      </div>
+    </div>
+
+    <!-- ══ RECHERCHES ══ -->
+    <div class="section" id="techs">
+      <div class="section-title"><span class="section-icon">🔬</span>Recherches clés</div>
+      <div class="age-tabs">
+        <div class="age-tab active" onclick="setTech(0,this)">II - Féodal</div>
+        <div class="age-tab" onclick="setTech(1,this)">III - Château</div>
+        <div class="age-tab" onclick="setTech(2,this)">IV - Impérial</div>
+      </div>
+
+      <div class="age-panel active" id="tech-0">
+        <div class="tech-grid">
+          <div class="tech-card"><div class="tech-icon">⚔️</div><div class="tech-body"><div class="tech-name">Setup Camp</div><div class="tech-desc">Permet aux Longbowmen de se déployer pour gagner bonus de portée et de dégâts depuis une position fixe. Essentiel.</div><div class="tech-cost">75 🪵 · 75 🪙</div></div></div>
+          <div class="tech-card"><div class="tech-icon">🛡️</div><div class="tech-body"><div class="tech-name">Steeled Arrow</div><div class="tech-desc">Augmente les dégâts des archers. Priorité haute pour les Longbowmen.</div><div class="tech-cost">100 🍖 · 250 🪙</div></div></div>
+          <div class="tech-card"><div class="tech-icon">🪵</div><div class="tech-body"><div class="tech-name">Specialized Pick</div><div class="tech-desc">Mineurs collectent l'or plus vite. Très utile si tu joues econ.</div><div class="tech-cost">75 🍖 · 75 🪵</div></div></div>
+          <div class="tech-card"><div class="tech-icon">🌾</div><div class="tech-body"><div class="tech-name">Horticulture</div><div class="tech-desc">Fermes produisent plus de nourriture. Bon pour l'économie long terme.</div><div class="tech-cost">75 🍖 · 175 🪙</div></div></div>
+        </div>
+      </div>
+
+      <div class="age-panel" id="tech-1">
+        <div class="tech-grid">
+          <div class="tech-card"><div class="tech-icon">🏹</div><div class="tech-body"><div class="tech-name">Longbow Veteran</div><div class="tech-desc">Améliore les statistiques du Longbowman - plus de PV, plus de dégâts. Upgrade essentiel.</div><div class="tech-cost">150 🍖 · 350 🪙</div></div></div>
+          <div class="tech-card"><div class="tech-icon">🗡️</div><div class="tech-body"><div class="tech-name">Man-at-Arms Upgrade</div><div class="tech-desc">Améliore les Man-at-Arms en version château. Armure et attaque accrues.</div><div class="tech-cost">200 🍖 · 500 🪙</div></div></div>
+          <div class="tech-card"><div class="tech-icon">🏰</div><div class="tech-body"><div class="tech-name">Court Engineers</div><div class="tech-desc">Les émplacements de Keep tirent plus vite et font plus de dégâts. Renforce considérablement les Keeps.</div><div class="tech-cost">200 🪵 · 500 🪙</div></div></div>
+          <div class="tech-card"><div class="tech-icon">🛡️</div><div class="tech-body"><div class="tech-name">Plate Armor</div><div class="tech-desc">Armure complète pour l'infanterie - réduit les dégâts reçus significativement.</div><div class="tech-cost">300 🍖 · 700 🪙</div></div></div>
+        </div>
+      </div>
+
+      <div class="age-panel" id="tech-2">
+        <div class="tech-grid">
+          <div class="tech-card"><div class="tech-icon">🏹</div><div class="tech-body"><div class="tech-name">Longbow Elite</div><div class="tech-desc">Version impériale du Longbowman - statistiques maximum. Priorité absolue en âge 4.</div><div class="tech-cost">300 🍖 · 700 🪙</div></div></div>
+          <div class="tech-card"><div class="tech-icon">🔫</div><div class="tech-body"><div class="tech-name">Chemistry</div><div class="tech-desc">Toutes les unités à poudre à canon (bombards, handcannoneers) gagnent en puissance.</div><div class="tech-cost">300 🍖 · 700 🪙</div></div></div>
+          <div class="tech-card"><div class="tech-icon">⚙️</div><div class="tech-body"><div class="tech-name">Siege Engineering</div><div class="tech-desc">Les villageois peuvent construire des machines de siège sur le champ. Très utile en pushes.</div><div class="tech-cost">500 🪙</div></div></div>
+          <div class="tech-card"><div class="tech-icon">🏇</div><div class="tech-body"><div class="tech-name">Steppe Lancer</div><div class="tech-desc">Améliore la cavalerie en version impériale - cavaliers lourds et résistants.</div><div class="tech-cost">300 🍖 · 700 🪙</div></div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══ STRATÉGIES ══ -->
+    <div class="section" id="strategy">
+      <div class="section-title"><span class="section-icon">🗺️</span>Stratégies recommandées</div>
+
+      <div class="strategy-box">
+        <div class="strat-title">Build Order débutant - Longbow Rush Féodal</div>
+        <div class="strat-desc">La stratégie la plus simple et efficace pour apprendre les Anglais en ligne.</div>
+        <ol class="strat-steps">
+          <li class="strat-step"><div class="step-n">1</div><div>6 villageois sur moutons → toujours requeue en TC</div></li>
+          <li class="strat-step"><div class="step-n">2</div><div>2 villageois sur bois → pour construire Archery Range</div></li>
+          <li class="strat-step"><div class="step-n">3</div><div>Monter à l'âge Féodal avec 15-16 villageois - choisir Council Hall</div></li>
+          <li class="strat-step"><div class="step-n">4</div><div>Construire 1-2 Archery Ranges immédiatement → spam Longbowmen</div></li>
+          <li class="strat-step"><div class="step-n">5</div><div>Pousser l'adversaire - créer Setup Camp pour vos Longbowmen en position</div></li>
+          <li class="strat-step"><div class="step-n">6</div><div>Continuer à produire des villageois pendant le push</div></li>
+        </ol>
+      </div>
+
+      <div class="strategy-box">
+        <div class="strat-title">Défense - Turtle & Scale</div>
+        <div class="strat-desc">Stratégie à long terme - défendre, grandir économiquement, et écraser en âge 3-4.</div>
+        <ol class="strat-steps">
+          <li class="strat-step"><div class="step-n">1</div><div>Maximiser l'économie (25+ villageois avant âge 3)</div></li>
+          <li class="strat-step"><div class="step-n">2</div><div>Construire des Keeps stratégiquement - génèrent des Gardes du Comte gratuits</div></li>
+          <li class="strat-step"><div class="step-n">3</div><div>Murs de pierre pour forcer l'adversaire à contourner</div></li>
+          <li class="strat-step"><div class="step-n">4</div><div>Âge 3 → The White Tower pour renforcer la défense et produire des unités</div></li>
+          <li class="strat-step"><div class="step-n">5</div><div>Âge 4 → Berkshire Palace (défense maximale) ou Wynguard Palace (armées automatiques)</div></li>
+        </ol>
+      </div>
+    </div>
+
+    <!-- Navigation entre civs -->
+    <div class="civ-nav-bar">
+      <a class="civ-nav-btn" href="../guide.html">← Retour au guide</a>
+      <a class="civ-nav-btn" href="francais.html">Français ⚜️ →</a>
+    </div>
+  </main>
+<script src="../js/data.js"></script>
+<script src="../js/main.js"></script>
+<script src="../js/civ.js"></script>
+</body>
+</html>

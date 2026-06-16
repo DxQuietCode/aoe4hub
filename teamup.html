@@ -1,0 +1,71 @@
+﻿<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<title>Team-UP — AOE IV Hub</title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="page-bg-global"></div>
+<div id="hub-toast" class="hub-toast" role="status" aria-live="polite"></div>
+<button id="back-to-top" class="back-to-top" onclick="scrollToTop()" aria-label="Retour en haut">&#8679;</button>
+<div id="hub-quote" class="hub-quote-bar"></div>
+<nav></nav>
+<div class="tu-picker" id="tu-picker" onclick="if(event.target===this)closePicker()">
+  <div class="tu-picker-box">
+    <div class="tu-picker-head">
+      <div class="tu-picker-title" id="tu-picker-title">Choisir une civilisation</div>
+      <button class="tu-picker-close" onclick="closePicker()">&#10005;</button>
+    </div>
+    <div class="tu-picker-search"><input type="text" id="tu-picker-search" placeholder="Rechercher..." oninput="renderPicker()"></div>
+    <div class="tu-picker-grid" id="tu-picker-grid"></div>
+  </div>
+</div>
+<div class="page" style="max-width:1000px;">
+  <div class="breadcrumb"><a href="index.html">Accueil</a><span style="opacity:.4">›</span><span>Team-UP</span></div>
+  <div class="page-header">
+    <span class="page-tag">🛡️ Team-UP</span>
+    <h1 class="page-title">Constructeur d'équipe</h1>
+    <p class="page-desc">Analyse les synergies et contre-stratégies de ton équipe avant la partie.</p>
+  </div>
+  <div style="display:flex;align-items:center;gap:.75rem;margin-bottom:1.4rem;flex-wrap:wrap;">
+    <div class="tu-team-mode">
+      <div class="tu-mode-btn active" onclick="setTeamMode(2,this)">1v1</div>
+      <div class="tu-mode-btn" onclick="setTeamMode(4,this)">2v2</div>
+      <div class="tu-mode-btn" onclick="setTeamMode(6,this)">3v3</div>
+      <div class="tu-mode-btn" onclick="setTeamMode(8,this)">4v4</div>
+    </div>
+    <button class="tu-reset-btn" onclick="resetTeamUp()">Réinitialiser</button>
+  </div>
+  <div class="tu-layout">
+    <div class="tu-team" id="tu-ally-team">
+      <div class="tu-team-header">
+        <div class="tu-team-title ally">⚔️ Mon équipe</div>
+        <div class="tu-team-size" id="tu-ally-size">0 / 1 joueur</div>
+      </div>
+      <div class="tu-slots" id="tu-ally-slots"></div>
+      <button class="tu-add-btn" id="tu-ally-add" onclick="openPicker('ally')">+ Ajouter une civilisation</button>
+      <div id="tu-timing-bar" style="display:none;"></div>
+    </div>
+    <div class="tu-team" id="tu-enemy-team">
+      <div class="tu-team-header">
+        <div class="tu-team-title enemy">🛡️ Équipe adverse</div>
+        <div class="tu-team-size" id="tu-enemy-size">0 / 1 joueur</div>
+      </div>
+      <div class="tu-slots" id="tu-enemy-slots"></div>
+      <button class="tu-add-btn" id="tu-enemy-add" onclick="openPicker('enemy')">+ Ajouter une civilisation</button>
+    </div>
+  </div>
+  <div id="tu-analysis-panel">
+    <div class="tu-analysis">
+      <div class="tu-analysis-empty" id="tu-empty-msg">Sélectionne au moins une civilisation pour commencer l'analyse.</div>
+      <div id="tu-analysis-content" style="display:none;"></div>
+    </div>
+  </div>
+<script src="js/data.js"></script>
+<script src="js/main.js"></script>
+<script src="js/teamup.js"></script>
+</body>
+</html>

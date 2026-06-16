@@ -1,0 +1,114 @@
+﻿<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<title>Dynastie Jin — AOE IV Hub</title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+<div class="page-bg-global"></div>
+<div id="hub-toast" class="hub-toast" role="status" aria-live="polite"></div>
+<button id="back-to-top" class="back-to-top" onclick="scrollToTop()" aria-label="Retour en haut">&#8679;</button>
+<div id="hub-quote" class="hub-quote-bar"></div>
+<nav></nav>
+
+  <div class="layout">
+    <aside class="toc">
+      <div class="toc-title">Sommaire</div>
+      <a class="toc-link" href="#overview-jindynasty">Vue d'ensemble</a>
+      <a class="toc-link" href="#bonus-jindynasty">Bonus uniques</a>
+      <a class="toc-link" href="#landmarks-jindynasty">Landmarks</a>
+      <a class="toc-link" href="#units-jindynasty">Troupes par âge</a>
+      <a class="toc-link" href="#strategy-jindynasty">Stratégies</a>
+      <div class="toc-sep"></div>
+      <div class="toc-title">Toutes les civs</div>
+      <a class="toc-civ-link" href="anglais.html">🏴󠁧󠁢󠁥󠁮󠁧󠁿 Anglais</a>
+      <a class="toc-civ-link" href="francais.html">⚜️ Français</a>
+      <a class="toc-civ-link" href="hre.html">🦅 Saint-Empire</a>
+      <a class="toc-civ-link" href="mongols.html">🏹 Mongols</a>
+      <a class="toc-civ-link" href="rus.html">🪶 Rus</a>
+      <a class="toc-civ-link" href="abbasides.html">🌙 Abbasides</a>
+      <a class="toc-civ-link" href="ottomans.html">🌺 Ottomans</a>
+      <a class="toc-civ-link" href="mali.html">🌞 Mali</a>
+      <a class="toc-civ-link" href="byzantins.html">🔱 Byzantins</a>
+      <a class="toc-civ-link" href="chine.html">🐉 Chine</a>
+      <a class="toc-civ-link" href="delhi.html">🐘 Delhi</a>
+      <a class="toc-civ-link" href="japonais.html">🌸 Japonais</a>
+      <div class="toc-sep"></div>
+      <div class="toc-title" style="color:var(--gold);font-size:.58rem;">DLC</div>
+      <a class="toc-civ-link" href="zhuxilegacy.html">🏯 <span class="dlc-badge-mini dlc-badge-mini-dynasties">DLC</span> Zhu Xi Legacy</a>
+      <a class="toc-civ-link" href="ayyoubides.html">⚔️ <span class="dlc-badge-mini">DLC</span> Ayyoubides</a>
+      <a class="toc-civ-link" href="jeannedarc.html">⚜️🔥 <span class="dlc-badge-mini">DLC</span> Jeanne d'Arc</a>
+      <a class="toc-civ-link" href="ordresmoines.html">✝️ <span class="dlc-badge-mini">DLC</span> Ordre du Dragon</a>
+      <a class="toc-civ-link" href="templiers.html">✝️⚔️ <span class="dlc-badge-mini dlc-badge-mini-knights">DLC</span> Templiers</a>
+      <a class="toc-civ-link" href="lancaster.html">🌹 <span class="dlc-badge-mini dlc-badge-mini-knights">DLC</span> Lancaster</a>
+      <a class="toc-civ-link" href="hordedor.html">🐎 <span class="dlc-badge-mini dlc-badge-mini-dynasties">DLC</span> Horde d'Or</a>
+      <a class="toc-civ-link" href="macedonienne.html">⚡ <span class="dlc-badge-mini dlc-badge-mini-dynasties">DLC</span> Macédonienne</a>
+      <a class="toc-civ-link" href="sengokudaimyo.html">⛩️ <span class="dlc-badge-mini dlc-badge-mini-dynasties">DLC</span> Sengoku Daimyo</a>
+      <a class="toc-civ-link" href="tughluq.html">🕌 <span class="dlc-badge-mini dlc-badge-mini-dynasties">DLC</span> Tughluq</a>
+      <a class="toc-civ-link" href="jindynasty.html">🏮 <span class="dlc-badge-mini dlc-badge-mini-yuefei">DLC</span> Dynastie Jin</a>
+    </aside>
+    <main class="main">
+      <div class="breadcrumb"><a href="../index.html">Accueil</a><span style="opacity:.4">›</span><a href="../guide.html">Guide Civs</a><span style="opacity:.4">›</span><span>Dynastie Jin</span></div>
+      <button class="fav-btn" id="fav-btn-jindynasty" onclick="toggleFav('jindynasty')" title="Ajouter aux favoris">⭐</button>
+      <div class="civ-hero" id="overview-jindynasty">
+        <div class="civ-hero-flag">🏮</div>
+        <div class="civ-hero-info">
+          <div class="civ-difficulty">
+            <div class="diff-stars-inline"><svg class="ds on" viewBox="0 0 16 16"><path d="M8 1l1.9 3.9 4.1.6-3 2.9.7 4.1L8 10.5l-3.7 1.9.7-4.1-3-2.9 4.1-.6z"/></svg><svg class="ds on" viewBox="0 0 16 16"><path d="M8 1l1.9 3.9 4.1.6-3 2.9.7 4.1L8 10.5l-3.7 1.9.7-4.1-3-2.9 4.1-.6z"/></svg><svg class="ds on" viewBox="0 0 16 16"><path d="M8 1l1.9 3.9 4.1.6-3 2.9.7 4.1L8 10.5l-3.7 1.9.7-4.1-3-2.9 4.1-.6z"/></svg></div>
+            <span class="diff-badge">EXPERT</span>
+            <span class="dlc-badge-hero-yuefei">DLC - Yue Fei's Legacy</span>
+          </div>
+          <div class="civ-name-hero">Dynastie Jin</div>
+          <div class="civ-tagline-hero">L'Empire Jurchen - cavalerie d'élite, Emissaires et économie montée</div>
+          <p class="civ-playstyle">La Dynastie Jin est une civilisation principale du DLC Yue Fei's Legacy. Fondee par les Jurchens qui conquirent le Nord de la Chine (1115-1234), elle affronta directement le général Song Yue Fei. Sa mécanique distinctive repose sur les Villageois Montés (Mounted Villagers), plus rapides et qui collectent davantage, et sur les Emissaires qui établissent des Tributaires pour un revenu passif en or. Les Keep Meng'an Mouke produisent automatiquement des défenseurs. Les Horse Grasslands génèrent des chevaux qui augmentent les PV de toute la cavalerie.</p>
+          <div class="str-weak">
+            <div class="sw-col str"><div class="sw-label str">Forces</div><ul class="sw-list str"><li class="sw-item">Iron Pagoda - cavalerie lourde d'élite très résistante</li><li class="sw-item">Villageois Montés - collecte plus rapide et mobilité</li><li class="sw-item">Emissaires - revenu or passif via Tributaires</li><li class="sw-item">Meng'an Mouke Keep - défenseurs automatiques</li><li class="sw-item">Puissant en cavalerie-poudre à canon en late game</li></ul></div>
+            <div class="sw-col wk"><div class="sw-label wk">Faiblesses</div><ul class="sw-list wk"><li class="sw-item">Courbe d'apprentissage élevée (économie complexe)</li><li class="sw-item">Limité à 20 Villageois Montés sans Emissaires</li><li class="sw-item">Iron Pagoda vulnérable aux piques en masse</li><li class="sw-item">Unités d'élite très coûteuses en ressources</li></ul></div>
+          </div>
+        </div>
+      </div>
+      <div class="section" id="bonus-jindynasty">
+        <div class="section-title"><span class="section-icon">⚡</span>Bonus de civilisation</div>
+        <div class="bonus-list"><div class="bonus-item"><div class="bonus-icon">🐎</div><div class="bonus-text"><div class="bt-title">Villageois Montés (Mounted Villagers)</div><div class="bt-desc">Les Mounted Villagers se déplacent deux fois plus vite que les villageois standards, collectent les ressources plus rapidement et ont une capacité de transport plus élevée. Coûtent Nourriture + Or. Limités à 20 sans embaucher des Emissaires.</div></div></div><div class="bonus-item"><div class="bonus-icon">🌾</div><div class="bonus-text"><div class="bt-title">Horse Grasslands - Pâturages à Chevaux</div><div class="bt-desc">À chaque montée d'âge via un Landmark, tu choisis l'emplacement d'un Horse Grasslands sur la carte. Ce bâtiment génère des chevaux au fil du temps — chaque cheval augmente les PV de TOUTE ta cavalerie. Le Landmark Great Pasture combine Horse Grasslands et War Stable.</div></div></div><div class="bonus-item"><div class="bonus-icon">🏛️</div><div class="bonus-text"><div class="bt-title">Emissaires et Tributaires</div><div class="bt-desc">Les Emissaires peuvent capturer des villages neutres pour établir des Tributaires qui génèrent un revenu en or passif sans construction de bâtiment. Embaucher plus d'Emissaires augmente aussi le plafond de Mounted Villagers autorisés.</div></div></div><div class="bonus-item"><div class="bonus-icon">🏯</div><div class="bonus-text"><div class="bt-title">Meng'an Mouke Keep - Défense Automatisée</div><div class="bt-desc">Ces keeps avancés produisent automatiquement des défenseurs de cavalerie toutes les 60 secondes qui sortent se battre contre les ennemis proches. Les Town Centers gagnent aussi cette capacité (toutes les 120 secondes).</div></div></div></div>
+      </div>
+      <div class="section" id="landmarks-jindynasty">
+        <div class="section-title"><span class="section-icon">🏯</span>Landmarks - Choix par âge</div>
+        <p style="font-size:.95rem;color:var(--text-muted);font-style:italic;margin-bottom:1.5rem;">À chaque montée d'âge, tu choisis l'un des deux landmarks.</p>
+        <div class="landmark-pair"><div class="age-label-lm">Âge II - Féodal</div><div class="landmark-card"><div class="lm-name">Flower Pagoda</div><div class="lm-desc">(Recommandé) Capacité active : ring buff Flower Garden qui accorde +25% de vitesse de collecte aux villageois proches ET +25% de vitesse d'attaque aux unités militaires non-siège. Une seule instance active à la fois.</div></div><div class="landmark-card"><div class="lm-name">Great Pasture</div><div class="lm-desc">Combine les fonctions du Horse Grasslands et du War Stable. Permet de former instantanément de la cavalerie à coût réduit dès qu'un cheval est disponible dans le pâturage.</div></div></div>
+        <div class="landmark-pair"><div class="age-label-lm">Âge III - Château</div><div class="landmark-card"><div class="lm-name">Dragon Pavilion</div><div class="lm-desc">(Recommandé défense) Produit des Emissaires à -33% de coût et en accorde un gratuitement. Amélioration : le Meng'an Mouke produit automatiquement des défenseurs de cavalerie toutes les 60s ; les Town Centers toutes les 120s.</div></div><div class="landmark-card"><div class="lm-name">Mountain Hall</div><div class="lm-desc">Génère du Karma au fur et à mesure du travail des villageois. À 1 000 Karma, un bonus est activé : +75% de vitesse de collecte aux fermes, régénération des bâtiments, +50% de vitesse d'attaque, et x3 production d'or des Reliques. Fonctionne aussi comme Monastère.</div></div></div>
+        <div class="landmark-pair"><div class="age-label-lm">Âge IV - Impérial</div><div class="landmark-card"><div class="lm-name">Pagoda Forest</div><div class="lm-desc">(Recommandé économie) Génère jusqu'à 15 petites forêts produisant ~600 Bois/minute au total. Capacité active : conversion des unités ennemies proches en alliées. Garnir 3 Moines augmente le rayon de conversion.</div></div><div class="landmark-card"><div class="lm-name">Great Wall Bastion</div><div class="lm-desc">Keep défensif avancé doté de 4 Bed Crossbows. Augmente le plafond de défenseurs Meng'an Mouke de +10 unités. Débloque l'amélioration Flying Fire Battalions.</div></div></div>
+      </div>
+      <div class="section" id="units-jindynasty">
+        <div class="section-title"><span class="section-icon">⚔️</span>Troupes par âge</div>
+        <div class="age-tabs"><div class="age-tab active" onclick="setAge(0,this)">I - Sombre</div><div class="age-tab" onclick="setAge(1,this)">II - Féodal</div><div class="age-tab" onclick="setAge(2,this)">III - Château</div><div class="age-tab" onclick="setAge(3,this)">IV - Impérial</div></div>
+        <div class="age-panel active" id="age-jindynasty-0"><div class="item-grid"><div class="item-card unique"><div class="item-icon-name"><div class="item-icon">🐎👷✨</div><div class="item-name">Villageois Monté (Mounted Villager)</div></div><div class="item-desc">Villageois à cheval : se déplace plus vite, collecte plus rapidement et transporte plus de ressources. Coûte Nourriture + Or. Max 20 sans Emissaires supplémentaires (Tributaires : +3 par Emissaire actif).</div><div class="item-stats"><span class="istat">UNITÉ UNIQUE</span></div></div><div class="item-card"><div class="item-icon-name"><div class="item-icon">🦌</div><div class="item-name">Rennes (Reindeer)</div></div><div class="item-desc">La Dynastie Jin démarre avec deux Rennes près du Centre-Ville, une réserve de nourriture supplémentaire dès le début de partie.</div><div class="item-stats"><span class="istat">Bonus de départ</span></div></div></div></div>
+        <div class="age-panel" id="age-jindynasty-1"><div class="item-grid"><div class="item-card unique"><div class="item-icon-name"><div class="item-icon">🐎🏮✨</div><div class="item-name">Mohe Tribesman</div></div><div class="item-desc">Remplace l'Archer. Cavalerie légère à distance produite en grand nombre à faible coût. Faible en mêlée - doit être soutenue par des unités de mêlée devant.</div><div class="item-stats"><span class="istat">UNITÉ UNIQUE</span></div></div><div class="item-card unique"><div class="item-icon-name"><div class="item-icon">🏹🏮✨</div><div class="item-name">Bed Crossbow</div></div><div class="item-desc">Remplace le Springald. Engin de siège à projectiles perforants, disponible dès l'âge Féodal grâce au Machine Workshop. Excellent contre l'infanterie groupée et les fortifications légères.</div><div class="item-stats"><span class="istat">UNITÉ UNIQUE</span></div></div><div class="item-card"><div class="item-icon-name"><div class="item-icon">🏛️</div><div class="item-name">Emissaire</div></div><div class="item-desc">Établit des Tributaires (revenu en nourriture, +3 Villageois Montés, plus de revenu marchand) ou lance Bribe pour convertir une unité ennemie en unité neutre.</div><div class="item-stats"><span class="istat">Diplomatie</span></div></div></div></div>
+        <div class="age-panel" id="age-jindynasty-2"><div class="item-grid"><div class="item-card unique"><div class="item-icon-name"><div class="item-icon">🏇🏮✨</div><div class="item-name">Iron Pagoda</div></div><div class="item-desc">Remplace le Lancer. Cavalerie lourde blindée à dégâts de zone et armure de mêlée accrue, renforcée par les chevaux générés par les Grasslands. Très résistante mais vulnérable aux piques en masse.</div><div class="item-stats"><span class="istat">UNITÉ UNIQUE</span></div></div><div class="item-card unique"><div class="item-icon-name"><div class="item-icon">⚔️🏮✨</div><div class="item-name">Zhanma Swordsman</div></div><div class="item-desc">Infanterie lourde spécialement efficace contre la cavalerie ennemie. Complète les Iron Pagoda en protégeant les flancs contre les charges adverses.</div><div class="item-stats"><span class="istat">UNITÉ UNIQUE</span></div></div><div class="item-card"><div class="item-icon-name"><div class="item-icon">🏯</div><div class="item-name">Défenseur (Meng'an Mouke)</div></div><div class="item-desc">Cavalerie de mêlée générée automatiquement par les emplacements défensifs Meng'an Mouke pour repousser les ennemis proches des fortifications.</div><div class="item-stats"><span class="istat">Auto-défense (IA)</span></div></div></div></div>
+        <div class="age-panel" id="age-jindynasty-3"><div class="item-grid"><div class="item-card unique"><div class="item-icon-name"><div class="item-icon">🔥🏮✨</div><div class="item-name">Eruptor</div></div><div class="item-desc">Version améliorée du Handcannoneer. Infanterie à poudre très efficace contre les bâtiments et en confrontation rapprochée, mais vulnérable à distance.</div><div class="item-stats"><span class="istat">UNITÉ UNIQUE</span></div></div><div class="item-card unique"><div class="item-icon-name"><div class="item-icon">💣🏮✨</div><div class="item-name">Mounted Grenadier</div></div><div class="item-desc">Cavalerie lourde à distance générée automatiquement par les emplacements Meng'an Mouke avancés. Dégâts de zone efficaces contre les groupes ennemis denses.</div><div class="item-stats"><span class="istat">Auto-défense (IA)</span></div></div><div class="item-card"><div class="item-icon-name"><div class="item-icon">💥</div><div class="item-name">Nest of Bees</div></div><div class="item-desc">Machine de siège partagée avec la Chine/Zhu Xi Legacy. Inflige des dégâts de zone à distance contre de grands groupes d'ennemis.</div><div class="item-stats"><span class="istat">Siège</span></div></div></div></div>
+      </div>
+      <div class="section" id="strategy-jindynasty">
+        <div class="section-title"><span class="section-icon">🗺️</span>Stratégies recommandées</div>
+        <div class="strategy-box">
+          <div class="strat-title">Économie Montée - Avantage éco précoce</div>
+          <div class="strat-desc">Exploiter les Mounted Villagers pour une collecte accélérée et sécuriser des revenus passifs via les Emissaires.</div>
+          <ol class="strat-steps"><li class="strat-step"><div class="step-n">1</div><div>Former les Mounted Villagers dès le début - collecte plus rapide</div></li><li class="strat-step"><div class="step-n">2</div><div>Envoyer des Emissaires capturer les villages neutres</div></li><li class="strat-step"><div class="step-n">3</div><div>Flower Pagoda en Féodal - bonus économique et militaire simultané</div></li><li class="strat-step"><div class="step-n">4</div><div>Construire des Horse Grasslands aux emplacements optimaux</div></li><li class="strat-step"><div class="step-n">5</div><div>Accumuler les chevaux pour augmenter les PV de toute la cavalerie</div></li></ol>
+        </div>
+        <div class="strategy-box">
+          <div class="strat-title">Iron Pagoda + Mounted Grenadiers - Combo cavalerie-poudre</div>
+          <div class="strat-desc">Combiner la cavalerie lourde Iron Pagoda avec les Mounted Grenadiers pour un combo dévastateur contre les armées groupées.</div>
+          <ol class="strat-steps"><li class="strat-step"><div class="step-n">1</div><div>Dragon Pavilion en âge 3 - Emissaires à prix réduit + Meng'an Mouke</div></li><li class="strat-step"><div class="step-n">2</div><div>Constituer 4-6 Iron Pagoda comme fer de lance</div></li><li class="strat-step"><div class="step-n">3</div><div>Mounted Grenadiers en soutien - grenades sur les groupes denses</div></li><li class="strat-step"><div class="step-n">4</div><div>Eruptors contre les bâtiments lors des assauts</div></li><li class="strat-step"><div class="step-n">5</div><div>Pagoda Forest en âge 4 pour l'économie bois et conversions</div></li></ol>
+        </div>
+      </div>
+      <div class="civ-nav-bar">
+        <a class="civ-nav-btn" href="tughluq.html">← Tughluq</a>
+        <a class="civ-nav-btn" href="ordresmoines.html">Ordre du Dragon ✝️ →</a>
+      </div>
+    </main>
+<script src="../js/data.js"></script>
+<script src="../js/main.js"></script>
+<script src="../js/civ.js"></script>
+</body>
+</html>

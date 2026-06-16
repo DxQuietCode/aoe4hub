@@ -1,0 +1,56 @@
+﻿<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<title>Build Orders — AOE IV Hub</title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="page-bg-global"></div>
+<div id="hub-toast" class="hub-toast" role="status" aria-live="polite"></div>
+<button id="back-to-top" class="back-to-top" onclick="scrollToTop()" aria-label="Retour en haut">&#8679;</button>
+<div id="hub-quote" class="hub-quote-bar"></div>
+<nav></nav>
+<div id="bo-focus-overlay" class="bo-focus-overlay">
+  <button class="bof-close" onclick="closeBOFocus()">&#10005; Quitter (Echap)</button>
+  <div class="bof-content"></div>
+</div>
+  <div class="page">
+    <div class="breadcrumb">
+      <a href="index.html">Accueil</a><span style="opacity:.4">›</span>
+      <span>Build Orders</span>
+    </div>
+    <div class="page-header">
+      <span class="page-tag">📋 Build Orders</span>
+      <h1 class="page-title">Séquences de construction</h1>
+      <p class="page-desc">Sélectionne un build order et utilise le timer pas-à-pas pour le pratiquer en partie.</p>
+    </div>
+
+    <div class="bo-filters">
+      <div class="bo-filter-row">
+        <span class="bo-filter-lbl">Civilisation :</span>
+        <select class="bo-civ-sel" id="bo-civ-filter" onchange="setBOCiv(this.value)"></select>
+      </div>
+      <div class="bo-filter-row">
+        <span class="bo-filter-lbl">Style :</span>
+        <button class="fbtn fbtn-bostyle active" data-bostyle="all"     onclick="setBOStyle('all',this)">Tous</button>
+        <button class="fbtn fbtn-bostyle"        data-bostyle="rush"    onclick="setBOStyle('rush',this)">⚔️ Rush Féodal</button>
+        <button class="fbtn fbtn-bostyle"        data-bostyle="chateau" onclick="setBOStyle('chateau',this)">🏰 Fast Château</button>
+        <button class="fbtn fbtn-bostyle"        data-bostyle="boom"    onclick="setBOStyle('boom',this)">📈 Boom Eco</button>
+        <button class="fbtn fbtn-bostyle"        data-bostyle="harass"  onclick="setBOStyle('harass',this)">💨 Harass</button>
+      </div>
+    </div>
+
+    <div class="bo-list" id="bo-list">
+      <div class="bo-empty">Chargement des build orders...</div>
+    </div>
+
+    <div class="bo-timer-section" id="bo-timer-section" style="display:none"></div>
+
+<script src="js/data.js"></script>
+<script src="js/main.js"></script>
+<script src="js/buildorders.js"></script>
+</body>
+</html>

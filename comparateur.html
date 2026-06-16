@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<title>Comparateur — AOE IV Hub</title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="page-bg-global"></div>
+<div id="hub-toast" class="hub-toast" role="status" aria-live="polite"></div>
+<button id="back-to-top" class="back-to-top" onclick="scrollToTop()" aria-label="Retour en haut">&#8679;</button>
+<div id="hub-quote" class="hub-quote-bar"></div>
+<nav></nav>
+
+  <div class="page">
+    <div class="breadcrumb">
+      <a href="index.html">Accueil</a><span style="opacity:.4">›</span>
+      <span>Comparateur</span>
+    </div>
+    <div class="page-header">
+      <span class="page-tag">⚖️ Comparateur</span>
+      <h1 class="page-title">Comparer deux civilisations</h1>
+      <p class="page-desc">Sélectionne deux civilisations pour voir leurs bonus, landmarks, unités spéciales et différences côté à côté.</p>
+    </div>
+
+    <div class="comp-selectors">
+      <div class="comp-sel-wrap side-a">
+        <select id="comp-sel-a"></select>
+      </div>
+      <div class="comp-vs">VS</div>
+      <div class="comp-sel-wrap side-b">
+        <select id="comp-sel-b"></select>
+      </div>
+    </div>
+
+    <div class="comp-grid" id="comp-grid">
+      <div class="comp-empty-state">Sélectionne deux civilisations dans les menus ci-dessus pour les comparer.</div>
+    </div>
+
+<script src="js/data.js"></script>
+<script src="js/main.js"></script>
+<script src="js/comparateur.js"></script>
+</body>
+</html>

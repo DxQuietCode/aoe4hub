@@ -1,0 +1,105 @@
+﻿<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<title>Abbasides — AOE IV Hub</title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+<div class="page-bg-global"></div>
+<div id="hub-toast" class="hub-toast" role="status" aria-live="polite"></div>
+<button id="back-to-top" class="back-to-top" onclick="scrollToTop()" aria-label="Retour en haut">&#8679;</button>
+<div id="hub-quote" class="hub-quote-bar"></div>
+<nav></nav>
+
+<div class="layout">
+  <aside class="toc">
+    <div class="toc-title">Sommaire</div>
+    <a class="toc-link" href="#overview">Vue d'ensemble</a>
+    <a class="toc-link" href="#bonus">Bonus uniques</a>
+    <a class="toc-link" href="#landmarks">Landmarks</a>
+    <a class="toc-link" href="#units">Troupes par âge</a>
+    <a class="toc-link" href="#strategy">Stratégies</a>
+    <div class="toc-sep"></div>
+    <div class="toc-title">Autres civs</div>
+    
+    <a class="toc-civ-link" href="anglais.html">🏴󠁧󠁢󠁥󠁮󠁧󠁿 Anglais</a>
+    <a class="toc-civ-link" href="francais.html">⚜️ Français</a>
+    <a class="toc-civ-link" href="hre.html">🦅 Saint-Empire</a>
+    <a class="toc-civ-link" href="mongols.html">🏹 Mongols</a>
+    <a class="toc-civ-link" href="rus.html">🪶 Rus</a>
+    <a class="toc-civ-link" href="abbasides.html">🌙 Abbasides</a>
+    <a class="toc-civ-link" href="ottomans.html">🌺 Ottomans</a>
+    <a class="toc-civ-link" href="mali.html">🌞 Mali</a>
+    <a class="toc-civ-link" href="byzantins.html">🔱 Byzantins</a>
+    <a class="toc-civ-link" href="chine.html">🐉 Chine</a>
+    <a class="toc-civ-link" href="delhi.html">🐘 Delhi Sultanat</a>
+    <a class="toc-civ-link" href="japonais.html">🌸 Japonais</a>
+  </aside>
+  <main class="main">
+    <div class="breadcrumb"><a href="../index.html">Accueil</a><span style="opacity:.4">›</span><a href="../guide.html">Guide Civs</a><span style="opacity:.4">›</span><span>Califat Abbasside</span></div>
+    <button class="fav-btn" id="fav-btn-abbasides" onclick="toggleFav('abbasides')" title="Ajouter aux favoris">⭐</button>
+    <div class="variant-banner"><span class="variant-banner-label">VARIANTE</span><a class="variant-banner-link" href="ayyoubides.html">⚔️ Sultanat Ayyoubide →</a></div>
+      <div class="civ-hero" id="overview">
+      <div class="civ-hero-flag">🌙</div>
+      <div class="civ-hero-info">
+        <div class="civ-difficulty">
+          <div class="diff-stars-inline"><svg class="ds on" viewBox="0 0 16 16"><path d="M8 1l1.9 3.9 4.1.6-3 2.9.7 4.1L8 10.5l-3.7 1.9.7-4.1-3-2.9 4.1-.6z"/></svg><svg class="ds on" viewBox="0 0 16 16"><path d="M8 1l1.9 3.9 4.1.6-3 2.9.7 4.1L8 10.5l-3.7 1.9.7-4.1-3-2.9 4.1-.6z"/></svg><svg class="ds off" viewBox="0 0 16 16"><path d="M8 1l1.9 3.9 4.1.6-3 2.9.7 4.1L8 10.5l-3.7 1.9.7-4.1-3-2.9 4.1-.6z"/></svg></div>
+          <span class="diff-badge">INTERMÉDIAIRE</span>
+        </div>
+        <div class="civ-name-hero">Califat Abbasside</div>
+        <div class="civ-tagline-hero">La Maison de la Sagesse - savoir est pouvoir</div>
+        <p class="civ-playstyle">Les Abbasides n'ont pas de système de landmarks classique - à la place, la Maison de la Sagesse offre des améliorations uniques choisies librement. Les Camels Riders et Camel Archers sont les meilleurs anti-cavalerie du jeu. Le 'Golden Age' offre des bonus cumulatifs selon le nombre de bâtiments construits. Civ complexe mais très puissante avec une bonne maîtrise.</p>
+        <div class="str-weak">
+          <div class="sw-col str"><div class="sw-label str">Forces</div><ul class="sw-list str"><li class="sw-item">Contre-cavalerie absolue (chameaux)</li><li class="sw-item">Montée d'âge très flexible</li><li class="sw-item">Golden Age - bonus cumulatifs puissants</li><li class="sw-item">Camels rapides et très efficaces</li><li class="sw-item">Technologies accessibles tôt</li></ul></div>
+          <div class="sw-col wk"><div class="sw-label wk">Faiblesses</div><ul class="sw-list wk"><li class="sw-item">Choix de technologies nombreux et complexes</li><li class="sw-item">Peu de défenses spéciales de bâtiments</li><li class="sw-item">Early game lent si mal géré</li><li class="sw-item">Faible en naval</li></ul></div>
+        </div>
+      </div>
+    </div>
+    <div class="section" id="bonus">
+      <div class="section-title"><span class="section-icon">⚡</span>Bonus de civilisation</div>
+      <div class="bonus-list"><div class="bonus-item"><div class="bonus-icon">🏛️</div><div class="bonus-text"><div class="bt-title">Maison de la Sagesse - Tech flexibles</div><div class="bt-desc">Au lieu des landmarks standard, tu choisis librement des améliorations dans 4 ailes (Économie, Militaire, Culture, Commerce). Très flexible.</div></div></div><div class="bonus-item"><div class="bonus-icon">🌟</div><div class="bonus-text"><div class="bt-title">Golden Age - Bonus cumulatifs</div><div class="bt-desc">Plus tu construis de bâtiments économiques différents, plus ton bonus global augmente (vitesse, coût des unités, production).</div></div></div><div class="bonus-item"><div class="bonus-icon">🐪</div><div class="bonus-text"><div class="bt-title">Chameaux - Anti-cavalerie absolu</div><div class="bt-desc">Le Camel Rider et le Camel Archer sont la meilleure réponse à la cavalerie ennemie. Un chameau = deux cavaliers adverses de moins.</div></div></div><div class="bonus-item"><div class="bonus-icon">🔬</div><div class="bonus-text"><div class="bt-title">Recherche accélérée</div><div class="bt-desc">Certaines recherches sont disponibles plus tôt ou pour moins cher grâce à la Maison de la Sagesse.</div></div></div><div class="bonus-item"><div class="bonus-icon">🏇</div><div class="bonus-text"><div class="bt-title">Infanterie de chameau unique</div><div class="bt-desc">Le Camel Rider inflige un malus de vitesse aux cavaliers proches, les rendant encore plus faciles à tuer.</div></div></div></div>
+    </div>
+    <div class="section" id="landmarks">
+      <div class="section-title"><span class="section-icon">🏯</span>Landmarks - Choix par âge</div>
+      <p style="font-size:.95rem;color:var(--text-muted);font-style:italic;margin-bottom:1.5rem;">À chaque montée d'âge, tu choisis l'un des deux landmarks. Chacun oriente ta stratégie.</p>
+      <div class="landmark-pair"><div class="age-label-lm">Âge II - Féodal</div><div class="landmark-card"><div class="lm-name">Maison de la Sagesse - Aile Économie</div><div class="lm-desc">Débloque des améliorations économiques uniques - vitesse de collecte, capacité de transport, production.</div></div><div class="landmark-card"><div class="lm-name">Maison de la Sagesse - Aile Militaire</div><div class="lm-desc">Débloque des améliorations pour tes unités de combat, notamment les chameaux et l'infanterie.</div></div></div><div class="landmark-pair"><div class="age-label-lm">Âge III - Château</div><div class="landmark-card"><div class="lm-name">Maison de la Sagesse - Aile Culture</div><div class="lm-desc">Améliorations de recherche et avantages de population. Idéal pour un late-game tech-heavy.</div></div><div class="landmark-card"><div class="lm-name">Maison de la Sagesse - Aile Commerce</div><div class="lm-desc">Débloque des bonus commerciaux et des routes de caravane avantageuses.</div></div></div><div class="landmark-pair"><div class="age-label-lm">Âge IV - Impérial</div><div class="landmark-card"><div class="lm-name">Grande Mosquée</div><div class="lm-desc">Génère des ressources importantes et améliore les recherches restantes.</div></div><div class="landmark-card"><div class="lm-name">Palais du Calife</div><div class="lm-desc">Produit des unités d'élite abbasides en continu - force de frappe finale.</div></div></div>
+    </div>
+    <div class="section" id="units">
+      <div class="section-title"><span class="section-icon">⚔️</span>Troupes par âge</div>
+      <div class="age-tabs">
+        <div class="age-tab active" onclick="setAge(0,this)">I - Sombre</div>
+        <div class="age-tab" onclick="setAge(1,this)">II - Féodal</div>
+        <div class="age-tab" onclick="setAge(2,this)">III - Château</div>
+        <div class="age-tab" onclick="setAge(3,this)">IV - Impérial</div>
+      </div>
+      <div class="age-panel active" id="age-0"><div class="item-grid"><div class="item-card"><div class="item-icon-name"><div class="item-icon">👷</div><div class="item-name">Villageois</div></div><div class="item-desc">Économie et construction.</div><div class="item-stats"><span class="istat">50 🍖 · 20s</span></div></div><div class="item-card"><div class="item-icon-name"><div class="item-icon">🐎</div><div class="item-name">Scout</div></div><div class="item-desc">Éclaireur.</div><div class="item-stats"><span class="istat">65 🍖 · 23s</span></div></div></div></div>
+      <div class="age-panel" id="age-1"><div class="item-grid"><div class="item-card unique"><div class="item-icon-name"><div class="item-icon">🐪✨</div><div class="item-name">Camel Rider</div></div><div class="item-desc">Anti-cavalerie surpuissant. Ralentit les cavaliers ennemis proches.</div><div class="item-stats"><span class="istat">100 🍖 · 50 🪙</span></div><div class="unique-badge">UNITÉ UNIQUE</div></div><div class="item-card unique"><div class="item-icon-name"><div class="item-icon">🏹🐪✨</div><div class="item-name">Camel Archer</div></div><div class="item-desc">Archer monté sur chameau - mobilité et anti-cavalerie en un.</div><div class="item-stats"><span class="istat">120 🍖 · 60 🪙</span></div><div class="unique-badge">UNITÉ UNIQUE</div></div><div class="item-card"><div class="item-icon-name"><div class="item-icon">🗡️</div><div class="item-name">Man-at-Arms</div></div><div class="item-desc">Infanterie lourde.</div><div class="item-stats"><span class="istat">100 🍖 · 20 🪙</span></div></div><div class="item-card"><div class="item-icon-name"><div class="item-icon">🗡️</div><div class="item-name">Spearman</div></div><div class="item-desc">Piquier.</div><div class="item-stats"><span class="istat">60 🍖 · 20 🪵</span></div></div></div></div>
+      <div class="age-panel" id="age-2"><div class="item-grid"><div class="item-card"><div class="item-icon-name"><div class="item-icon">🐪</div><div class="item-name">Camel Rider amélioré</div></div><div class="item-desc">Version château - plus résistant et plus rapide.</div><div class="item-stats"><span class="istat">120 🍖 · 70 🪙</span></div></div><div class="item-card"><div class="item-icon-name"><div class="item-icon">🏹</div><div class="item-name">Arbalétrier</div></div><div class="item-desc">Archer lourd.</div><div class="item-stats"><span class="istat">80 🍖 · 40 🪙</span></div></div><div class="item-card"><div class="item-icon-name"><div class="item-icon">💣</div><div class="item-name">Springald</div></div><div class="item-desc">Siège de longue portée.</div><div class="item-stats"><span class="istat">250 🪵 · 250 🪙</span></div></div></div></div>
+      <div class="age-panel" id="age-3"><div class="item-grid"><div class="item-card"><div class="item-icon-name"><div class="item-icon">🐪🏆</div><div class="item-name">Camel Elite</div></div><div class="item-desc">Version impériale - le meilleur counter-cavalerie du jeu.</div><div class="item-stats"><span class="istat">150 🍖 · 90 🪙</span></div></div><div class="item-card"><div class="item-icon-name"><div class="item-icon">💥</div><div class="item-name">Bombard</div></div><div class="item-desc">Canon de siège.</div><div class="item-stats"><span class="istat">400 🪵 · 400 🪙</span></div></div><div class="item-card"><div class="item-icon-name"><div class="item-icon">🔫</div><div class="item-name">Handcannoneer</div></div><div class="item-desc">Arquebusier.</div><div class="item-stats"><span class="istat">120 🍖 · 60 🪙</span></div></div></div></div>
+    </div>
+    <div class="section" id="strategy">
+      <div class="section-title"><span class="section-icon">🗺️</span>Stratégies recommandées</div>
+      <div class="strategy-box">
+        <div class="strat-title">Camel Rush - Counter absolu à la cavalerie</div>
+        <div class="strat-desc">Si l'adversaire joue cavalerie (Français, Mongols) - les Camel Riders les détruisent systématiquement.</div>
+        <ol class="strat-steps"><li class="strat-step"><div class="step-n">1</div><div>Économie rapide - Maison de Sagesse Aile Économie en priorité</div></li><li class="strat-step"><div class="step-n">2</div><div>Monter Féodal à 15 villageois</div></li><li class="strat-step"><div class="step-n">3</div><div>Construire 2 Stables pour chameaux</div></li><li class="strat-step"><div class="step-n">4</div><div>Spam Camel Riders - ils counter tout ce qui est à cheval</div></li><li class="strat-step"><div class="step-n">5</div><div>Ajouter des Camel Archers pour du harass à distance</div></li><li class="strat-step"><div class="step-n">6</div><div>Golden Age - continue de construire des bâtiments variés pour augmenter les bonus</div></li></ol>
+      </div>
+      <div class="strategy-box">
+        <div class="strat-title">Golden Age - Économie dominante</div>
+        <div class="strat-desc">Maximiser les bonus cumulatifs du Golden Age en diversifiant les bâtiments construits.</div>
+        <ol class="strat-steps"><li class="strat-step"><div class="step-n">1</div><div>Construire un bâtiment de chaque type dès que possible - fermes, camps, casernes, stables</div></li><li class="strat-step"><div class="step-n">2</div><div>Chaque nouveau type de bâtiment = bonus supplémentaire</div></li><li class="strat-step"><div class="step-n">3</div><div>Laisser l'économie s'emballer pendant que tu restes discret</div></li><li class="strat-step"><div class="step-n">4</div><div>Âge 3 → Investir les ressources en technologie et chameaux d'élite</div></li><li class="strat-step"><div class="step-n">5</div><div>Âge 4 → Armée complète avec avantage technologique majeur</div></li></ol>
+      </div>
+    </div>
+    <div class="civ-nav-bar">
+      <a class="civ-nav-btn" href="rus.html">← Rus 🪶</a>
+      <a class="civ-nav-btn" href="ottomans.html">Ottomans 🌺 →</a>
+    </div>
+  </main>
+<script src="../js/data.js"></script>
+<script src="../js/main.js"></script>
+<script src="../js/civ.js"></script>
+</body>
+</html>

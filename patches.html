@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<title>Patch Notes — AOE IV Hub</title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="page-bg-global"></div>
+<div id="hub-toast" class="hub-toast" role="status" aria-live="polite"></div>
+<button id="back-to-top" class="back-to-top" onclick="scrollToTop()" aria-label="Retour en haut">&#8679;</button>
+<div id="hub-quote" class="hub-quote-bar"></div>
+<nav></nav>
+
+  <div style="padding:80px 3rem 5rem;max-width:1100px;margin:0 auto;">
+    <div class="breadcrumb"><a href="index.html">Accueil</a><span style="opacity:.4">›</span><span>Patch Notes</span></div>
+    <div style="margin-bottom:2.5rem;padding-bottom:1.8rem;border-bottom:1px solid var(--border);">
+      <span style="font-family:'Share Tech Mono',monospace;font-size:.67rem;letter-spacing:.25em;color:var(--gold);text-transform:uppercase;margin-bottom:.6rem;display:block;">📜 Patch Notes</span>
+      <h1 style="font-family:'Cinzel',serif;font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:700;color:var(--gold-light);margin-bottom:.6rem;">Dernières mises à jour</h1>
+      <p style="font-size:1.1rem;color:var(--text-muted);font-style:italic;">Données chargées en temps réel - toujours à jour à chaque visite.</p>
+    </div>
+    <div id="patch-container">
+      <div style="text-align:center;padding:4rem 2rem;">
+        <div style="font-size:2rem;margin-bottom:1rem;opacity:.5;animation:spin 2s linear infinite;display:inline-block;">⚙️</div>
+        <div style="font-family:'Share Tech Mono',monospace;font-size:.8rem;letter-spacing:.15em;color:var(--gold);margin-bottom:.5rem;">CHARGEMENT EN COURS</div>
+        <div style="font-size:.95rem;color:var(--text-muted);">Recherche des derniers patch notes...</div>
+      </div>
+    </div>
+    <div id="patch-loaded-time" style="margin-top:1rem;font-family:'Share Tech Mono',monospace;font-size:.67rem;letter-spacing:.1em;color:var(--text-dim);"></div>
+<script src="js/data.js"></script>
+<script src="js/main.js"></script>
+<script>window.addEventListener("DOMContentLoaded", function(){ fetchPatches(); });</script>
+
+</body>
+</html>

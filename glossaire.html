@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<title>Glossaire — AOE IV Hub</title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="page-bg-global"></div>
+<div id="hub-toast" class="hub-toast" role="status" aria-live="polite"></div>
+<button id="back-to-top" class="back-to-top" onclick="scrollToTop()" aria-label="Retour en haut">&#8679;</button>
+<div id="hub-quote" class="hub-quote-bar"></div>
+<nav></nav>
+
+<div class="page" style="max-width:860px;">
+  <div class="breadcrumb"><a href="index.html">Accueil</a><span style="opacity:.4">›</span><span>Glossaire</span></div>
+  <div class="page-header">
+    <span class="page-tag">📖 Glossaire</span>
+    <h1 class="page-title">Glossaire AOE4</h1>
+    <p class="page-desc">Définitions des termes, abréviations et concepts stratégiques du jeu.</p>
+  </div>
+  <input class="gloss-search" id="gloss-search" type="text" placeholder="Rechercher un terme... (ex: all-in, boom, APM)" oninput="filterGloss()">
+  <div class="gloss-cats">
+    <div class="gloss-cat active" onclick="filterGlossCat('all',this)">Tous</div>
+    <div class="gloss-cat" onclick="filterGlossCat('gen',this)">Général</div>
+    <div class="gloss-cat" onclick="filterGlossCat('eco',this)">Économie</div>
+    <div class="gloss-cat" onclick="filterGlossCat('mil',this)">Militaire</div>
+    <div class="gloss-cat" onclick="filterGlossCat('tac',this)">Tactique</div>
+  </div>
+  <div class="gloss-grid" id="gloss-grid"></div>
+<script src="js/data.js"></script>
+<script src="js/main.js"></script>
+<script>window.addEventListener("DOMContentLoaded", function(){ renderGloss(); });</script>
+
+</body>
+</html>
