@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="fr">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
@@ -24,9 +24,11 @@
   <div class="filter-bar">
     <span class="filter-lbl">Difficulté :</span>
     <button class="fbtn fbtn-diff active" onclick="filter('all',this)">Toutes</button>
-    <button class="fbtn fbtn-diff" onclick="filter('easy',this)">★ Facile</button>
-    <button class="fbtn fbtn-diff" onclick="filter('med',this)">★★ Intermédiaire</button>
-    <button class="fbtn fbtn-diff" onclick="filter('hard',this)">★★★ Expert</button>
+    <button class="fbtn fbtn-diff" onclick="filter('d1',this)">★ Débutant</button>
+    <button class="fbtn fbtn-diff" onclick="filter('d2',this)">★★ Facile</button>
+    <button class="fbtn fbtn-diff" onclick="filter('d3',this)">★★★ Intermédiaire</button>
+    <button class="fbtn fbtn-diff" onclick="filter('d4',this)">★★★★ Avancé</button>
+    <button class="fbtn fbtn-diff" onclick="filter('d5',this)">★★★★★ Expert</button>
     <button class="fbtn fbtn-diff" style="border-color:rgba(106,171,223,.35);color:#8ec8f0;" onclick="filter('dlc',this)">🔵 DLC</button>
   </div>
   <div class="filter-bar" style="margin-top:-.5rem;">
@@ -45,84 +47,50 @@
     <div class="ges-sub">Essaie un autre filtre ou sélectionne « Toutes ».</div>
   </div>
 
-  <div class="diff-section" id="sec-easy">
-    <div class="diff-heading">
-      <div class="stars"><svg class="st on" viewBox="0 0 15 15"><path d="M7.5 1l1.8 3.7 3.9.6-2.8 2.7.7 3.9-3.6-1.9-3.6 1.9.7-3.9L2 5.3l3.9-.6z"/></svg><svg class="st off" viewBox="0 0 15 15"><path d="M7.5 1l1.8 3.7 3.9.6-2.8 2.7.7 3.9-3.6-1.9-3.6 1.9.7-3.9L2 5.3l3.9-.6z"/></svg><svg class="st off" viewBox="0 0 15 15"><path d="M7.5 1l1.8 3.7 3.9.6-2.8 2.7.7 3.9-3.6-1.9-3.6 1.9.7-3.9L2 5.3l3.9-.6z"/></svg></div>
-      <span class="diff-title">Facile</span><span class="diff-sub">- Idéales pour débuter en ligne</span><div class="diff-line"></div>
-    </div>
-    <div class="civ-grid">
-      <a class="civ-card" href="civs/anglais.html" data-diff="easy"><button class="guide-fav-btn" id="gfav-anglais" onclick="event.preventDefault();event.stopPropagation();toggleFav('anglais')">☆</button><div class="cc-top"><div class="cc-flag">🏴󠁧󠁢󠁥󠁮󠁧󠁿</div><div class="cc-name">Anglais</div><div class="cc-tagline">Défense, Longbowmen & économie stable</div></div><div class="cc-body"><div class="cc-tags"><span class="ctag">Défensif</span><span class="ctag">Archer</span><span class="ctag">Économie</span></div><div class="cc-hint">Page complète <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 7h10M8 3l4 4-4 4"/></svg></div></div></a>
-      <a class="civ-card" href="civs/francais.html" data-diff="easy"><button class="guide-fav-btn" id="gfav-francais" onclick="event.preventDefault();event.stopPropagation();toggleFav('francais')">☆</button><div class="cc-top"><div class="cc-flag">⚜️</div><div class="cc-name">Français</div><div class="cc-tagline">Cavalerie royale & commerce flexible</div></div><div class="cc-body"><div class="cc-tags"><span class="ctag">Cavalerie</span><span class="ctag">Commerce</span><span class="ctag">Agressif</span></div><div class="cc-hint">Page complète <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 7h10M8 3l4 4-4 4"/></svg></div></div></a>
-      <a class="civ-card" href="civs/hre.html" data-diff="easy"><button class="guide-fav-btn" id="gfav-hre" onclick="event.preventDefault();event.stopPropagation();toggleFav('hre')">☆</button><div class="cc-top"><div class="cc-flag">🦅</div><div class="cc-name">Saint-Empire</div><div class="cc-tagline">Reliques, Prélats & infanterie solide</div></div><div class="cc-body"><div class="cc-tags"><span class="ctag">Infanterie</span><span class="ctag">Reliques</span><span class="ctag">Défensif</span></div><div class="cc-hint">Page complète <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 7h10M8 3l4 4-4 4"/></svg></div></div></a>
-    </div>
-  </div>
-
-  <div class="diff-section" id="sec-med">
-    <div class="diff-heading">
-      <div class="stars"><svg class="st on" viewBox="0 0 15 15"><path d="M7.5 1l1.8 3.7 3.9.6-2.8 2.7.7 3.9-3.6-1.9-3.6 1.9.7-3.9L2 5.3l3.9-.6z"/></svg><svg class="st on" viewBox="0 0 15 15"><path d="M7.5 1l1.8 3.7 3.9.6-2.8 2.7.7 3.9-3.6-1.9-3.6 1.9.7-3.9L2 5.3l3.9-.6z"/></svg><svg class="st off" viewBox="0 0 15 15"><path d="M7.5 1l1.8 3.7 3.9.6-2.8 2.7.7 3.9-3.6-1.9-3.6 1.9.7-3.9L2 5.3l3.9-.6z"/></svg></div>
-      <span class="diff-title">Intermédiaire</span><span class="diff-sub">- Mécaniques spéciales à maîtriser</span><div class="diff-line"></div>
-    </div>
-    <div class="civ-grid">
-      <a class="civ-card" href="civs/mongols.html" data-diff="med"><button class="guide-fav-btn" id="gfav-mongols" onclick="event.preventDefault();event.stopPropagation();toggleFav('mongols')">☆</button><div class="cc-top"><div class="cc-flag">🏹</div><div class="cc-name">Mongols</div><div class="cc-tagline">Mobilité nomade & harass permanent</div></div><div class="cc-body"><div class="cc-tags"><span class="ctag">Nomade</span><span class="ctag">Cavalerie</span><span class="ctag">Agressif</span></div><div class="cc-hint">Page complète <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 7h10M8 3l4 4-4 4"/></svg></div></div></a>
-      <a class="civ-card" href="civs/rus.html" data-diff="med"><button class="guide-fav-btn" id="gfav-rus" onclick="event.preventDefault();event.stopPropagation();toggleFav('rus')">☆</button><div class="cc-top"><div class="cc-flag">🪶</div><div class="cc-name">Rus</div><div class="cc-tagline">Chasse, forêts & Streltsy</div></div><div class="cc-body"><div class="cc-tags"><span class="ctag">Chasse</span><span class="ctag">Infanterie</span><span class="ctag">Agressif</span></div><div class="cc-hint">Page complète <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 7h10M8 3l4 4-4 4"/></svg></div></div></a>
-      <a class="civ-card" href="civs/abbasides.html" data-diff="med"><button class="guide-fav-btn" id="gfav-abbasides" onclick="event.preventDefault();event.stopPropagation();toggleFav('abbasides')">☆</button><div class="cc-top"><div class="cc-flag">🌙</div><div class="cc-name">Abbasides</div><div class="cc-tagline">Maison de la Sagesse & chameaux</div></div><div class="cc-body"><div class="cc-tags"><span class="ctag">Tech</span><span class="ctag">Anti-cav</span><span class="ctag">Flexible</span></div><div class="cc-hint">Page complète <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 7h10M8 3l4 4-4 4"/></svg></div></div></a>
-      <a class="civ-card" href="civs/ottomans.html" data-diff="med"><button class="guide-fav-btn" id="gfav-ottomans" onclick="event.preventDefault();event.stopPropagation();toggleFav('ottomans')">☆</button><div class="cc-top"><div class="cc-flag">🌺</div><div class="cc-name">Ottomans</div><div class="cc-tagline">Armée passive & Grand Bombard</div></div><div class="cc-body"><div class="cc-tags"><span class="ctag">Artillerie</span><span class="ctag">Passif</span><span class="ctag">Late Game</span></div><div class="cc-hint">Page complète <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 7h10M8 3l4 4-4 4"/></svg></div></div></a>
-      <a class="civ-card" href="civs/mali.html" data-diff="med"><button class="guide-fav-btn" id="gfav-mali" onclick="event.preventDefault();event.stopPropagation();toggleFav('mali')">☆</button><div class="cc-top"><div class="cc-flag">🌞</div><div class="cc-name">Mali</div><div class="cc-tagline">Or passif & construction rapide</div></div><div class="cc-body"><div class="cc-tags"><span class="ctag">Économie</span><span class="ctag">Construction</span><span class="ctag">Polyvalent</span></div><div class="cc-hint">Page complète <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 7h10M8 3l4 4-4 4"/></svg></div></div></a>
-      <a class="civ-card" href="civs/byzantins.html" data-diff="med"><button class="guide-fav-btn" id="gfav-byzantins" onclick="event.preventDefault();event.stopPropagation();toggleFav('byzantins')">☆</button><div class="cc-top"><div class="cc-flag">🔱</div><div class="cc-name">Byzantins</div><div class="cc-tagline">Citernes, aqueducs & défense</div></div><div class="cc-body"><div class="cc-tags"><span class="ctag">Infrastructure</span><span class="ctag">Défensif</span><span class="ctag">Adaptable</span></div><div class="cc-hint">Page complète <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 7h10M8 3l4 4-4 4"/></svg></div></div></a>
-    </div>
-  </div>
-
-  <div class="diff-section" id="sec-hard">
-    <div class="diff-heading">
-      <div class="stars"><svg class="st on" viewBox="0 0 15 15"><path d="M7.5 1l1.8 3.7 3.9.6-2.8 2.7.7 3.9-3.6-1.9-3.6 1.9.7-3.9L2 5.3l3.9-.6z"/></svg><svg class="st on" viewBox="0 0 15 15"><path d="M7.5 1l1.8 3.7 3.9.6-2.8 2.7.7 3.9-3.6-1.9-3.6 1.9.7-3.9L2 5.3l3.9-.6z"/></svg><svg class="st on" viewBox="0 0 15 15"><path d="M7.5 1l1.8 3.7 3.9.6-2.8 2.7.7 3.9-3.6-1.9-3.6 1.9.7-3.9L2 5.3l3.9-.6z"/></svg></div>
-      <span class="diff-title">Expert</span><span class="diff-sub">- Haute maîtrise requise</span><div class="diff-line"></div>
-    </div>
-    <div class="civ-grid">
-      <a class="civ-card" href="civs/chine.html" data-diff="hard"><button class="guide-fav-btn" id="gfav-chine" onclick="event.preventDefault();event.stopPropagation();toggleFav('chine')">☆</button><div class="cc-top"><div class="cc-flag">🐉</div><div class="cc-name">Chine</div><div class="cc-tagline">Dynasties, Grande Muraille & naval</div></div><div class="cc-body"><div class="cc-tags"><span class="ctag">Dynasties</span><span class="ctag">Naval</span><span class="ctag">Construction</span></div><div class="cc-hint">Page complète <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 7h10M8 3l4 4-4 4"/></svg></div></div></a>
-      <a class="civ-card" href="civs/delhi.html" data-diff="hard"><button class="guide-fav-btn" id="gfav-delhi" onclick="event.preventDefault();event.stopPropagation();toggleFav('delhi')">☆</button><div class="cc-top"><div class="cc-flag">🐘</div><div class="cc-name">Delhi Sultanat</div><div class="cc-tagline">Éléphants de guerre & tech gratuite</div></div><div class="cc-body"><div class="cc-tags"><span class="ctag">Tech gratuite</span><span class="ctag">Éléphants</span><span class="ctag">Late Game</span></div><div class="cc-hint">Page complète <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 7h10M8 3l4 4-4 4"/></svg></div></div></a>
-      <a class="civ-card" href="civs/japonais.html" data-diff="hard"><button class="guide-fav-btn" id="gfav-japonais" onclick="event.preventDefault();event.stopPropagation();toggleFav('japonais')">☆</button><div class="cc-top"><div class="cc-flag">🌸</div><div class="cc-name">Japonais</div><div class="cc-tagline">Samurai, Bushido & villageois-soldats</div></div><div class="cc-body"><div class="cc-tags"><span class="ctag">Samurai</span><span class="ctag">Hybride</span><span class="ctag">Micro</span></div><div class="cc-hint">Page complète <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 7h10M8 3l4 4-4 4"/></svg></div></div></a>
-    </div>
-  </div>
-
-  <div class="diff-section" id="sec-dlc">
+  <!-- ★ DÉBUTANT -->
+  <div class="diff-section" id="sec-d1">
     <div class="diff-heading">
       <div class="stars">
-        <svg class="st" viewBox="0 0 15 15" style="fill:var(--blue)"><path d="M7.5 1l1.8 3.7 3.9.6-2.8 2.7.7 3.9-3.6-1.9-3.6 1.9.7-3.9L2 5.3l3.9-.6z"/></svg>
+        <svg class="st on" viewBox="0 0 15 15"><path d="M7.5 1l1.8 3.7 3.9.6-2.8 2.7.7 3.9-3.6-1.9-3.6 1.9.7-3.9L2 5.3l3.9-.6z"/></svg>
+        <svg class="st off" viewBox="0 0 15 15"><path d="M7.5 1l1.8 3.7 3.9.6-2.8 2.7.7 3.9-3.6-1.9-3.6 1.9.7-3.9L2 5.3l3.9-.6z"/></svg>
+        <svg class="st off" viewBox="0 0 15 15"><path d="M7.5 1l1.8 3.7 3.9.6-2.8 2.7.7 3.9-3.6-1.9-3.6 1.9.7-3.9L2 5.3l3.9-.6z"/></svg>
+        <svg class="st off" viewBox="0 0 15 15"><path d="M7.5 1l1.8 3.7 3.9.6-2.8 2.7.7 3.9-3.6-1.9-3.6 1.9.7-3.9L2 5.3l3.9-.6z"/></svg>
+        <svg class="st off" viewBox="0 0 15 15"><path d="M7.5 1l1.8 3.7 3.9.6-2.8 2.7.7 3.9-3.6-1.9-3.6 1.9.7-3.9L2 5.3l3.9-.6z"/></svg>
       </div>
-      <span class="diff-title">Civilisations DLC</span>
-      <span class="diff-sub">- Contenu additionnel payant</span>
-      <div class="diff-line"></div>
+      <span class="diff-title">Débutant</span><span class="diff-sub">- Idéales pour débuter en ligne</span><div class="diff-line"></div>
     </div>
     <div class="civ-grid">
-      <a class="civ-card" href="civs/zhuxilegacy.html" data-diff="dlc"><button class="guide-fav-btn" id="gfav-zhuxilegacy" onclick="event.preventDefault();event.stopPropagation();toggleFav('zhuxilegacy')">☆</button>
-        <div class="cc-top">
-          <div class="cc-flag">🏯</div>
-          <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;justify-content:center;">
-            <div class="cc-name">Héritage de Zhu Xi</div>
-            <span class="dlc-tag-dynasties">DLC - Dynasties of the East</span>
-          </div>
-          <div class="cc-tagline">Variante chinoise - naval absolu & production maximale</div>
-        </div>
-        <div class="cc-body">
-          <div class="cc-tags"><span class="ctag">Naval</span><span class="ctag">Production</span><span class="ctag">Expert</span></div>
-          <div class="cc-hint">Page complète <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 7h10M8 3l4 4-4 4"/></svg></div>
-        </div>
-      </a>
-      <a class="civ-card" href="civs/ayyoubides.html" data-diff="dlc"><button class="guide-fav-btn" id="gfav-ayyoubides" onclick="event.preventDefault();event.stopPropagation();toggleFav('ayyoubides')">☆</button>
+      <a class="civ-card" href="civs/anglais.html" data-diff="d1"><button class="guide-fav-btn" id="gfav-anglais" onclick="event.preventDefault();event.stopPropagation();toggleFav('anglais')">☆</button><div class="cc-top"><div class="cc-flag">🏴󠁧󠁢󠁥󠁮󠁧󠁿</div><div class="cc-name">Anglais</div><div class="cc-tagline">Défense, Longbowmen & économie stable</div></div><div class="cc-body"><div class="cc-tags"><span class="ctag">Défensif</span><span class="ctag">Archer</span><span class="ctag">Économie</span></div><div class="cc-hint">Page complète <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 7h10M8 3l4 4-4 4"/></svg></div></div></a>
+      <a class="civ-card" href="civs/francais.html" data-diff="d1"><button class="guide-fav-btn" id="gfav-francais" onclick="event.preventDefault();event.stopPropagation();toggleFav('francais')">☆</button><div class="cc-top"><div class="cc-flag">⚜️</div><div class="cc-name">Français</div><div class="cc-tagline">Cavalerie royale & commerce flexible</div></div><div class="cc-body"><div class="cc-tags"><span class="ctag">Cavalerie</span><span class="ctag">Commerce</span><span class="ctag">Agressif</span></div><div class="cc-hint">Page complète <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 7h10M8 3l4 4-4 4"/></svg></div></div></a>
+    </div>
+  </div>
+
+  <!-- ★★ FACILE -->
+  <div class="diff-section" id="sec-d2">
+    <div class="diff-heading">
+      <div class="stars">
+        <svg class="st on" viewBox="0 0 15 15"><path d="M7.5 1l1.8 3.7 3.9.6-2.8 2.7.7 3.9-3.6-1.9-3.6 1.9.7-3.9L2 5.3l3.9-.6z"/></svg>
+        <svg class="st on" viewBox="0 0 15 15"><path d="M7.5 1l1.8 3.7 3.9.6-2.8 2.7.7 3.9-3.6-1.9-3.6 1.9.7-3.9L2 5.3l3.9-.6z"/></svg>
+        <svg class="st off" viewBox="0 0 15 15"><path d="M7.5 1l1.8 3.7 3.9.6-2.8 2.7.7 3.9-3.6-1.9-3.6 1.9.7-3.9L2 5.3l3.9-.6z"/></svg>
+        <svg class="st off" viewBox="0 0 15 15"><path d="M7.5 1l1.8 3.7 3.9.6-2.8 2.7.7 3.9-3.6-1.9-3.6 1.9.7-3.9L2 5.3l3.9-.6z"/></svg>
+        <svg class="st off" viewBox="0 0 15 15"><path d="M7.5 1l1.8 3.7 3.9.6-2.8 2.7.7 3.9-3.6-1.9-3.6 1.9.7-3.9L2 5.3l3.9-.6z"/></svg>
+      </div>
+      <span class="diff-title">Facile</span><span class="diff-sub">- Mécaniques simples à maîtriser</span><div class="diff-line"></div>
+    </div>
+    <div class="civ-grid">
+      <a class="civ-card" href="civs/hre.html" data-diff="d2"><button class="guide-fav-btn" id="gfav-hre" onclick="event.preventDefault();event.stopPropagation();toggleFav('hre')">☆</button><div class="cc-top"><div class="cc-flag">🦅</div><div class="cc-name">Saint-Empire</div><div class="cc-tagline">Reliques, Prélats & infanterie solide</div></div><div class="cc-body"><div class="cc-tags"><span class="ctag">Infanterie</span><span class="ctag">Reliques</span><span class="ctag">Défensif</span></div><div class="cc-hint">Page complète <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 7h10M8 3l4 4-4 4"/></svg></div></div></a>
+      <a class="civ-card" href="civs/ayyoubides.html" data-diff="d2" data-dlc="true"><button class="guide-fav-btn" id="gfav-ayyoubides" onclick="event.preventDefault();event.stopPropagation();toggleFav('ayyoubides')">☆</button>
         <div class="cc-top">
           <div class="cc-flag">⚔️</div>
           <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;justify-content:center;">
-            <div class="cc-name">Sultanat Ayyoubide</div>
+            <div class="cc-name">Ayyoubides</div>
             <span class="dlc-tag">DLC - Sultans Ascend</span>
           </div>
           <div class="cc-tagline">Camel Corps & Masteries - cavalerie agressive</div>
         </div>
-        <div class="cc-body">
-          <div class="cc-tags"><span class="ctag">Cavalerie</span><span class="ctag">Anti-cav</span><span class="ctag">Intermédiaire</span></div>
-          <div class="cc-hint">Page complète <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 7h10M8 3l4 4-4 4"/></svg></div>
-        </div>
+        <div class="cc-body"><div class="cc-tags"><span class="ctag">Cavalerie</span><span class="ctag">Anti-cav</span><span class="ctag">Facile</span></div><div class="cc-hint">Page complète <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 7h10M8 3l4 4-4 4"/></svg></div></div>
       </a>
-      <a class="civ-card" href="civs/jeannedarc.html" data-diff="dlc"><button class="guide-fav-btn" id="gfav-jeannedarc" onclick="event.preventDefault();event.stopPropagation();toggleFav('jeannedarc')">☆</button>
+      <a class="civ-card" href="civs/jeannedarc.html" data-diff="d2" data-dlc="true"><button class="guide-fav-btn" id="gfav-jeannedarc" onclick="event.preventDefault();event.stopPropagation();toggleFav('jeannedarc')">☆</button>
         <div class="cc-top">
           <div class="cc-flag">⚜️🔥</div>
           <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;justify-content:center;">
@@ -131,40 +99,9 @@
           </div>
           <div class="cc-tagline">Héroïne évolutive - foi et inspiration divine</div>
         </div>
-        <div class="cc-body">
-          <div class="cc-tags"><span class="ctag">Héroïne</span><span class="ctag">Soutien</span><span class="ctag">Intermédiaire</span></div>
-          <div class="cc-hint">Page complète <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 7h10M8 3l4 4-4 4"/></svg></div>
-        </div>
+        <div class="cc-body"><div class="cc-tags"><span class="ctag">Héroïne</span><span class="ctag">Soutien</span><span class="ctag">Facile</span></div><div class="cc-hint">Page complète <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 7h10M8 3l4 4-4 4"/></svg></div></div>
       </a>
-      <a class="civ-card" href="civs/ordresmoines.html" data-diff="dlc"><button class="guide-fav-btn" id="gfav-ordresmoines" onclick="event.preventDefault();event.stopPropagation();toggleFav('ordresmoines')">☆</button>
-        <div class="cc-top">
-          <div class="cc-flag">✝️</div>
-          <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;justify-content:center;">
-            <div class="cc-name">Ordre du Dragon</div>
-            <span class="dlc-tag">DLC - The Sultans Ascend</span>
-          </div>
-          <div class="cc-tagline">Chevaliers-moines - foi, acier et chapelles mobiles</div>
-        </div>
-        <div class="cc-body">
-          <div class="cc-tags"><span class="ctag">Chevaliers</span><span class="ctag">Soin</span><span class="ctag">Défensif</span></div>
-          <div class="cc-hint">Page complète <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 7h10M8 3l4 4-4 4"/></svg></div>
-        </div>
-      </a>
-      <a class="civ-card" href="civs/templiers.html" data-diff="dlc"><button class="guide-fav-btn" id="gfav-templiers" onclick="event.preventDefault();event.stopPropagation();toggleFav('templiers')">☆</button>
-        <div class="cc-top">
-          <div class="cc-flag">✝️⚔️</div>
-          <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;justify-content:center;">
-            <div class="cc-name">Templiers</div>
-            <span class="dlc-tag-knights">DLC - Knights of Cross and Rose</span>
-          </div>
-          <div class="cc-tagline">Chevaliers du Temple - guerre sainte et chapelles fortifiees</div>
-        </div>
-        <div class="cc-body">
-          <div class="cc-tags"><span class="ctag">Chevaliers</span><span class="ctag">Religieux</span><span class="ctag">Expert</span></div>
-          <div class="cc-hint">Page complète <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 7h10M8 3l4 4-4 4"/></svg></div>
-        </div>
-      </a>
-      <a class="civ-card" href="civs/lancaster.html" data-diff="dlc"><button class="guide-fav-btn" id="gfav-lancaster" onclick="event.preventDefault();event.stopPropagation();toggleFav('lancaster')">☆</button>
+      <a class="civ-card" href="civs/lancaster.html" data-diff="d2" data-dlc="true"><button class="guide-fav-btn" id="gfav-lancaster" onclick="event.preventDefault();event.stopPropagation();toggleFav('lancaster')">☆</button>
         <div class="cc-top">
           <div class="cc-flag">🌹</div>
           <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;justify-content:center;">
@@ -173,12 +110,83 @@
           </div>
           <div class="cc-tagline">La Rose Rouge - archers royaux et retenue dynastique</div>
         </div>
-        <div class="cc-body">
-          <div class="cc-tags"><span class="ctag">Archers</span><span class="ctag">Défensif</span><span class="ctag">Intermédiaire</span></div>
-          <div class="cc-hint">Page complète <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 7h10M8 3l4 4-4 4"/></svg></div>
-        </div>
+        <div class="cc-body"><div class="cc-tags"><span class="ctag">Archers</span><span class="ctag">Défensif</span><span class="ctag">Facile</span></div><div class="cc-hint">Page complète <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 7h10M8 3l4 4-4 4"/></svg></div></div>
       </a>
-      <a class="civ-card" href="civs/hordedor.html" data-diff="dlc"><button class="guide-fav-btn" id="gfav-hordedor" onclick="event.preventDefault();event.stopPropagation();toggleFav('hordedor')">☆</button>
+    </div>
+  </div>
+
+  <!-- ★★★ INTERMÉDIAIRE -->
+  <div class="diff-section" id="sec-d3">
+    <div class="diff-heading">
+      <div class="stars">
+        <svg class="st on" viewBox="0 0 15 15"><path d="M7.5 1l1.8 3.7 3.9.6-2.8 2.7.7 3.9-3.6-1.9-3.6 1.9.7-3.9L2 5.3l3.9-.6z"/></svg>
+        <svg class="st on" viewBox="0 0 15 15"><path d="M7.5 1l1.8 3.7 3.9.6-2.8 2.7.7 3.9-3.6-1.9-3.6 1.9.7-3.9L2 5.3l3.9-.6z"/></svg>
+        <svg class="st on" viewBox="0 0 15 15"><path d="M7.5 1l1.8 3.7 3.9.6-2.8 2.7.7 3.9-3.6-1.9-3.6 1.9.7-3.9L2 5.3l3.9-.6z"/></svg>
+        <svg class="st off" viewBox="0 0 15 15"><path d="M7.5 1l1.8 3.7 3.9.6-2.8 2.7.7 3.9-3.6-1.9-3.6 1.9.7-3.9L2 5.3l3.9-.6z"/></svg>
+        <svg class="st off" viewBox="0 0 15 15"><path d="M7.5 1l1.8 3.7 3.9.6-2.8 2.7.7 3.9-3.6-1.9-3.6 1.9.7-3.9L2 5.3l3.9-.6z"/></svg>
+      </div>
+      <span class="diff-title">Intermédiaire</span><span class="diff-sub">- Mécaniques spéciales à maîtriser</span><div class="diff-line"></div>
+    </div>
+    <div class="civ-grid">
+      <a class="civ-card" href="civs/mongols.html" data-diff="d3"><button class="guide-fav-btn" id="gfav-mongols" onclick="event.preventDefault();event.stopPropagation();toggleFav('mongols')">☆</button><div class="cc-top"><div class="cc-flag">🏹</div><div class="cc-name">Mongols</div><div class="cc-tagline">Mobilité nomade & harass permanent</div></div><div class="cc-body"><div class="cc-tags"><span class="ctag">Nomade</span><span class="ctag">Cavalerie</span><span class="ctag">Agressif</span></div><div class="cc-hint">Page complète <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 7h10M8 3l4 4-4 4"/></svg></div></div></a>
+      <a class="civ-card" href="civs/rus.html" data-diff="d3"><button class="guide-fav-btn" id="gfav-rus" onclick="event.preventDefault();event.stopPropagation();toggleFav('rus')">☆</button><div class="cc-top"><div class="cc-flag">🪶</div><div class="cc-name">Rus</div><div class="cc-tagline">Chasse, forêts & Streltsy</div></div><div class="cc-body"><div class="cc-tags"><span class="ctag">Chasse</span><span class="ctag">Infanterie</span><span class="ctag">Agressif</span></div><div class="cc-hint">Page complète <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 7h10M8 3l4 4-4 4"/></svg></div></div></a>
+      <a class="civ-card" href="civs/abbasides.html" data-diff="d3"><button class="guide-fav-btn" id="gfav-abbasides" onclick="event.preventDefault();event.stopPropagation();toggleFav('abbasides')">☆</button><div class="cc-top"><div class="cc-flag">🌙</div><div class="cc-name">Abbasides</div><div class="cc-tagline">Maison de la Sagesse & chameaux</div></div><div class="cc-body"><div class="cc-tags"><span class="ctag">Tech</span><span class="ctag">Anti-cav</span><span class="ctag">Flexible</span></div><div class="cc-hint">Page complète <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 7h10M8 3l4 4-4 4"/></svg></div></div></a>
+      <a class="civ-card" href="civs/ottomans.html" data-diff="d3"><button class="guide-fav-btn" id="gfav-ottomans" onclick="event.preventDefault();event.stopPropagation();toggleFav('ottomans')">☆</button><div class="cc-top"><div class="cc-flag">🌺</div><div class="cc-name">Ottomans</div><div class="cc-tagline">Armée passive & Grand Bombard</div></div><div class="cc-body"><div class="cc-tags"><span class="ctag">Artillerie</span><span class="ctag">Passif</span><span class="ctag">Late Game</span></div><div class="cc-hint">Page complète <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 7h10M8 3l4 4-4 4"/></svg></div></div></a>
+      <a class="civ-card" href="civs/mali.html" data-diff="d3"><button class="guide-fav-btn" id="gfav-mali" onclick="event.preventDefault();event.stopPropagation();toggleFav('mali')">☆</button><div class="cc-top"><div class="cc-flag">🌞</div><div class="cc-name">Mali</div><div class="cc-tagline">Or passif & construction rapide</div></div><div class="cc-body"><div class="cc-tags"><span class="ctag">Économie</span><span class="ctag">Construction</span><span class="ctag">Polyvalent</span></div><div class="cc-hint">Page complète <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 7h10M8 3l4 4-4 4"/></svg></div></div></a>
+      <a class="civ-card" href="civs/byzantins.html" data-diff="d3"><button class="guide-fav-btn" id="gfav-byzantins" onclick="event.preventDefault();event.stopPropagation();toggleFav('byzantins')">☆</button><div class="cc-top"><div class="cc-flag">🔱</div><div class="cc-name">Byzantins</div><div class="cc-tagline">Citernes, aqueducs & défense</div></div><div class="cc-body"><div class="cc-tags"><span class="ctag">Infrastructure</span><span class="ctag">Défensif</span><span class="ctag">Adaptable</span></div><div class="cc-hint">Page complète <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 7h10M8 3l4 4-4 4"/></svg></div></div></a>
+      <a class="civ-card" href="civs/ordresmoines.html" data-diff="d3" data-dlc="true"><button class="guide-fav-btn" id="gfav-ordresmoines" onclick="event.preventDefault();event.stopPropagation();toggleFav('ordresmoines')">☆</button>
+        <div class="cc-top">
+          <div class="cc-flag">✝️</div>
+          <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;justify-content:center;">
+            <div class="cc-name">Ordre du Dragon</div>
+            <span class="dlc-tag">DLC - The Sultans Ascend</span>
+          </div>
+          <div class="cc-tagline">Chevaliers-moines - foi, acier et chapelles mobiles</div>
+        </div>
+        <div class="cc-body"><div class="cc-tags"><span class="ctag">Chevaliers</span><span class="ctag">Soin</span><span class="ctag">Défensif</span></div><div class="cc-hint">Page complète <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 7h10M8 3l4 4-4 4"/></svg></div></div>
+      </a>
+      <a class="civ-card" href="civs/tughluq.html" data-diff="d3" data-dlc="true"><button class="guide-fav-btn" id="gfav-tughluq" onclick="event.preventDefault();event.stopPropagation();toggleFav('tughluq')">☆</button>
+        <div class="cc-top">
+          <div class="cc-flag">🕌</div>
+          <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;justify-content:center;">
+            <div class="cc-name">Tughluq</div>
+            <span class="dlc-tag-dynasties">DLC - Dynasties of the East</span>
+          </div>
+          <div class="cc-tagline">Worker Elephants & Forts de Tughlaqabad</div>
+        </div>
+        <div class="cc-body"><div class="cc-tags"><span class="ctag">Éléphants</span><span class="ctag">Économie</span><span class="ctag">Intermédiaire</span></div><div class="cc-hint">Page complète <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 7h10M8 3l4 4-4 4"/></svg></div></div>
+      </a>
+    </div>
+  </div>
+
+  <!-- ★★★★ AVANCÉ -->
+  <div class="diff-section" id="sec-d4">
+    <div class="diff-heading">
+      <div class="stars">
+        <svg class="st on" viewBox="0 0 15 15"><path d="M7.5 1l1.8 3.7 3.9.6-2.8 2.7.7 3.9-3.6-1.9-3.6 1.9.7-3.9L2 5.3l3.9-.6z"/></svg>
+        <svg class="st on" viewBox="0 0 15 15"><path d="M7.5 1l1.8 3.7 3.9.6-2.8 2.7.7 3.9-3.6-1.9-3.6 1.9.7-3.9L2 5.3l3.9-.6z"/></svg>
+        <svg class="st on" viewBox="0 0 15 15"><path d="M7.5 1l1.8 3.7 3.9.6-2.8 2.7.7 3.9-3.6-1.9-3.6 1.9.7-3.9L2 5.3l3.9-.6z"/></svg>
+        <svg class="st on" viewBox="0 0 15 15"><path d="M7.5 1l1.8 3.7 3.9.6-2.8 2.7.7 3.9-3.6-1.9-3.6 1.9.7-3.9L2 5.3l3.9-.6z"/></svg>
+        <svg class="st off" viewBox="0 0 15 15"><path d="M7.5 1l1.8 3.7 3.9.6-2.8 2.7.7 3.9-3.6-1.9-3.6 1.9.7-3.9L2 5.3l3.9-.6z"/></svg>
+      </div>
+      <span class="diff-title">Avancé</span><span class="diff-sub">- Haute maîtrise des mécaniques uniques</span><div class="diff-line"></div>
+    </div>
+    <div class="civ-grid">
+      <a class="civ-card" href="civs/chine.html" data-diff="d4"><button class="guide-fav-btn" id="gfav-chine" onclick="event.preventDefault();event.stopPropagation();toggleFav('chine')">☆</button><div class="cc-top"><div class="cc-flag">🐉</div><div class="cc-name">Chine</div><div class="cc-tagline">Dynasties, Grande Muraille & naval</div></div><div class="cc-body"><div class="cc-tags"><span class="ctag">Dynasties</span><span class="ctag">Naval</span><span class="ctag">Construction</span></div><div class="cc-hint">Page complète <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 7h10M8 3l4 4-4 4"/></svg></div></div></a>
+      <a class="civ-card" href="civs/delhi.html" data-diff="d4"><button class="guide-fav-btn" id="gfav-delhi" onclick="event.preventDefault();event.stopPropagation();toggleFav('delhi')">☆</button><div class="cc-top"><div class="cc-flag">🐘</div><div class="cc-name">Delhi Sultanat</div><div class="cc-tagline">Éléphants de guerre & tech gratuite</div></div><div class="cc-body"><div class="cc-tags"><span class="ctag">Tech gratuite</span><span class="ctag">Éléphants</span><span class="ctag">Late Game</span></div><div class="cc-hint">Page complète <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 7h10M8 3l4 4-4 4"/></svg></div></div></a>
+      <a class="civ-card" href="civs/japonais.html" data-diff="d4"><button class="guide-fav-btn" id="gfav-japonais" onclick="event.preventDefault();event.stopPropagation();toggleFav('japonais')">☆</button><div class="cc-top"><div class="cc-flag">🌸</div><div class="cc-name">Japonais</div><div class="cc-tagline">Samurai, Bushido & villageois-soldats</div></div><div class="cc-body"><div class="cc-tags"><span class="ctag">Samurai</span><span class="ctag">Hybride</span><span class="ctag">Micro</span></div><div class="cc-hint">Page complète <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 7h10M8 3l4 4-4 4"/></svg></div></div></a>
+      <a class="civ-card" href="civs/zhuxilegacy.html" data-diff="d4" data-dlc="true"><button class="guide-fav-btn" id="gfav-zhuxilegacy" onclick="event.preventDefault();event.stopPropagation();toggleFav('zhuxilegacy')">☆</button>
+        <div class="cc-top">
+          <div class="cc-flag">🏯</div>
+          <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;justify-content:center;">
+            <div class="cc-name">Héritage de Zhu Xi</div>
+            <span class="dlc-tag-dynasties">DLC - Dynasties of the East</span>
+          </div>
+          <div class="cc-tagline">Variante chinoise - naval absolu & production maximale</div>
+        </div>
+        <div class="cc-body"><div class="cc-tags"><span class="ctag">Naval</span><span class="ctag">Production</span><span class="ctag">Avancé</span></div><div class="cc-hint">Page complète <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 7h10M8 3l4 4-4 4"/></svg></div></div>
+      </a>
+      <a class="civ-card" href="civs/hordedor.html" data-diff="d4" data-dlc="true"><button class="guide-fav-btn" id="gfav-hordedor" onclick="event.preventDefault();event.stopPropagation();toggleFav('hordedor')">☆</button>
         <div class="cc-top">
           <div class="cc-flag">🐎</div>
           <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;justify-content:center;">
@@ -187,12 +195,25 @@
           </div>
           <div class="cc-tagline">Empire de la Steppe - taxation et cavalerie invincible</div>
         </div>
-        <div class="cc-body">
-          <div class="cc-tags"><span class="ctag">Cavalerie</span><span class="ctag">Harass</span><span class="ctag">Expert</span></div>
-          <div class="cc-hint">Page complète <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 7h10M8 3l4 4-4 4"/></svg></div>
-        </div>
+        <div class="cc-body"><div class="cc-tags"><span class="ctag">Cavalerie</span><span class="ctag">Harass</span><span class="ctag">Avancé</span></div><div class="cc-hint">Page complète <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 7h10M8 3l4 4-4 4"/></svg></div></div>
       </a>
-      <a class="civ-card" href="civs/macedonienne.html" data-diff="dlc"><button class="guide-fav-btn" id="gfav-macedonienne" onclick="event.preventDefault();event.stopPropagation();toggleFav('macedonienne')">☆</button>
+    </div>
+  </div>
+
+  <!-- ★★★★★ EXPERT -->
+  <div class="diff-section" id="sec-d5">
+    <div class="diff-heading">
+      <div class="stars">
+        <svg class="st on" viewBox="0 0 15 15"><path d="M7.5 1l1.8 3.7 3.9.6-2.8 2.7.7 3.9-3.6-1.9-3.6 1.9.7-3.9L2 5.3l3.9-.6z"/></svg>
+        <svg class="st on" viewBox="0 0 15 15"><path d="M7.5 1l1.8 3.7 3.9.6-2.8 2.7.7 3.9-3.6-1.9-3.6 1.9.7-3.9L2 5.3l3.9-.6z"/></svg>
+        <svg class="st on" viewBox="0 0 15 15"><path d="M7.5 1l1.8 3.7 3.9.6-2.8 2.7.7 3.9-3.6-1.9-3.6 1.9.7-3.9L2 5.3l3.9-.6z"/></svg>
+        <svg class="st on" viewBox="0 0 15 15"><path d="M7.5 1l1.8 3.7 3.9.6-2.8 2.7.7 3.9-3.6-1.9-3.6 1.9.7-3.9L2 5.3l3.9-.6z"/></svg>
+        <svg class="st on" viewBox="0 0 15 15"><path d="M7.5 1l1.8 3.7 3.9.6-2.8 2.7.7 3.9-3.6-1.9-3.6 1.9.7-3.9L2 5.3l3.9-.6z"/></svg>
+      </div>
+      <span class="diff-title">Expert</span><span class="diff-sub">- Maîtrise totale requise</span><div class="diff-line"></div>
+    </div>
+    <div class="civ-grid">
+      <a class="civ-card" href="civs/macedonienne.html" data-diff="d5" data-dlc="true"><button class="guide-fav-btn" id="gfav-macedonienne" onclick="event.preventDefault();event.stopPropagation();toggleFav('macedonienne')">☆</button>
         <div class="cc-top">
           <div class="cc-flag">⚡</div>
           <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;justify-content:center;">
@@ -201,12 +222,9 @@
           </div>
           <div class="cc-tagline">Argent, Varègues et héritage byzantin</div>
         </div>
-        <div class="cc-body">
-          <div class="cc-tags"><span class="ctag">Argent</span><span class="ctag">Varègues</span><span class="ctag">Expert</span></div>
-          <div class="cc-hint">Page complète <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 7h10M8 3l4 4-4 4"/></svg></div>
-        </div>
+        <div class="cc-body"><div class="cc-tags"><span class="ctag">Argent</span><span class="ctag">Varègues</span><span class="ctag">Expert</span></div><div class="cc-hint">Page complète <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 7h10M8 3l4 4-4 4"/></svg></div></div>
       </a>
-      <a class="civ-card" href="civs/sengokudaimyo.html" data-diff="dlc"><button class="guide-fav-btn" id="gfav-sengokudaimyo" onclick="event.preventDefault();event.stopPropagation();toggleFav('sengokudaimyo')">☆</button>
+      <a class="civ-card" href="civs/sengokudaimyo.html" data-diff="d5" data-dlc="true"><button class="guide-fav-btn" id="gfav-sengokudaimyo" onclick="event.preventDefault();event.stopPropagation();toggleFav('sengokudaimyo')">☆</button>
         <div class="cc-top">
           <div class="cc-flag">⛩️</div>
           <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;justify-content:center;">
@@ -215,26 +233,20 @@
           </div>
           <div class="cc-tagline">L'ère Sengoku - Daimyo Estate et économie inépuisable</div>
         </div>
-        <div class="cc-body">
-          <div class="cc-tags"><span class="ctag">Daimyo Estate</span><span class="ctag">Seigneur de guerre</span><span class="ctag">Expert</span></div>
-          <div class="cc-hint">Page complète <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 7h10M8 3l4 4-4 4"/></svg></div>
-        </div>
+        <div class="cc-body"><div class="cc-tags"><span class="ctag">Daimyo Estate</span><span class="ctag">Seigneur de guerre</span><span class="ctag">Expert</span></div><div class="cc-hint">Page complète <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 7h10M8 3l4 4-4 4"/></svg></div></div>
       </a>
-      <a class="civ-card" href="civs/tughluq.html" data-diff="dlc"><button class="guide-fav-btn" id="gfav-tughluq" onclick="event.preventDefault();event.stopPropagation();toggleFav('tughluq')">☆</button>
+      <a class="civ-card" href="civs/templiers.html" data-diff="d5" data-dlc="true"><button class="guide-fav-btn" id="gfav-templiers" onclick="event.preventDefault();event.stopPropagation();toggleFav('templiers')">☆</button>
         <div class="cc-top">
-          <div class="cc-flag">🕌</div>
+          <div class="cc-flag">✝️⚔️</div>
           <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;justify-content:center;">
-            <div class="cc-name">Tughluq</div>
-            <span class="dlc-tag-dynasties">DLC - Dynasties of the East</span>
+            <div class="cc-name">Templiers</div>
+            <span class="dlc-tag-knights">DLC - Knights of Cross and Rose</span>
           </div>
-          <div class="cc-tagline">Dynastie Tughlaq - Worker Elephants et Forts de Tughlaqabad</div>
+          <div class="cc-tagline">Chevaliers du Temple - guerre sainte et chapelles fortifiees</div>
         </div>
-        <div class="cc-body">
-          <div class="cc-tags"><span class="ctag">Éléphants</span><span class="ctag">Économie</span><span class="ctag">Intermédiaire</span></div>
-          <div class="cc-hint">Page complète <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 7h10M8 3l4 4-4 4"/></svg></div>
-        </div>
+        <div class="cc-body"><div class="cc-tags"><span class="ctag">Chevaliers</span><span class="ctag">Religieux</span><span class="ctag">Expert</span></div><div class="cc-hint">Page complète <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 7h10M8 3l4 4-4 4"/></svg></div></div>
       </a>
-      <a class="civ-card" href="civs/jindynasty.html" data-diff="dlc"><button class="guide-fav-btn" id="gfav-jindynasty" onclick="event.preventDefault();event.stopPropagation();toggleFav('jindynasty')">☆</button>
+      <a class="civ-card" href="civs/jindynasty.html" data-diff="d5" data-dlc="true"><button class="guide-fav-btn" id="gfav-jindynasty" onclick="event.preventDefault();event.stopPropagation();toggleFav('jindynasty')">☆</button>
         <div class="cc-top">
           <div class="cc-flag">🏮</div>
           <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;justify-content:center;">
@@ -243,10 +255,7 @@
           </div>
           <div class="cc-tagline">L'Empire Jurchen - cavalerie lourde et murailles invincibles</div>
         </div>
-        <div class="cc-body">
-          <div class="cc-tags"><span class="ctag">Cavalerie</span><span class="ctag">Siège</span><span class="ctag">Expert</span></div>
-          <div class="cc-hint">Page complète <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 7h10M8 3l4 4-4 4"/></svg></div>
-        </div>
+        <div class="cc-body"><div class="cc-tags"><span class="ctag">Cavalerie</span><span class="ctag">Siège</span><span class="ctag">Expert</span></div><div class="cc-hint">Page complète <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 7h10M8 3l4 4-4 4"/></svg></div></div>
       </a>
     </div>
   </div>

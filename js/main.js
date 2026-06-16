@@ -161,7 +161,8 @@ function _applyGuideFilter() {
   document.querySelectorAll('.civ-card').forEach(function(card) {
     var diff = card.dataset.diff || '';
     var styles = (card.dataset.style || '').split(' ');
-    var diffOk = _fDiff === 'all' || diff === _fDiff;
+    var diffOk = _fDiff === 'all'
+      || (_fDiff === 'dlc' ? card.dataset.dlc === 'true' : diff === _fDiff);
     var styleOk = _fStyle === 'all' || styles.indexOf(_fStyle) !== -1;
     card.style.display = (diffOk && styleOk) ? '' : 'none';
   });

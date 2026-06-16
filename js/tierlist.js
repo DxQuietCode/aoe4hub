@@ -5,8 +5,8 @@
 var _tlMode  = 'dynamic';
 var _tlRank  = 'all';
 var _tlCache = {};
-var _TL_API  = 'https://aoe4world.com/api/v0/civilizations';
-var _TL_RANK_RATING = { all:0, platinum:1400, diamond:1600, conqueror:1800 };
+var _TL_API  = 'https://aoe4world.com/api/v0/stats/rm_solo/civilizations';
+var _TL_RANK_RATING = { all:'', platinum:'>1400', diamond:'>1600', conqueror:'>1700' };
 
 function _applyTierFilter() {
   document.querySelectorAll('.tier-civ').forEach(function(tc) {
@@ -78,15 +78,15 @@ function _tlRenderStatic() {
   _applyTierFilter();
 }
 function _tlClassify(wr) {
-  if (wr >= 0.53) return 'S'; if (wr >= 0.51) return 'A';
-  if (wr >= 0.49) return 'B'; if (wr >= 0.47) return 'C';
+  if (wr >= 53) return 'S'; if (wr >= 51) return 'A';
+  if (wr >= 49) return 'B'; if (wr >= 47) return 'C';
   return 'D';
 }
 function _tlTrend(wr, prev) {
   if (prev === null || prev === undefined) return '';
   var delta = wr - prev;
-  if (delta > 0.005) return '<span class="tl-trend up" title="En hausse">&#8593;</span>';
-  if (delta < -0.005) return '<span class="tl-trend dn" title="En baisse">&#8595;</span>';
+  if (delta > 0.5) return '<span class="tl-trend up" title="En hausse">&#8593;</span>';
+  if (delta < -0.5) return '<span class="tl-trend dn" title="En baisse">&#8595;</span>';
   return '<span class="tl-trend eq" title="Stable">&#8594;</span>';
 }
 function _tlQ(s) { return (s || '').replace(/\\/g,'\\\\').replace(/'/g,"\\'"); }
@@ -110,10 +110,10 @@ function _tlRender(data) {
     if (!slug) return;
     var meta = CIV_FLAG_MAP[slug] || {};
     var wr = typeof civ.win_rate === 'number' ? civ.win_rate
-           : (civ.wins_count && civ.games_count ? civ.wins_count / civ.games_count : null);
+           : (civ.wins_count && civ.games_count ? (civ.wins_count / civ.games_count * 100) : null);
     if (wr === null || wr === undefined) return;
     var pr = (civ.pick_rate != null) ? civ.pick_rate
-           : (totalGames > 0 && civ.games_count ? civ.games_count / totalGames : null);
+           : (totalGames > 0 && civ.games_count ? (civ.games_count / totalGames * 100) : null);
     var prev = civ.previous_win_rate != null ? civ.previous_win_rate : null;
     var styleStr = (ALL_CIVS.find(function(c){return c.id===slug;})||{}).style || '';
     var tier = _tlClassify(wr);
@@ -127,8 +127,8 @@ function _tlRender(data) {
     html += '<div class="tier-label ' + t.toLowerCase() + '">' + t + '</div>';
     html += '<div class="tier-civs">';
     tiers[t].forEach(function(c) {
-      var wrPct  = (Math.round(c.wr * 1000) / 10).toFixed(1);
-      var prPct  = c.pr != null ? (Math.round(c.pr * 1000) / 10).toFixed(1) : null;
+      var wrPct  = (Math.round(c.wr * 10) / 10).toFixed(1);
+      var prPct  = c.pr != null ? (Math.round(c.pr * 10) / 10).toFixed(1) : null;
       var trend  = _tlTrend(c.wr, c.prev);
       var desc   = "Winrate reel : " + wrPct + "%" + (prPct ? " | Pick rate : " + prPct + "%" : "") + ". Source : aoe4world.com";
       var styleAttr = c.styleStr ? ' data-style="' + c.styleStr + '"' : '';
@@ -153,8 +153,8 @@ function _tlRender(data) {
 }
 async function _tlFetch(rank) {
   var url = _TL_API;
-  var rating = _TL_RANK_RATING[rank] || 0;
-  if (rating > 0) url += '?min_rating=' + rating;
+  var rating = _TL_RANK_RATING[rank] || '';
+  if (rating) url += '?rating=' + rating;
   var ctrl = new AbortController();
   var tid = setTimeout(function(){ ctrl.abort(); }, 9000);
   try {

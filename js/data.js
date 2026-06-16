@@ -3,8 +3,8 @@
 
 // ── CIVILISATIONS ──────────────────────────────────────────────────────────────
 const ALL_CIVS = [
-  {id:'anglais',   flag:'🏴󠁧󠁢󠁥󠁮󠁧󠁿', name:'Anglais',               diff:'Facile',          dlc:false, style:'defense boom'},
-  {id:'francais',  flag:'⚜️',  name:'Français',              diff:'Facile',          dlc:false, style:'agressif flexible'},
+  {id:'anglais',   flag:'🏴󠁧󠁢󠁥󠁮󠁧󠁿', name:'Anglais',               diff:'Débutant',        dlc:false, style:'defense boom'},
+  {id:'francais',  flag:'⚜️',  name:'Français',              diff:'Débutant',        dlc:false, style:'agressif flexible'},
   {id:'hre',       flag:'🦅',  name:'Saint-Empire',           diff:'Facile',          dlc:false, style:'defense boom'},
   {id:'mongols',   flag:'🏹',  name:'Mongols',                diff:'Intermédiaire',   dlc:false, style:'agressif'},
   {id:'rus',       flag:'🪶',  name:'Rus',                    diff:'Intermédiaire',   dlc:false, style:'agressif economique'},
@@ -12,16 +12,16 @@ const ALL_CIVS = [
   {id:'ottomans',  flag:'🌺',  name:'Ottomans',               diff:'Intermédiaire',   dlc:false, style:'defense boom'},
   {id:'mali',      flag:'🌞',  name:'Mali',                   diff:'Intermédiaire',   dlc:false, style:'economique boom'},
   {id:'byzantins', flag:'🔱',  name:'Byzantins',              diff:'Intermédiaire',   dlc:false, style:'defense flexible'},
-  {id:'chine',     flag:'🐉',  name:'Chine',                  diff:'Expert',          dlc:false, style:'boom flexible'},
-  {id:'delhi',     flag:'🐘',  name:'Delhi Sultanat',         diff:'Expert',          dlc:false, style:'boom defense'},
-  {id:'japonais',  flag:'🌸',  name:'Japonais',               diff:'Expert',          dlc:false, style:'agressif flexible'},
-  {id:'zhuxilegacy',flag:'🏯', name:'Héritage de Zhu Xi',    diff:'Expert',          dlc:'Dynasties of the East', style:'boom economique'},
-  {id:'ayyoubides',flag:'⚔️',  name:'Ayyoubides',             diff:'Intermédiaire',   dlc:'Sultans Ascend', style:'agressif'},
-  {id:'jeannedarc',flag:'⚜️🔥',name:"Jeanne d'Arc",           diff:'Intermédiaire',   dlc:"Jeanne d'Arc", style:'agressif flexible'},
+  {id:'chine',     flag:'🐉',  name:'Chine',                  diff:'Avancé',          dlc:false, style:'boom flexible'},
+  {id:'delhi',     flag:'🐘',  name:'Delhi Sultanat',         diff:'Avancé',          dlc:false, style:'boom defense'},
+  {id:'japonais',  flag:'🌸',  name:'Japonais',               diff:'Avancé',          dlc:false, style:'agressif flexible'},
+  {id:'zhuxilegacy',flag:'🏯', name:'Héritage de Zhu Xi',    diff:'Avancé',          dlc:'Dynasties of the East', style:'boom economique'},
+  {id:'ayyoubides',flag:'⚔️',  name:'Ayyoubides',             diff:'Facile',          dlc:'Sultans Ascend', style:'agressif'},
+  {id:'jeannedarc',flag:'⚜️🔥',name:"Jeanne d'Arc",           diff:'Facile',          dlc:"Jeanne d'Arc", style:'agressif flexible'},
   {id:'ordresmoines',  flag:'✝️',  name:'Ordre du Dragon',      diff:'Intermédiaire',   dlc:'The Sultans Ascend', style:'defense'},
   {id:'templiers',     flag:'✝️⚔️',name:'Templiers',             diff:'Expert',          dlc:'Knights of Cross and Rose', style:'defense agressif'},
-  {id:'lancaster',     flag:'🌹',  name:'Lancaster',              diff:'Intermédiaire',   dlc:'Knights of Cross and Rose', style:'defense boom'},
-  {id:'hordedor',      flag:'🐎',  name:"Horde d'Or",             diff:'Expert',          dlc:'Dynasties of the East', style:'agressif'},
+  {id:'lancaster',     flag:'🌹',  name:'Lancaster',              diff:'Facile',          dlc:'Knights of Cross and Rose', style:'defense boom'},
+  {id:'hordedor',      flag:'🐎',  name:"Horde d'Or",             diff:'Avancé',          dlc:'Dynasties of the East', style:'agressif'},
   {id:'macedonienne',  flag:'⚡',  name:'Macédonienne',           diff:'Expert',          dlc:'Dynasties of the East', style:'defense agressif'},
   {id:'sengokudaimyo', flag:'⛩️', name:'Sengoku Daimyo',          diff:'Expert',          dlc:'Dynasties of the East', style:'agressif flexible'},
   {id:'tughluq',       flag:'🕌',  name:'Tughluq',                diff:'Intermédiaire',   dlc:'Dynasties of the East', style:'boom defense'},
@@ -30,13 +30,24 @@ const ALL_CIVS = [
 const CIV_FLAG_MAP = Object.fromEntries(ALL_CIVS.map(c=>[c.id,{flag:c.flag,name:c.name,diff:c.diff,dlc:c.dlc}]));
 const GLOSSARY = [{term:'APM',def:"Actions Par Minute - Nombre d'actions effectuées par minute (clics, raccourcis). Un indicateur de vitesse d'exécution. En AOE4, 60-80 APM est correct pour débuter en ligne.",cat:'Plus ton APM est élevé, plus tu peux gérer simultanément économie et armée.',catid:'gen'},{term:'ELO',def:'Système de classement numérique. Plus tu gagnes, plus ton ELO monte. En AOE4 : Bronze (0-999), Argent (1000-1199), Or (1200-1399), Platine (1400-1599), Diamant (1600+), Conqueror (top %).',cat:'Atteindre 1200 ELO est un excellent objectif pour un joueur qui commence le ranked.',catid:'gen'},{term:'Meta',def:"L'ensemble des stratégies, civilisations et compositions d'armée considérées comme les plus efficaces à un instant donné. Change après chaque patch.",cat:'En saison 13, les Mongols et Japonais sont très forts dans la meta actuelle.',catid:'gen'},{term:'Ranked',def:'Mode classé où les victoires et défaites affectent ton ELO. Opposite de Quick Match (non classé).',cat:'Joue en Quick Match pour pratiquer sans pression, puis passe au Ranked quand tu te sens prêt.',catid:'gen'},{term:'BO',def:"Build Order - Séquence précise d'actions à effectuer depuis le début de la partie pour atteindre un objectif économique ou militaire optimal.",cat:'Apprendre 1 seul BO par coeur est la chose la plus importante pour progresser.',catid:'gen'},{term:'Replay',def:"Enregistrement d'une partie permettant de la revoir depuis n'importe quel point de vue. Outil d'analyse crucial pour progresser.",cat:'Regarde tes replays après chaque défaite - identifie le moment exact où tu as pris du retard.',catid:'gen'},{term:'Map Pool',def:'Ensemble des cartes disponibles en ranked pour une saison donnée. Change chaque saison.',cat:'',catid:'gen'},{term:'Patch',def:'Mise à jour du jeu modifiant les statistiques, mécaniques ou contenu. Change souvent la meta.',cat:'',catid:'gen'},{term:'Boom',def:'Stratégie consistant à maximiser la production économique (villageois, ressources) avant de produire une armée significative.',cat:"Je vais boom jusqu'à l'âge 3 avant de push.",catid:'eco'},{term:'Fast Castle',def:"Monter rapidement à l'âge Château (âge 3) avec un minimum de ressources dépensées. Sacrifie la défense précoce pour le timing.",cat:'Fast Castle avec les Français pour sortir des Knights très tôt.',catid:'eco'},{term:'Fast Imperial',def:"Monter à l'âge Impérial (âge 4) le plus vite possible, souvent au détriment de l'armée mid-game.",cat:'',catid:'eco'},{term:'Villager',def:"Terme anglais pour villageois. 'Ne jamais stopper la production de vills' est une règle d'or.",cat:'Toujours requeue (relancer la production) tes vills en TC.',catid:'eco'},{term:'TC',def:'Town Center - Centre-Ville. Bâtiment principal qui produit les villageois. Avoir plusieurs TC accélère énormément la production économique.',cat:'Double TC en Féodal = économie qui explose en âge 3.',catid:'eco'},{term:'Idle Time',def:"Temps pendant lequel un bâtiment de production ne produit rien. Minimiser l'idle TC time (TC sans produire) est crucial.",cat:"Mon TC était idle pendant 2 minutes - j'aurais pu produire 6 villageois de plus.",catid:'eco'},{term:'Food/Wood/Gold/Stone',def:"Les 4 ressources du jeu. La nourriture sert aux villageois et unités, le bois aux bâtiments, l'or aux unités militaires et recherches, la pierre aux défenses.",cat:'',catid:'eco'},{term:'Mining Camp / Lumber Camp',def:"Camps de ressources à construire près des gisements d'or/de bois pour que les villageois déposent les ressources plus vite.",cat:'Toujours construire le camp au plus proche de la ressource.',catid:'eco'},{term:'Trade',def:"Commerce - envoyer des Traders sur les routes commerciales pour générer de l'or passif sans miner.",cat:"Les Français avec 6 Traders en âge 3 ont une économie d'or inarrêtable.",catid:'eco'},{term:'Micro',def:'Micro-gestion - Contrôle précis des unités individuelles en combat (focus fire, kiting, retraite).',cat:'Le micro des Mangudai Mongols est très difficile à maîtriser.',catid:'mil'},{term:'Macro',def:"Macro-gestion - Gestion globale de la partie : économie, production, expansion, montée d'âge.",cat:"Même avec un mauvais micro, un bon macro suffit pour monter d'ELO.",catid:'mil'},{term:'Spam',def:"Produire un maximum d'unités du même type en continu depuis plusieurs bâtiments.",cat:'Spam des Man-at-Arms depuis 3 casernes pendant le push.',catid:'mil'},{term:'Counter',def:'Unité ou stratégie qui bat directement une autre. Ex : Spearman counter la cavalerie.',cat:'Les Camels Abbasides counter parfaitement le Royal Knight français.',catid:'mil'},{term:'Kiting',def:'Attaquer en reculant pour faire des dégâts tout en évitant les coups en retour. Très utilisé avec les archers.',cat:"Le Longbowman en kiting est presque impossible à tuer pour de l'infanterie.",catid:'mil'},{term:'Focus Fire',def:'Concentrer les tirs de toutes les unités sur une seule cible pour la tuer rapidement.',cat:'Focus fire sur le Khan Mongol en premier - il inspire les troupes autour.',catid:'mil'},{term:'Raider',def:"Unité ou groupe d'unités envoyé harceler les villageois ennemis plutôt que d'attaquer frontalement.",cat:'Envoyer 2-3 Horsemen raider les villageois pendant que tu continues de boomer.',catid:'mil'},{term:'All-in',def:'Stratégie consistant à tout miser sur une attaque décisive sans plan B. Si ça échoue, la partie est perdue.',cat:"Rush Féodal all-in avec 10 Man-at-Arms - si l'adversaire défend, tu as perdu.",catid:'tac'},{term:'Rush',def:"Attaque très précoce visant à détruire l'adversaire avant qu'il n'ait le temps de s'installer.",cat:'Feudal rush avec les Anglais - Longbowmen dès la minute 5.',catid:'tac'},{term:'Timing Attack',def:"Attaque lancée à un moment précis pour exploiter une fenêtre de vulnérabilité adverse (pendant qu'il monte d'âge, avant ses upgrades).",cat:"Timing attack à la minute 8 juste avant qu'il finisse son TC 2.",catid:'tac'},{term:'Contain',def:"Contrôler l'espace autour de la base adverse pour limiter son expansion et l'accès aux ressources.",cat:"Mettre des tours au milieu de la carte pour contain l'adversaire dans sa base.",catid:'tac'},{term:'Map Control',def:'Contrôle de la carte - occuper les zones de ressources stratégiques, les reliques, les positions élevées.',cat:'Les Mongols prennent le map control très tôt grâce à leur mobilité.',catid:'tac'},{term:'Forward Base',def:'Base avancée construite près de la base ennemie pour réduire le temps de trajet des unités attaquantes.',cat:"Forward TC avec les Mali - construction 2x plus rapide, c'est difficile à stopper.",catid:'tac'},{term:'Wall',def:"Murs de palissade ou de pierre construits pour bloquer les rushes et canaliser l'attaque ennemie.",cat:'Wall + Longbowmen derrière = défense presque impénétrable pour les Anglais.',catid:'tac'},{term:'Siege',def:'Machines de siège (Trébuchet, Springald, Bombard) utilisées pour détruire les bâtiments et murs ennemis.',cat:"Pousser sans siège contre une base wallée c'est suicidaire.",catid:'tac'},{term:'Push',def:"Avancer avec son armée vers la base ennemie pour détruire des structures ou éliminer l'adversaire.",cat:'',catid:'tac'},{term:'Scout',def:'Unité légère servant à explorer la carte et repérer la stratégie adverse le plus tôt possible.',cat:"Scouter l'adversaire à la minute 1-2 pour savoir sa civ et son ouverture.",catid:'tac'},{term:'Snipe',def:"Tuer une unité clé adverse isolée (Khan, Scholar, Prélat, Jeanne d'Arc) pour perturber son économie.",cat:'Sniper le Khan Mongol avec un Springald change complètement la bataille.',catid:'tac'},{term:'Deathball',def:'Grande armée regroupée en boule dense - très puissante mais vulnérable aux Springalds et Trebuchets.',cat:'',catid:'tac'},{term:'Age Up',def:"Monter d'âge - passer de l'âge Sombre au Féodal, Féodal au Château, etc.",cat:'Age up avec 20 villageois pour un boom confortable.',catid:'tac'},{term:'Landmark',def:"Bâtiment spécial choisi à chaque montée d'âge, donnant des bonus uniques selon la civilisation.",cat:'Le Council Hall anglais rend les Longbowmen 2x plus rapides à produire.',catid:'tac'}];
 const CIV_IDS_BY_NAME = {
-  'english':'anglais','french':'francais','hre':'hre','mongols':'mongols',
-  'rus':'rus','abbasid':'abbasides','ottomans':'ottomans','malians':'mali',
-  'byzantines':'byzantins','chinese':'chine','delhi':'delhi','japanese':'japonais',
-  'zhu_xi':'zhuxilegacy','ayyubids':'ayyoubides','jeanne_darc':'jeannedarc',
+  'english':'anglais','french':'francais','hre':'hre',
+  'holy_roman_empire':'hre',
+  'mongols':'mongols',
+  'rus':'rus',
+  'abbasid':'abbasides','abbasid_dynasty':'abbasides',
+  'ottomans':'ottomans','malians':'mali',
+  'byzantines':'byzantins','chinese':'chine',
+  'delhi':'delhi','delhi_sultanate':'delhi',
+  'japanese':'japonais',
+  'zhu_xi':'zhuxilegacy','zhu_xis_legacy':'zhuxilegacy',
+  'ayyubids':'ayyoubides','jeanne_darc':'jeannedarc',
   'order_of_the_dragon':'ordresmoines',
-  'templars':'templiers','lancaster':'lancaster','golden_horde':'hordedor',
-  'macedonian':'macedonienne','sengoku':'sengokudaimyo','tughluq':'tughluq',
+  'templars':'templiers','knights_templar':'templiers',
+  'lancaster':'lancaster','house_of_lancaster':'lancaster',
+  'golden_horde':'hordedor',
+  'macedonian':'macedonienne','macedonian_dynasty':'macedonienne',
+  'sengoku':'sengokudaimyo','sengoku_daimyo':'sengokudaimyo',
+  'tughluq':'tughluq','tughlaq_dynasty':'tughluq',
   'jin_dynasty':'jindynasty'
 };
 
@@ -312,6 +323,246 @@ const BUILD_ORDERS = [
     {n:8,vils:18,res:'🔬',action:"Continuer branche tech - objectif Chateau rapide",dur:50},
     {n:9,vils:20,res:'🏛️',action:"MONTER EN CHATEAU (20 vils) - Landmark tech avancee",dur:70},
     {n:10,vils:22,res:'⚔️',action:"Chameaux + tech avancee = domination mid-game",dur:60}
+  ]}
+  ,{id:'bo-ord-boom',civ:'ordresmoines',style:'boom',styleLabel:'Boom Economique',diff:'Intermediaire',
+   title:'Boom Villageois Dores - Ordre du Dragon',
+   desc:"Exploiter les Villageois Dores (+27% gathering) pour une eco ultra-solide avant le Chateau.",
+   steps:[
+    {n:1,vils:6, res:'🍖',action:"6 vils sur moutons. Preparer or pour le 1er Villageois Dore",dur:55},
+    {n:2,vils:7, res:'🪙',action:"1 vil sur or. Produire Villageois Dore immediatement (priorite absolue)",dur:40},
+    {n:3,vils:9, res:'🪵',action:"2 vils sur bois. Construire Lumber Camp",dur:40},
+    {n:4,vils:11,res:'🍖',action:"2 vils nourriture. Placer Chapelle pres du TC pour aura de soin",dur:45},
+    {n:5,vils:13,res:'🪙',action:"2 vils or. Produire 2e Villageois Dore",dur:40},
+    {n:6,vils:15,res:'🍖',action:"2 vils nourriture. Lancer Monument feodal",dur:45},
+    {n:7,vils:17,res:'🏛️',action:"MONTER EN FEODAL (16 vils). Chapelle Feodal en priorite",dur:60},
+    {n:8,vils:19,res:'🪙',action:"2 vils or supplementaires. 3 Villageois Dores total",dur:45},
+    {n:9,vils:21,res:'🍖',action:"Lancer Monument Chateau. 10 nour, 6 bois, 5 or",dur:50},
+    {n:10,vils:23,res:'⚔️',action:"MONTER EN CHATEAU (~9min). Chevaliers Dragons + soin permanent",dur:70}
+  ]}
+  ,{id:'bo-ord-rush',civ:'ordresmoines',style:'rush',styleLabel:'Rush Feodal',diff:'Intermediaire',
+   title:'Rush Cavaliers Dores Feodal',
+   desc:"Pression feodal rapide avec Cavaliers Dores depuis l'Ecurie. Attaque vers 5-6 minutes.",
+   steps:[
+    {n:1,vils:6, res:'🍖',action:"6 vils sur moutons autour du TC",dur:55},
+    {n:2,vils:7, res:'🪙',action:"1 vil sur or. Produire 1 Villageois Dore (gathering 27% plus rapide)",dur:40},
+    {n:3,vils:9, res:'🪵',action:"2 vils bois. Construire Ecurie immediatement",dur:40},
+    {n:4,vils:11,res:'🍖',action:"2 vils nourriture. Chapelle pres de l'Ecurie pour l'aura",dur:45},
+    {n:5,vils:13,res:'🏛️',action:"Lancer Monument feodal avec les vils bois",dur:30},
+    {n:6,vils:13,res:'🔍',action:"Eclaireur : reperer nourriture et vils adverses",dur:20},
+    {n:7,vils:13,res:'🏛️',action:"MONTER EN FEODAL (~4min15). Produire 2-3 Cavaliers Dores",dur:60},
+    {n:8,vils:15,res:'⚔️',action:"Attaquer avec Cavaliers Dores. Viser vils et camps de ressources",dur:45},
+    {n:9,vils:17,res:'🍖',action:"Continuer eco. 2 vils nourriture supplementaires",dur:40},
+    {n:10,vils:18,res:'⚔️',action:"Maintenir pression. Decider : continuer rush ou transition Chateau",dur:60}
+  ]}
+  ,{id:'bo-tem-boom',civ:'templiers',style:'boom',styleLabel:'Boom Economique',diff:'Expert',
+   title:'Boom Double TC Templiers',
+   desc:"Double TC en Feodal pour eco solide avant Templar Brothers au Chateau.",
+   steps:[
+    {n:1,vils:6, res:'🍖',action:"6 vils sur moutons. Construire Maison immediatement",dur:55},
+    {n:2,vils:8, res:'🪵',action:"2 vils bois. Construire Lumber Camp",dur:40},
+    {n:3,vils:10,res:'🪙',action:"2 vils or. Construire Mining Camp",dur:40},
+    {n:4,vils:12,res:'🍖',action:"2 vils nourriture (fermes). Preparer 2eme TC",dur:45},
+    {n:5,vils:14,res:'🪵',action:"Lancer Monument feodal. Construire 2eme TC avec bois",dur:50},
+    {n:6,vils:16,res:'🏛️',action:"MONTER EN FEODAL (~5min). Rallier 2eme TC sur nourriture",dur:60},
+    {n:7,vils:20,res:'🍖',action:"Production depuis 2 TC. 12 nour, 4 bois, 4 or",dur:60},
+    {n:8,vils:22,res:'🪙',action:"2 vils or supplementaires pour financer Chateau",dur:45},
+    {n:9,vils:24,res:'🏛️',action:"Lancer Monument Chateau. 12 nour, 6 bois, 6 or",dur:60},
+    {n:10,vils:26,res:'⚔️',action:"MONTER EN CHATEAU (~9min). Templar Brothers + Commanderie",dur:70}
+  ]}
+  ,{id:'bo-tem-harass',civ:'templiers',style:'harass',styleLabel:'Harass',diff:'Expert',
+   title:'Harass Feodal Templiers',
+   desc:"Pression rapide avec cavalerie legere Templar. Age feodal vers 4min30.",
+   steps:[
+    {n:1,vils:6, res:'🍖',action:"5 vils moutons, 1 vil construit Caserne",dur:55},
+    {n:2,vils:8, res:'🪵',action:"2 vils bois. Construire Ecurie",dur:40},
+    {n:3,vils:10,res:'🪙',action:"2 vils or pour production cavalerie",dur:40},
+    {n:4,vils:12,res:'🍖',action:"2 vils nourriture. Lancer Monument feodal",dur:45},
+    {n:5,vils:12,res:'🔍',action:"Eclaireur : reperer eco et vils adverses",dur:20},
+    {n:6,vils:12,res:'🏛️',action:"MONTER EN FEODAL (~4min30). 2 Hobelars depuis Ecurie",dur:60},
+    {n:7,vils:14,res:'⚔️',action:"Attaquer eco ennemie avec Hobelars. Harceler sans trop engager",dur:45},
+    {n:8,vils:15,res:'🍖',action:"1 vil nourriture supplementaire. Maintenir production militaire",dur:40},
+    {n:9,vils:17,res:'⚔️',action:"Ajouter infanterie Templar (Man-at-Arms). Continuer harass",dur:45},
+    {n:10,vils:18,res:'🏛️',action:"Decider : all-in feodal ou transition Chateau pour Templar Brothers",dur:60}
+  ]}
+  ,{id:'bo-lan-fc',civ:'lancaster',style:'chateau',styleLabel:'Fast Chateau',diff:'Facile',
+   title:'Fast Chateau Lancaster - Manoirs',
+   desc:"Utiliser les Manoirs pour eco passive et monter au Chateau vers 8min30.",
+   steps:[
+    {n:1,vils:6, res:'🍖',action:"6 vils moutons. Construire 2 Manoirs immediatement",dur:55},
+    {n:2,vils:8, res:'🪵',action:"2 vils bois. Lumber Camp + 3eme Manoir",dur:40},
+    {n:3,vils:9, res:'🪙',action:"1 vil or. Mining Camp",dur:40},
+    {n:4,vils:11,res:'🍖',action:"2 vils nourriture. Les Manoirs generent ressources passives",dur:45},
+    {n:5,vils:13,res:'🪵',action:"6 nour, 4 bois, 3 or. Lancer Monument feodal",dur:45},
+    {n:6,vils:15,res:'🏛️',action:"MONTER EN FEODAL (~5min). Lancaster Castle en priorite",dur:60},
+    {n:7,vils:18,res:'🍖',action:"Production depuis 2 TC (bonus Lancaster). 3 vils nourriture",dur:55},
+    {n:8,vils:20,res:'🪙',action:"2 vils or. Preparer Monument Chateau",dur:45},
+    {n:9,vils:22,res:'🏛️',action:"Lancer Monument Chateau. 10 nour, 5 bois, 7 or",dur:55},
+    {n:10,vils:24,res:'⚔️',action:"MONTER EN CHATEAU (~8min30). Yeomen + Earl's Guard en masse",dur:70}
+  ]}
+  ,{id:'bo-lan-rush',civ:'lancaster',style:'rush',styleLabel:'Rush Feodal',diff:'Facile',
+   title:'Rush Feodal Yeomen Lancaster',
+   desc:"Pression feodal avec Yeomen (archers royaux Lancaster). Attaque vers 5-6 minutes.",
+   steps:[
+    {n:1,vils:6, res:'🍖',action:"6 vils moutons. Construire 1 Manoir pour eco passive",dur:55},
+    {n:2,vils:8, res:'🪵',action:"2 vils bois. Lumber Camp + Stand de tir (archers)",dur:40},
+    {n:3,vils:10,res:'🍖',action:"2 vils nourriture. 2eme Manoir",dur:45},
+    {n:4,vils:11,res:'🪙',action:"1 vil or pour production d'archers",dur:40},
+    {n:5,vils:13,res:'🏛️',action:"Lancer Monument feodal (Lancaster Castle)",dur:30},
+    {n:6,vils:13,res:'🔍',action:"Eclaireur : reperer eco adverse et position des vils",dur:20},
+    {n:7,vils:13,res:'🏛️',action:"MONTER EN FEODAL (~4min15)",dur:60},
+    {n:8,vils:14,res:'⚔️',action:"Produire 3-4 Yeomen depuis Stand de tir. Attaquer immediatement",dur:45},
+    {n:9,vils:16,res:'🍖',action:"2 vils nourriture supplementaires. Maintenir production Yeomen",dur:40},
+    {n:10,vils:18,res:'⚔️',action:"Pression soutenue avec Yeomen. Viser vils et camps de ressources",dur:60}
+  ]}
+  ,{id:'bo-hor-rush',civ:'hordedor',style:'rush',styleLabel:'Rush Feodal',diff:'Expert',
+   title:'Rush Cavalerie Horde - Stable Age Sombre',
+   desc:"Produire de la cavalerie depuis l'Age Sombre grace au Stable disponible immediatement.",
+   steps:[
+    {n:1,vils:4, res:'🍖',action:"4 vils sur moutons (par paires). Construire Ecurie immediatement",dur:55},
+    {n:2,vils:6, res:'🪵',action:"2 vils bois. Placer Ger pres du bois (remplace Camp de bucherons)",dur:40},
+    {n:3,vils:6, res:'⚔️',action:"Produire 2 Kharash depuis Ecurie. Envoyer harasser a 3min",dur:35},
+    {n:4,vils:8, res:'🍖',action:"2 vils nourriture. Ger pres des moutons",dur:40},
+    {n:5,vils:8, res:'⚔️',action:"Harasser avec cavalerie. Viser vils et camps adverses",dur:35},
+    {n:6,vils:10,res:'🪙',action:"2 vils or. Ger sur gisement or",dur:40},
+    {n:7,vils:12,res:'🏛️',action:"Lancer Monument feodal (Berke Palace ou Khan's Palace)",dur:30},
+    {n:8,vils:12,res:'🏛️',action:"MONTER EN FEODAL (~5min30). Choisir Khan and Torguuds au Golden Tent",dur:60},
+    {n:9,vils:14,res:'⚔️',action:"Kipchak Archers depuis Ecurie. Double pression cavalerie",dur:45},
+    {n:10,vils:16,res:'⚔️',action:"Attaque avec Kharash + Kipchak. Decider : all-in ou transition Chateau",dur:60}
+  ]}
+  ,{id:'bo-hor-boom',civ:'hordedor',style:'boom',styleLabel:'Boom Economique',diff:'Expert',
+   title:"Boom Eco Gers Horde d'Or",
+   desc:"Maximiser l'efficacite des Gers pour boom solide en late game. Chateau vers 9min.",
+   steps:[
+    {n:1,vils:6, res:'🍖',action:"4 vils moutons, 2 vils construisent Ger central (drop-off universel)",dur:55},
+    {n:2,vils:8, res:'🪵',action:"2 vils bois. Construire 2eme Ger pres boiserie",dur:40},
+    {n:3,vils:10,res:'🪙',action:"2 vils or. Ger sur gisement or",dur:40},
+    {n:4,vils:12,res:'🍖',action:"2 vils fermes. Construire Caserne",dur:45},
+    {n:5,vils:14,res:'🍖',action:"Equilibrer : 6 nour, 4 bois, 4 or. Gers augmentent efficiency",dur:45},
+    {n:6,vils:16,res:'🏛️',action:"Lancer Monument feodal (Khan's Palace)",dur:30},
+    {n:7,vils:18,res:'🏛️',action:"MONTER EN FEODAL (~6min). Construire Stockyard (4 vils travaillent)",dur:60},
+    {n:8,vils:20,res:'🍖',action:"10 nour (Stockyard), 4 bois, 6 or. Preparer Chateau",dur:55},
+    {n:9,vils:22,res:'🏛️',action:"Lancer Monument Chateau. Continuer boom",dur:50},
+    {n:10,vils:25,res:'⚔️',action:"MONTER EN CHATEAU (~9min). Mangudais d'elite disponibles",dur:70}
+  ]}
+  ,{id:'bo-mac-rush',civ:'macedonienne',style:'rush',styleLabel:'Rush Feodal',diff:'Expert',
+   title:'Phalanx Feodal - Macedonienne',
+   desc:"Pression feodal avec Hoplites en formation phalange. Contre la cavalerie adverse.",
+   steps:[
+    {n:1,vils:6, res:'🍖',action:"6 vils moutons. Construire Caserne immediatement",dur:55},
+    {n:2,vils:8, res:'🪵',action:"2 vils bois. Lumber Camp",dur:40},
+    {n:3,vils:10,res:'🍖',action:"2 vils nourriture fermes",dur:45},
+    {n:4,vils:11,res:'🪙',action:"1 vil or pour argent macedonien (Galena Gathering)",dur:40},
+    {n:5,vils:13,res:'🏛️',action:"Lancer Monument feodal (Agora macedonienne)",dur:30},
+    {n:6,vils:13,res:'🔍',action:"Eclaireur : reperer eco adverse",dur:20},
+    {n:7,vils:13,res:'🏛️',action:"MONTER EN FEODAL (~4min30). 3-4 Hoplites depuis Caserne",dur:60},
+    {n:8,vils:15,res:'⚔️',action:"Pression en formation phalange. Efficace contre cavalerie",dur:45},
+    {n:9,vils:17,res:'🪙',action:"2 vils or/pierre pour generer argent via Galena Gathering",dur:40},
+    {n:10,vils:18,res:'⚔️',action:"Soutenir avec Archers macedoniens. Maintenir pression",dur:60}
+  ]}
+  ,{id:'bo-mac-fc',civ:'macedonienne',style:'chateau',styleLabel:'Fast Chateau',diff:'Expert',
+   title:'Fast Chateau Varègues',
+   desc:"Monter au Chateau pour deverrouiller les Varangian Guards et l'Arsenal Varègue.",
+   steps:[
+    {n:1,vils:6, res:'🍖',action:"6 vils moutons. Planifier placement des batiments",dur:55},
+    {n:2,vils:8, res:'🪵',action:"2 vils bois. Lumber Camp",dur:40},
+    {n:3,vils:10,res:'🪙',action:"2 vils or. Mining Camp",dur:40},
+    {n:4,vils:11,res:'🪨',action:"1 vil pierre pour generer argent via Galena Gathering",dur:40},
+    {n:5,vils:13,res:'🍖',action:"2 vils nourriture (fermes)",dur:45},
+    {n:6,vils:15,res:'🏛️',action:"Lancer Monument feodal",dur:30},
+    {n:7,vils:17,res:'🏛️',action:"MONTER EN FEODAL (~5min30). Construire Forteresse Varegue",dur:60},
+    {n:8,vils:19,res:'🪙',action:"2 vils or supplementaires. Acheter Arsenal Varègue avec argent",dur:45},
+    {n:9,vils:21,res:'🏛️',action:"Lancer Monument Chateau. 10 nour, 5 bois, 6 or",dur:55},
+    {n:10,vils:23,res:'⚔️',action:"MONTER EN CHATEAU (~8min). Varangian Guard depuis Forteresse",dur:70}
+  ]}
+  ,{id:'bo-sen-boom',civ:'sengokudaimyo',style:'boom',styleLabel:'Boom Economique',diff:'Expert',
+   title:'Boom Matsuri - Sengoku Daimyo',
+   desc:"Exploiter le Matsuri et les Yatai pour maximiser la gathering rate. Chateau vers 9min.",
+   steps:[
+    {n:1,vils:6, res:'🍖',action:"6 vils sur cerfs/moutons. Construire Matsuri immediatement",dur:55},
+    {n:2,vils:8, res:'🪵',action:"2 vils bois. Lumber Camp",dur:40},
+    {n:3,vils:9, res:'🪙',action:"1 vil or. Placer Sake Brewery pour or passif",dur:40},
+    {n:4,vils:11,res:'🍖',action:"2 vils nourriture. Placer Yatai pres des ressources",dur:45},
+    {n:5,vils:13,res:'🪵',action:"4 bois, 2 or, 7 nour. Construire Manoirs Daimyo",dur:45},
+    {n:6,vils:15,res:'🏛️',action:"Lancer Monument feodal. Activer upgrades Daimyo",dur:30},
+    {n:7,vils:17,res:'🏛️',action:"MONTER EN FEODAL (~5min30). Choisir Daimyo Estate",dur:60},
+    {n:8,vils:19,res:'🪙',action:"2 vils or. Sake Brewery genere Toko-Koji (or passif)",dur:45},
+    {n:9,vils:21,res:'🏛️',action:"Lancer Monument Chateau. 10 nour, 6 bois, 5 or",dur:50},
+    {n:10,vils:24,res:'⚔️',action:"MONTER EN CHATEAU (~9min). Samurai + Yumi archers",dur:70}
+  ]}
+  ,{id:'bo-sen-harass',civ:'sengokudaimyo',style:'harass',styleLabel:'Harass',diff:'Expert',
+   title:'Rush Ashigaru Feodal',
+   desc:"Pression precoce avec Ashigaru (fantassin rapide). Construire Manoirs tot pour or passif.",
+   steps:[
+    {n:1,vils:6, res:'🍖',action:"5 vils nourriture, 1 vil construit Caserne",dur:55},
+    {n:2,vils:8, res:'🪵',action:"2 vils bois. Lumber Camp",dur:40},
+    {n:3,vils:9, res:'🪙',action:"1 vil Sake Brewery (or passif genere)",dur:40},
+    {n:4,vils:11,res:'🍖',action:"2 vils nourriture. Construire 1-2 Manoirs Daimyo",dur:45},
+    {n:5,vils:13,res:'🏛️',action:"Lancer Monument feodal. Envoyer eclaireur",dur:30},
+    {n:6,vils:13,res:'🔍',action:"Reperer eco ennemie",dur:20},
+    {n:7,vils:13,res:'🏛️',action:"MONTER EN FEODAL (~4min30)",dur:60},
+    {n:8,vils:13,res:'⚔️',action:"Produire 3-4 Ashigaru depuis Caserne",dur:45},
+    {n:9,vils:15,res:'🍖',action:"2 vils supplementaires. Continuer production Ashigaru",dur:40},
+    {n:10,vils:18,res:'⚔️',action:"Attaquer avec Ashigaru. Viser vils et camps de ressources",dur:60}
+  ]}
+  ,{id:'bo-tug-fc',civ:'tughluq',style:'chateau',styleLabel:'Fast Chateau',diff:'Intermediaire',
+   title:'Fast Chateau Worker Elephants',
+   desc:"Monter au Chateau pour debloquer les Worker Elephants qui remplacent tous les camps.",
+   steps:[
+    {n:1,vils:6, res:'🍖',action:"6 vils moutons. Les Worker Elephants remplaceront Mill/Camp plus tard",dur:55},
+    {n:2,vils:7, res:'🪵',action:"1 vil bois. Construire Camp de bucherons standard",dur:40},
+    {n:3,vils:9, res:'🍖',action:"2 vils nourriture",dur:45},
+    {n:4,vils:10,res:'🪙',action:"1 vil or. Mining Camp",dur:40},
+    {n:5,vils:12,res:'🪵',action:"2 vils bois supplementaires. 7 nour, 4 bois, 3 or",dur:45},
+    {n:6,vils:14,res:'🍖',action:"Equilibrer eco. Lancer Monument feodal",dur:45},
+    {n:7,vils:16,res:'🏛️',action:"MONTER EN FEODAL (~5min30). Construire Tour defensive",dur:60},
+    {n:8,vils:18,res:'🪙',action:"3 vils or supplementaires. Preparer Monument Chateau",dur:45},
+    {n:9,vils:20,res:'🏛️',action:"Lancer Monument Chateau. 9 nour, 5 bois, 6 or",dur:55},
+    {n:10,vils:22,res:'⚔️',action:"MONTER EN CHATEAU (~9min). Debloquer Worker Elephants",dur:70}
+  ]}
+  ,{id:'bo-tug-boom',civ:'tughluq',style:'boom',styleLabel:'Boom Economique',diff:'Intermediaire',
+   title:'Defense Fortifiee Tughluq',
+   desc:"Defense avec Forts de Tughlaqabad puis boom economique protege.",
+   steps:[
+    {n:1,vils:6, res:'🍖',action:"6 vils nourriture. Construire Tour defensive pres TC",dur:55},
+    {n:2,vils:8, res:'🪵',action:"2 vils bois. Lumber Camp",dur:40},
+    {n:3,vils:10,res:'🍖',action:"2 vils nourriture. 2eme Tour defensive",dur:45},
+    {n:4,vils:12,res:'🪙',action:"2 vils or",dur:40},
+    {n:5,vils:14,res:'🍖',action:"7 nour, 4 bois, 3 or. Lancer Monument feodal",dur:45},
+    {n:6,vils:16,res:'🏛️',action:"MONTER EN FEODAL (~6min). Tour supplementaire avec pierre",dur:60},
+    {n:7,vils:18,res:'🪙',action:"2 vils or, 1 vil bois supplementaires",dur:45},
+    {n:8,vils:20,res:'🍖',action:"2 vils nourriture (fermes securisees par tours)",dur:45},
+    {n:9,vils:22,res:'🏛️',action:"Lancer Monument Chateau. 10 nour, 6 bois, 6 or",dur:55},
+    {n:10,vils:25,res:'⚔️',action:"MONTER EN CHATEAU (~10min). Forts de Tughlaqabad + Elephants",dur:70}
+  ]}
+  ,{id:'bo-jin-boom',civ:'jindynasty',style:'boom',styleLabel:'Boom Economique',diff:'Expert',
+   title:'Boom Villageois Montes - Dynastie Jin',
+   desc:"Villageois Montes (gathering + mouvement rapide) sur ressources eloignees. Chateau vers 9min.",
+   steps:[
+    {n:1,vils:4, res:'🍖',action:"4 vils nourriture. Produire immediatement Villageois Montes (nour+or)",dur:55},
+    {n:2,vils:6, res:'🪙',action:"2 vils or (necessaires pour Villageois Montes)",dur:40},
+    {n:3,vils:6, res:'🏇',action:"Lancer 2 Villageois Montes. Les envoyer sur ressources eloignees",dur:35},
+    {n:4,vils:8, res:'🪵',action:"2 vils bois. Lumber Camp",dur:40},
+    {n:5,vils:10,res:'🍖',action:"2 vils nourriture. Meditation Gardens (bonus bois)",dur:45},
+    {n:6,vils:12,res:'🪙',action:"2 vils or. Viser 6-8 Villageois Montes totaux",dur:40},
+    {n:7,vils:14,res:'🏛️',action:"Lancer Monument feodal. Draft Horses deverrouille en feodal",dur:30},
+    {n:8,vils:16,res:'🏛️',action:"MONTER EN FEODAL (~5min30). Draft Horses +15% bois",dur:60},
+    {n:9,vils:18,res:'🪙',action:"Ajouter vils or. Preparer Monument Chateau",dur:45},
+    {n:10,vils:21,res:'⚔️',action:"MONTER EN CHATEAU (~9min). Iron Pagoda + Emissaires",dur:70}
+  ]}
+  ,{id:'bo-jin-fc',civ:'jindynasty',style:'chateau',styleLabel:'Fast Chateau',diff:'Expert',
+   title:'Fast Chateau Emissaires Jin',
+   desc:"Monter vite au Chateau pour deployer Emissaires et Etats Tributaires (nourriture passive).",
+   steps:[
+    {n:1,vils:6, res:'🍖',action:"6 vils nourriture. Mining Camp sur or",dur:55},
+    {n:2,vils:7, res:'🪙',action:"1 vil or pour Villageois Montes",dur:40},
+    {n:3,vils:9, res:'🪵',action:"2 vils bois. Lumber Camp",dur:40},
+    {n:4,vils:11,res:'🍖',action:"2 vils nourriture. Meditation Gardens (bonus bois)",dur:45},
+    {n:5,vils:13,res:'🪵',action:"6 nour, 4 bois, 3 or. Equilibrer",dur:45},
+    {n:6,vils:14,res:'🏛️',action:"Lancer Monument feodal (Barbican de l'Est)",dur:30},
+    {n:7,vils:16,res:'🏛️',action:"MONTER EN FEODAL (~5min). Chercher Reliques avec Official",dur:60},
+    {n:8,vils:18,res:'🪙',action:"2 vils or supplementaires. Preparer Monument Chateau",dur:45},
+    {n:9,vils:20,res:'🏛️',action:"9 nour, 5 bois, 6 or. Lancer Monument Chateau",dur:50},
+    {n:10,vils:22,res:'⚔️',action:"MONTER EN CHATEAU (~8min30). Emissaires + Iron Pagoda",dur:70}
   ]}
 ];
 
